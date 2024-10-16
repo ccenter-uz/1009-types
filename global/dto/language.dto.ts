@@ -11,5 +11,5 @@ export class LanguageDto {
 
   @IsString()
   @IsNotEmpty()
-  en: string;
+  cy: string;
 }
