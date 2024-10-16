@@ -18,13 +18,18 @@ export interface IObjectList<T> {
   [key: string]: T;
 }
 
-export type AppLanguages =
-  | AppLanguagesList.UZ
-  | AppLanguagesList.CY
-  | AppLanguagesList.RU;
+export interface AppLanguages {
+  uz: string,
+  cy: string,
+  ru: string
+}
+// | AppLanguagesList.UZ
+// | AppLanguagesList.CY
+// | AppLanguagesList.RU;
 
 export enum AppLanguagesList {
   RU = 'ru',
   UZ = 'uz',
   CY = 'cy',
 }
+

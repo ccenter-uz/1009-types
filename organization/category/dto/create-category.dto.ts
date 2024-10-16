@@ -1,20 +1,23 @@
+import { Type } from 'class-transformer';
 import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
+  IsObject,
   IsString,
   Length,
+  ValidateNested,
 } from 'class-validator';
-import { AppLanguages, AppLanguagesList } from 'types/global/types';
+import { LanguageDto } from 'types/global';
 
-export class CreateCategoryDto {
+export class CategoryCreateDto {
   @IsNotEmpty()
   @IsNumber()
   staffNumber: number;
 
   @IsNotEmpty()
-  @IsString()
-  @IsEnum(AppLanguagesList, { each: true })
-  @Length(0, 150)
-  name: AppLanguages;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  name: Object;
 }

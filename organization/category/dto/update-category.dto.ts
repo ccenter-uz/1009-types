@@ -2,20 +2,22 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
+  IsObject,
   IsString,
   Length,
+  ValidateNested,
 } from 'class-validator';
-import { IdDto } from '../../../common/id.dto';
-import { AppLanguages, AppLanguagesList } from 'types/global/types';
+import { Type } from 'class-transformer';
+import { IdDto, LanguageDto } from 'types/global';
 
-export class UpdateCategoryDto extends IdDto {
+export class CategoryUpdateDto extends IdDto {
   @IsNotEmpty()
   @IsNumber()
   staffNumber?: number;
 
   @IsNotEmpty()
-  @IsString()
-  @IsEnum(AppLanguagesList, { each: true })
-  @Length(0, 150)
-  name?: AppLanguages;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  name: Object;
 }
