@@ -6,5 +6,5 @@ export class LanguageRequestDto {
   @IsString()
   @IsNotEmpty()
   @IsEnum(LanguageRequestEnum)
-  uz: LanguageRequestType;
+  lang: LanguageRequestType;
 }
