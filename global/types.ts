@@ -1,3 +1,5 @@
+import { LanguageRequestEnum } from './constants';
+
 export type JsonObject = { [Key in string]?: JsonValue };
 
 export type JsonArray = Array<JsonValue>;
@@ -18,18 +20,13 @@ export interface IObjectList<T> {
   [key: string]: T;
 }
 
-export interface AppLanguages {
-  uz: string,
-  cy: string,
-  ru: string
-}
-// | AppLanguagesList.UZ
-// | AppLanguagesList.CY
-// | AppLanguagesList.RU;
+export type AppLanguages = {
+  uz: string;
+  cy: string;
+  ru: string;
+};
 
-export enum AppLanguagesList {
-  RU = 'ru',
-  UZ = 'uz',
-  CY = 'cy',
-}
-
+export type LanguageRequestType =
+  | LanguageRequestEnum.UZ
+  | LanguageRequestEnum.CY
+  | LanguageRequestEnum.RU;

@@ -8,9 +8,9 @@ import {
   Length,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LanguageRequestDto } from 'types/global';
 
-export class CategoryCreateDto {
+export class CategoryCreateDto extends LanguageRequestDto {
   @IsNotEmpty()
   @IsNumber()
   staffNumber: number;
