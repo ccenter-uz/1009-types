@@ -14,7 +14,6 @@ export namespace CategoryInterfaces {
   export interface Response {
     id: number;
     staffNumber: number;
-    name: JsonValue;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
