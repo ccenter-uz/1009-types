@@ -9,8 +9,9 @@ import {
   Min,
 } from 'class-validator';
 import { Type } from 'class-transformer';
+import { LanguageRequestDto } from './language-request.dto';
 
-export class ListQueryDto {
+export class ListQueryDto extends LanguageRequestDto {
   @IsInt()
   @Min(1)
   @IsOptional()

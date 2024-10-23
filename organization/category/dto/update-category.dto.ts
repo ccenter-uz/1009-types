@@ -3,6 +3,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
   IsString,
   Length,
   ValidateNested,
@@ -11,11 +12,11 @@ import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
 
 export class CategoryUpdateDto extends IdDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   staffNumber?: number;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
