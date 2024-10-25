@@ -1,15 +1,15 @@
-import { IsString, IsNotEmpty } from 'class-validator';
+import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 
 export class LanguageDto {
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   uz: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   ru: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   cy: string;
 }
