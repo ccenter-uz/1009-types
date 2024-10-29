@@ -41,7 +41,6 @@ export class ListQueryDto extends LanguageRequestDto {
   @Type(() => Boolean)
   all?: boolean = false;
 
-
   @IsNumber({}, { each: true })
   @Type(() => Number)
   @IsArray()
