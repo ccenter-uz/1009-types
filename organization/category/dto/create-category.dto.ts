@@ -19,5 +19,5 @@ export class CategoryCreateDto extends LanguageRequestDto {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: Object;
+  name: LanguageDto;
 }

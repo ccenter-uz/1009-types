@@ -20,5 +20,5 @@ export class CategoryUpdateDto extends IdDto {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: Object;
+  name: LanguageDto;
 }
