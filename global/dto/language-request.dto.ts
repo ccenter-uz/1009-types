@@ -1,14 +1,23 @@
-import { IsString, IsNotEmpty, IsEnum, IsBoolean, IsOptional } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsEnum,
+  IsBoolean,
+  IsOptional,
+} from 'class-validator';
 import { LanguageRequestEnum } from '../constants';
 import { LanguageRequestType } from '../types';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class LanguageRequestDto {
+  @ApiProperty({ type: String, required: false })
   @IsString()
   @IsOptional()
   @IsEnum(LanguageRequestEnum)
   lang_code?: LanguageRequestType;
 
+  @ApiProperty({ type: Boolean, required: false })
   @IsBoolean()
   @IsOptional()
-  all_lang? = false;
+  all_lang?: boolean;
 }

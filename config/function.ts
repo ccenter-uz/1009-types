@@ -1,16 +1,38 @@
 import { ClientsProviderAsyncOptions, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { CONFIG_SERVICES_RMQ_TOKEN } from 'src/common/config/app.config';
 
-export const initTcpService = (name: string) =>
-  <ClientsProviderAsyncOptions>{
-    name: name,
-    imports: [ConfigModule],
-    useFactory: async (configService: ConfigService) => ({
-      transport: Transport.TCP,
+export const initRmqClient = (
+  serviceName: string
+): ClientsProviderAsyncOptions => ({
+  name: serviceName,
+  imports: [ConfigModule],
+  useFactory: async (configService: ConfigService) => {
+    const rmqConfig = configService.get(CONFIG_SERVICES_RMQ_TOKEN + '.CONFIG');
+    const serviceConfig = configService.get(
+      `${CONFIG_SERVICES_RMQ_TOKEN}.${serviceName}`
+    );
+
+    if (!serviceConfig) {
+      throw new Error(
+        `RabbitMQ configuration for service "${serviceName}" not found`
+      );
+    }
+
+    return {
+      transport: Transport.RMQ,
       options: {
-        host: configService.get(`SERVICE.${name}_HOST`) || 'localhost',
-        port: parseInt(configService.get(`SERVICE.${name}_PORT`)) || 5462,
+        urls: [
+          `amqp://${rmqConfig.login}:${rmqConfig.password}@${rmqConfig.host}:${rmqConfig.port}`,
+        ],
+        queue: serviceConfig.queueName,
+        queueOptions: {
+          durable: true,
+        },
+        exchange: serviceConfig.exchangeName,
+        exchangeType: 'direct', // Adjust exchange type if needed
       },
-    }),
-    inject: [ConfigService],
-  };
+    };
+  },
+  inject: [ConfigService],
+});
