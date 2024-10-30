@@ -1,6 +1,6 @@
 import { ClientsProviderAsyncOptions, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { CONFIG_SERVICES_RMQ_TOKEN } from 'src/common/config/app.config';
+import { CONFIG_SERVICES_RMQ_TOKEN } from './tokens';
 
 export const initRmqClient = (
   serviceName: string
