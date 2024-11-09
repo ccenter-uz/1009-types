@@ -14,3 +14,9 @@ export enum LanguageRequestEnum {
   CY = 'cy',
   RU = 'ru',
 }
+
+export const RegExForPassowrd =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+export const ErrorMessageForPassword =
+  'Password too weak. Must include uppercase, lowercase, number, and special character.';

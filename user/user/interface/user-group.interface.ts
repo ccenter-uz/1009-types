@@ -1,16 +1,27 @@
-export namespace RoleInterfaces {
+export namespace UserInterfaces {
   export interface Request {
-    name: string;
+    fullName: string;
+    phoneNumber: string;
+    password: string;
+    roleId: number;
+    numericId?: string;
   }
 
   export interface Update {
     id: number;
-    name?: string;
+    fullName?: string;
+    phoneNumber?: string;
+    password?: string;
+    roleId?: number;
+    numericId?: string;
   }
 
   export interface Response {
     id: number;
-    name: string;
+    fullName: string;
+    phoneNumber: string;
+    roleId: number;
+    numericId: string;
     status: number;
     createdAt: Date;
     updatedAt: Date;
