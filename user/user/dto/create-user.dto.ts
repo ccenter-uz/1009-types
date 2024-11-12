@@ -9,7 +9,7 @@ import {
   MaxLength,
 } from 'class-validator';
 import { UserInterfaces } from '../interface/user-group.interface';
-import { ErrorMessageForPassword, RegExForPassowrd } from 'types/global';
+import { ErrorMessageForPassword } from 'types/global';
 
 export class UserCreateDto implements UserInterfaces.Request {
   @ApiProperty()

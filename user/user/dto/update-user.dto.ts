@@ -6,7 +6,7 @@ import {
   Matches,
   MaxLength,
 } from 'class-validator';
-import { ErrorMessageForPassword, IdDto, RegExForPassowrd } from 'types/global';
+import { ErrorMessageForPassword, IdDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { UserInterfaces } from '../interface/user-group.interface';
 
@@ -26,7 +26,7 @@ export class UserUpdateDto extends IdDto implements UserInterfaces.Update {
   @IsOptional()
   @IsString()
   @Length(8, 20)
-  @Matches(RegExForPassowrd, {
+  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
     message: ErrorMessageForPassword,
   })
   password?: string;
