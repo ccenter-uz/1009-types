@@ -17,3 +17,10 @@ export enum LanguageRequestEnum {
 
 export const ErrorMessageForPassword =
   'Password too weak. Must include uppercase, lowercase, number, and special character.';
+
+export enum Roles {
+  ADMIN = 'admin',
+  MODERATOR = 'moderator',
+  OPERATOR = 'operator',
+  USER = 'user'
+}
