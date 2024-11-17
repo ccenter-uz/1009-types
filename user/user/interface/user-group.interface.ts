@@ -1,4 +1,13 @@
 export namespace UserInterfaces {
+  export interface LogInRequest {
+    phoneNumber: string;
+    password: string;
+  }
+
+  export interface LogInResponse {
+    token: string;
+  }
+
   export interface Request {
     fullName: string;
     phoneNumber: string;
