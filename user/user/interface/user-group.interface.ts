@@ -5,7 +5,7 @@ export namespace UserInterfaces {
   }
 
   export interface LogInResponse {
-    token: string;
+    accessToken: string;
   }
 
   export interface Request {
