@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
   IsEnum,
@@ -8,10 +9,12 @@ import {
   Length,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { SectionInterfaces } from '../interface/section-group.interface';
 
-export class SectionCreateDto extends LanguageRequestDto {
-
+export class SectionCreateDto implements SectionInterfaces.Request {
+  @ApiProperty({
+    example:'swager-name'
+  })
   @IsNotEmpty()
   @IsString()
   name: string;
