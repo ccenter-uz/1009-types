@@ -10,15 +10,24 @@ import {
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
+import { ApiProperty } from '@nestjs/swagger';
+import { ProductServiseCategoryInterfaces } from '../interface/product-service-category-group.interface';
 
-export class ProductServiseCategoryUpdateDto extends IdDto {
+export class ProductServiseCategoryUpdateDto
+  extends IdDto
+  implements ProductServiseCategoryInterfaces.Update
+{
+  @ApiProperty()
   @IsOptional()
   @IsNumber()
   staffNumber?: number;
 
+  @ApiProperty({
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
+  })
   @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: Object;
+  name: LanguageDto;
 }
