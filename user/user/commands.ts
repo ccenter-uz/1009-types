@@ -7,4 +7,5 @@ export enum UserServiceCommands {
   UPDATE = 'USER_UPDATE',
   DELETE = 'USER_DELETE',
   RESTORE = 'USER_RESTORE',
+  LOG_IN = 'USER_LOG_IN',
 }
