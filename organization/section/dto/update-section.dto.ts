@@ -1,17 +1,15 @@
 import {
-  IsEnum,
-  IsNotEmpty,
-  IsNumber,
-  IsObject,
   IsOptional,
   IsString,
-  Length,
-  ValidateNested,
 } from 'class-validator';
-import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto } from 'types/global';
+import { ApiProperty } from '@nestjs/swagger';
+import { SectionInterfaces } from '../interface/section-group.interface';
 
-export class SectionUpdateDto extends IdDto {
+export class SectionUpdateDto extends IdDto implements SectionInterfaces.Update {
+  @ApiProperty({
+    example: 'swager-name'
+  })
   @IsOptional()
   @IsString()
   name: string;

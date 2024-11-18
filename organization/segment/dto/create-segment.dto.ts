@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
   IsEnum,
@@ -9,12 +10,15 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { SegmentInterfaces } from '../interface/segment-group.interface';
 
-export class SegmentCreateDto extends LanguageRequestDto {
-
+export class SegmentCreateDto implements SegmentInterfaces.Request {
+  @ApiProperty({
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
+  })
   @IsNotEmpty()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: Object;
+  name: LanguageDto;
 }
