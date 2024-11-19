@@ -1,4 +1,3 @@
-import { SubCategoryInterfaces } from 'types/organization/sub-category';
 import {
   IsEnum,
   IsNotEmpty,
@@ -12,21 +11,9 @@ import {
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
+import { RegionInterfaces } from '../interface/region-group.interface';
 
-export class SubCategoryUpdateDto
-  extends IdDto
-  implements SubCategoryInterfaces.Update
-{
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  categoryId?: number;
-
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  staffNumber?: number;
-
+export class RegionUpdateDto extends IdDto implements RegionInterfaces.Update {
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
