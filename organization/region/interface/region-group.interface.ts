@@ -4,24 +4,18 @@ import {
   JsonValue,
   LanguageRequestType,
 } from 'types/global/types';
-export namespace SubCategoryInterfaces {
+export namespace RegionInterfaces {
   export interface Request {
-    categoryId: number;
-    staffNumber: number;
     name: AppLanguages;
   }
 
   export interface Update {
     id: number;
-    categoryId?: number;
-    staffNumber?: number;
     name?: AppLanguages;
   }
 
   export interface Response {
     id: number;
-    categoryId: number;
-    staffNumber: number;
     name?: {} | string;
     createdAt: Date;
     updatedAt: Date;
