@@ -1,20 +1,24 @@
-import {
-  IsNumber,
-  IsOptional,
-} from 'class-validator';
-import { IdDto } from 'types/global';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IdDto, PermissionType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { RolePermissionInterfaces } from '../interface/role-permission-group.interface';
 
-
-export class RolePermissionUpdateDto extends IdDto implements RolePermissionInterfaces.Update {
+export class RolePermissionUpdateDto
+  extends IdDto
+  implements RolePermissionInterfaces.Update
+{
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  permissionId?: number;
+  @IsString()
+  permission?: PermissionType;
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
   roleId?: number;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  path: string;
 }

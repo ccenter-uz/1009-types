@@ -1,4 +1,4 @@
-import { LanguageRequestEnum } from './constants';
+import { LanguageRequestEnum, PermissionsEnum } from './constants';
 
 export type JsonObject = { [Key in string]?: JsonValue };
 
@@ -41,3 +41,10 @@ export interface ApiErrorType {
   message: string;
   details?: any;
 }
+
+export type PermissionType =
+  | PermissionsEnum.CREATE_DATA
+  | PermissionsEnum.READ_DATA
+  | PermissionsEnum.UPDATE_DATA
+  | PermissionsEnum.DELETE_DATA
+  | PermissionsEnum.RESTORE_DATA;

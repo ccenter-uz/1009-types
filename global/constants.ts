@@ -22,5 +22,13 @@ export enum Roles {
   ADMIN = 'admin',
   MODERATOR = 'moderator',
   OPERATOR = 'operator',
-  USER = 'user'
+  USER = 'user',
+}
+
+export enum PermissionsEnum {
+  CREATE_DATA = 'CREATE_DATA',
+  READ_DATA = 'READ_DATA',
+  UPDATE_DATA = 'UPDATE_DATA',
+  DELETE_DATA = 'DELETE_DATA',
+  RESTORE_DATA = 'RESTORE_DATA',
 }
