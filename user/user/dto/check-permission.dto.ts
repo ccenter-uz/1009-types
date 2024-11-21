@@ -1,20 +1,25 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { RolePermissionInterfaces } from '../interface/role-permission-group.interface';
+import { UserInterfaces } from '../interface/user-group.interface';
 import { PermissionType } from 'types/global';
 
-export class RolePermissionCreateDto
-  implements RolePermissionInterfaces.Request
+export class CheckUserPermissionDto
+  implements UserInterfaces.CheckUserPermissionRequest
 {
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  permission: PermissionType;
+  @IsNumber()
+  userId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   roleId: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  method: PermissionType;
 
   @ApiProperty()
   @IsNotEmpty()

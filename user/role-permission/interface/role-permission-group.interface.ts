@@ -1,19 +1,24 @@
+import { PermissionType } from 'types/global';
+
 export namespace RolePermissionInterfaces {
   export interface Request {
     roleId: number;
-    permissionId: number;
+    permission: PermissionType;
+    path: string;
   }
 
   export interface Update {
     id: number;
     roleId?: number;
-    permissionId?: number;
+    permission?: PermissionType;
+    path?: string;
   }
 
   export interface Response {
     id: number;
     roleId: number;
-    permissionId: number;
+    permission: string;
+    path: string;
     status: number;
     createdAt: Date;
     updatedAt: Date;
