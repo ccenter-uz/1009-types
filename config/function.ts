@@ -30,7 +30,7 @@ export const initRmqClient = (
           durable: true,
         },
         exchange: serviceConfig.exchangeName,
-        exchangeType: 'direct', // Adjust exchange type if needed
+        exchangeType: 'direct',
       },
     };
   },

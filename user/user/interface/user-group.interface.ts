@@ -6,6 +6,11 @@ export namespace UserInterfaces {
     password: string;
   }
 
+  export interface LogInResponse {
+    accessToken: string;
+    permissions: any;
+  }
+
   export interface CheckUserPermissionRequest {
     userId: number;
     roleId: number;

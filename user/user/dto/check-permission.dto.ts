@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { UserInterfaces } from '../interface/user-group.interface';
 import { PermissionType } from 'types/global';
 
-export class checkUserPermissionDto
+export class CheckUserPermissionDto
   implements UserInterfaces.CheckUserPermissionRequest
 {
   @ApiProperty()
