@@ -1,11 +1,16 @@
+import { PermissionType } from 'types/global';
+
 export namespace UserInterfaces {
   export interface LogInRequest {
     phoneNumber: string;
     password: string;
   }
 
-  export interface LogInResponse {
-    accessToken: string;
+  export interface CheckUserPermissionRequest {
+    userId: number;
+    roleId: number;
+    method: PermissionType;
+    path: string;
   }
 
   export interface Request {

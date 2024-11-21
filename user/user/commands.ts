@@ -8,4 +8,5 @@ export enum UserServiceCommands {
   DELETE = 'USER_DELETE',
   RESTORE = 'USER_RESTORE',
   LOG_IN = 'USER_LOG_IN',
+  CHECK_PERMISSION = 'USER_CHECK_PERMISSION',
 }
