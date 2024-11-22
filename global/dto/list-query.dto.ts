@@ -58,13 +58,13 @@ export class ListQueryDto extends LanguageRequestDto {
   date_to?: Date | string;
 
   @ApiProperty({
-    type: Number,
+    type: Boolean,
     required: false,
   })
   @IsBoolean()
   @IsOptional()
   @Type(() => Boolean)
-  all?: boolean = false;
+  all?: boolean = true;
 
   @ApiProperty({
     type: Number,
