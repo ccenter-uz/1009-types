@@ -9,7 +9,6 @@ export namespace PassageInterfaces {
     index: number;
     staffId: number;
     districtId: number;
-    staffNumber: number;
     name: AppLanguages;
     old_name: AppLanguages;
     new_name: AppLanguages;
@@ -22,7 +21,6 @@ export namespace PassageInterfaces {
     index?: number;
     staffId?: number;
     districtId?: number;
-    staffNumber?: number;
     name?: AppLanguages;
     old_name?: AppLanguages;
     new_name?: AppLanguages;
@@ -35,7 +33,6 @@ export namespace PassageInterfaces {
     index: number;
     staffId: number;
     districtId: number;
-    staffNumber: number;
     name?: {} | string;
     old_name?: {} | string;
     new_name?: {} | string;

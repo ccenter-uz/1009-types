@@ -40,11 +40,6 @@ export class PassageUpdateDto implements PassageInterfaces.Update {
   @IsNumber()
   districtId?: number;
 
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  staffNumber?: number;
-
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })

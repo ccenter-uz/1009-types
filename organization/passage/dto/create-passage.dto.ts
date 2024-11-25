@@ -36,10 +36,6 @@ export class PassageCreateDto implements PassageInterfaces.Request {
   @IsNumber()
   districtId: number;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffNumber: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
