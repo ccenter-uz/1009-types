@@ -11,8 +11,6 @@ export namespace NearbyInterfaces  {
     cityId: number;
     staffNumber: number;
     name: AppLanguages;
-    old_name: AppLanguages;
-    new_name: AppLanguages;
   }
 
   export interface Update {
@@ -22,8 +20,6 @@ export namespace NearbyInterfaces  {
     cityId?: number;
     staffNumber?: number;
     name?: AppLanguages;
-    old_name?: AppLanguages;
-    new_name?: AppLanguages;
   }
 
   export interface Response {
@@ -33,8 +29,6 @@ export namespace NearbyInterfaces  {
     cityId: number;
     staffNumber: number;
     name?: {} | string;
-    old_name?: {} | string;
-    new_name?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

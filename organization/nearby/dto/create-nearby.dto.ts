@@ -40,29 +40,5 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @Type(() => LanguageDto)
   name: LanguageDto;
 
-  @ApiProperty({
-    example: {
-      ru: 'swagger-old-ru',
-      uz: 'swagger-old-uz',
-      cy: 'swagger-old-cy',
-    },
-  })
-  @IsNotEmpty()
-  @IsObject()
-  @ValidateNested()
-  @Type(() => LanguageDto)
-  old_name: LanguageDto;
-
-  @ApiProperty({
-    example: {
-      ru: 'swagger-new-ru',
-      uz: 'swagger-new-uz',
-      cy: 'swagger-new-cy',
-    },
-  })
-  @IsNotEmpty()
-  @IsObject()
-  @ValidateNested()
-  @Type(() => LanguageDto)
-  new_name: LanguageDto;
+ 
 }
