@@ -34,7 +34,7 @@ export class ListQueryDto extends LanguageRequestDto {
   limit = 25;
 
   @ApiProperty({
-    type: Number,
+    type: String,
     required: false,
   })
   @IsString()
