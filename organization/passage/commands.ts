@@ -8,5 +8,3 @@ export enum PassageServiceCommands {
     DELETE = 'PASSAGE_DELETE',
     RESTORE = 'PASSAGE_RESTORE',
   }
-  
-  
