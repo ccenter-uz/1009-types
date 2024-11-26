@@ -7,9 +7,9 @@ import {
   IsObject,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { IdDto, LanguageDto } from 'types/global';
 
-export class PassageUpdateDto implements PassageInterfaces.Update {
+export class PassageUpdateDto  extends IdDto implements PassageInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
