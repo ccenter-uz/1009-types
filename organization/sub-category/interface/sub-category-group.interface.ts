@@ -7,7 +7,7 @@ import {
 export namespace SubCategoryInterfaces {
   export interface Request {
     categoryId: number;
-    staffNumber: number;
+    staffNumber?: number;
     name: AppLanguages;
   }
 
@@ -21,7 +21,7 @@ export namespace SubCategoryInterfaces {
   export interface Response {
     id: number;
     categoryId: number;
-    staffNumber: number;
+    staffNumber?: number;
     name?: {} | string;
     createdAt: Date;
     updatedAt: Date;

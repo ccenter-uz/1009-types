@@ -33,7 +33,7 @@ export class AreaUpdateDto  extends IdDto implements AreaInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsOptional()

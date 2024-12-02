@@ -29,7 +29,7 @@ export class AvenueCreateDto implements AvenueInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffId: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsNotEmpty()

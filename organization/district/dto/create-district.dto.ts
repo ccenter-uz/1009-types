@@ -24,7 +24,7 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffId: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsNotEmpty()

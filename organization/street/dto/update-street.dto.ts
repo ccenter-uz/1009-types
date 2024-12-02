@@ -33,7 +33,7 @@ export class StreetUpdateDto extends IdDto implements StreetInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsOptional()

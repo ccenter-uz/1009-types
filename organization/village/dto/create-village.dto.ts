@@ -28,7 +28,7 @@ export class VillageCreateDto implements VillageInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffId: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsNotEmpty()

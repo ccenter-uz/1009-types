@@ -29,7 +29,7 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber: number;
+  staffNumber?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -40,5 +40,5 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @Type(() => LanguageDto)
   name: LanguageDto;
 
- 
+
 }

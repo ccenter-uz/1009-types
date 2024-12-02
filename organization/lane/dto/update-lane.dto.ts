@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
-export class LaneUpdateDto  extends IdDto implements LaneInterfaces.Update {
+export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -33,7 +33,7 @@ export class LaneUpdateDto  extends IdDto implements LaneInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsOptional()

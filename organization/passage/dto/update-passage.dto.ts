@@ -33,7 +33,7 @@ export class PassageUpdateDto  extends IdDto implements PassageInterfaces.Update
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: number;
 
   @ApiProperty()
   @IsOptional()

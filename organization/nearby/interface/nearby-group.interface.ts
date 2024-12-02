@@ -4,12 +4,12 @@ import {
   JsonValue,
   LanguageRequestType,
 } from 'types/global/types';
-export namespace NearbyInterfaces  {
+export namespace NearbyInterfaces {
   export interface Request {
     nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    staffNumber: number;
+    staffNumber?: number;
     name: AppLanguages;
   }
 
@@ -27,7 +27,7 @@ export namespace NearbyInterfaces  {
     nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    staffNumber: number;
+    staffNumber?: number;
     name?: {} | string;
     createdAt: Date;
     updatedAt: Date;

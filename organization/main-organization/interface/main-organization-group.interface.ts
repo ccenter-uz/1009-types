@@ -1,7 +1,7 @@
 import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
 export namespace MainOrganizationInterfaces {
   export interface Request {
-    staffNumber: number;
+    staffNumber?: number;
     name: string;
   }
 
@@ -13,8 +13,8 @@ export namespace MainOrganizationInterfaces {
 
   export interface Response {
     id: number;
-    staffNumber: number;
-    name?:  string,
+    staffNumber?: number;
+    name?: string,
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

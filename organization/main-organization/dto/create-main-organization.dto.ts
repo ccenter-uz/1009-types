@@ -10,13 +10,13 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
-import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';  
+import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 
 export class MainOrganizationCreateDto implements MainOrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber: number;
+  staffNumber?: number;
   @ApiProperty({
     example: 'swager-name',
   })

@@ -19,7 +19,7 @@ export class SubCategoryCreateDto implements SubCategoryInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber: number;
+  staffNumber?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
