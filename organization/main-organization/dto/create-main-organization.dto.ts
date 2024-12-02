@@ -12,7 +12,9 @@ import {
 import { LanguageDto, LanguageRequestDto } from 'types/global';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 
-export class MainOrganizationCreateDto implements MainOrganizationInterfaces.Request {
+export class MainOrganizationCreateDto
+  implements MainOrganizationInterfaces.Request
+{
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()

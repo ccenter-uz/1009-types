@@ -1,4 +1,9 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
+import {
+  AppLanguages,
+  JsonObject,
+  JsonValue,
+  LanguageRequestType,
+} from 'types/global/types';
 export namespace MainOrganizationInterfaces {
   export interface Request {
     staffNumber?: number;
@@ -7,7 +12,7 @@ export namespace MainOrganizationInterfaces {
 
   export interface Update {
     id: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: string;
   }
 
