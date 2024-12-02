@@ -19,7 +19,7 @@ export class MainOrganizationUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
   @ApiProperty({
     example: 'swager-name',
   })
