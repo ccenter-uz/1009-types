@@ -7,7 +7,7 @@ export class MainOrganizationCreateDto
 {
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({
