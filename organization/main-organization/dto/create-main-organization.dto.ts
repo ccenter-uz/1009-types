@@ -5,6 +5,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
   IsString,
   Length,
   ValidateNested,
@@ -16,8 +17,8 @@ export class MainOrganizationCreateDto
   implements MainOrganizationInterfaces.Request
 {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
+  @IsOptional()
+  @IsString()
   staffNumber?: string;
   @ApiProperty({
     example: 'swager-name',

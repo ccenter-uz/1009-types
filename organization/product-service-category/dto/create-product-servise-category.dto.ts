@@ -7,6 +7,7 @@ import {
   IsObject,
   IsString,
   Length,
+  IsOptional,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
@@ -14,8 +15,8 @@ import { ProductServiseCategoryInterfaces } from '../interface/product-service-c
 
 export class ProductServiseCategoryCreateDto implements ProductServiseCategoryInterfaces.Request {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
+  @IsOptional()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

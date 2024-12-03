@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
@@ -27,8 +29,8 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   cityId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
+  @IsOptional()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

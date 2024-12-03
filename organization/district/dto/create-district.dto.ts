@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
@@ -22,8 +24,8 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   cityId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
+  @IsOptional()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty()
