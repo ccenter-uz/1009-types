@@ -15,12 +15,11 @@ import { ProductServiseCategoryInterfaces } from '../interface/product-service-c
 
 export class ProductServiseCategoryUpdateDto
   extends IdDto
-  implements ProductServiseCategoryInterfaces.Update
-{
+  implements ProductServiseCategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

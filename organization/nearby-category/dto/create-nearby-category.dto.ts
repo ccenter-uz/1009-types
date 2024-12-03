@@ -17,7 +17,7 @@ export class NearbyCategoryCreateDto
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: 'swager-name',

@@ -17,7 +17,7 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @ApiProperty()
   @IsNumber()
   @IsOptional()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

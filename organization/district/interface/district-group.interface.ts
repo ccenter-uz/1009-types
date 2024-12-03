@@ -8,7 +8,7 @@ export namespace DistrictInterfaces {
   export interface Request {
     regionId: number;
     cityId: number;
-    staffNumber?: number;
+    staffNumber?: string;
     index: number;
     name: AppLanguages;
     old_name: AppLanguages;
@@ -19,7 +19,7 @@ export namespace DistrictInterfaces {
     id: number;
     regionId?: number;
     cityId?: number;
-    staffNumber?: number;
+    staffNumber?: string;
     index?: number;
     name?: AppLanguages;
     old_name?: AppLanguages;
@@ -30,7 +30,7 @@ export namespace DistrictInterfaces {
     id: number;
     regionId: number;
     cityId: number;
-    staffNumber?: number;
+    staffNumber?: string;
     index: number;
     name?: {} | string;
     old_name?: {} | string;

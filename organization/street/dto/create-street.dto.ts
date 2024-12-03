@@ -33,7 +33,7 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

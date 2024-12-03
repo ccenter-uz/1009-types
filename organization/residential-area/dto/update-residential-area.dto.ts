@@ -33,7 +33,7 @@ export class ResidentialAreaUpdateDto extends IdDto implements ResidentialAreaIn
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsOptional()

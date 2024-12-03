@@ -12,13 +12,13 @@ export namespace MainOrganizationInterfaces {
 
   export interface Update {
     id: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: string;
   }
 
   export interface Response {
     id: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: string,
     createdAt: Date;
     updatedAt: Date;

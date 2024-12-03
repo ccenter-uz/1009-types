@@ -29,7 +29,7 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()

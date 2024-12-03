@@ -15,8 +15,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class SubCategoryUpdateDto
   extends IdDto
-  implements SubCategoryInterfaces.Update
-{
+  implements SubCategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -25,7 +24,7 @@ export class SubCategoryUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

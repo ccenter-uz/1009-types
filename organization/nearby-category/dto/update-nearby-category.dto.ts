@@ -15,12 +15,11 @@ import { NearbyCategoryInterfaces } from '../interface/nearby-category-group.int
 
 export class NearbyCategoryUpdateDto
   extends IdDto
-  implements NearbyCategoryInterfaces.Update
-{
+  implements NearbyCategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: 'swager-name',

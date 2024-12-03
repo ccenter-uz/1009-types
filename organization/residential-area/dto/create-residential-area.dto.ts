@@ -29,7 +29,7 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()

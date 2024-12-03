@@ -29,7 +29,7 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()

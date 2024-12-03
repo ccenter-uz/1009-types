@@ -33,7 +33,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsOptional()

@@ -28,7 +28,7 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
 
   @ApiProperty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

@@ -9,7 +9,7 @@ export namespace NearbyInterfaces {
     nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name: AppLanguages;
   }
 
@@ -18,7 +18,7 @@ export namespace NearbyInterfaces {
     nearbyCategoryId?: number;
     regionId?: number;
     cityId?: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: AppLanguages;
   }
 
@@ -27,7 +27,7 @@ export namespace NearbyInterfaces {
     nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: {} | string;
     createdAt: Date;
     updatedAt: Date;

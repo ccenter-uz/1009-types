@@ -33,7 +33,7 @@ export class ImpasseUpdateDto extends IdDto implements ImpasseInterfaces.Update 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsOptional()
