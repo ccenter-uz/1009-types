@@ -6,7 +6,7 @@ import {
 } from 'types/global/types';
 export namespace MainOrganizationInterfaces {
   export interface Request {
-    staffNumber?: number;
+    staffNumber?: string;
     name: string;
   }
 

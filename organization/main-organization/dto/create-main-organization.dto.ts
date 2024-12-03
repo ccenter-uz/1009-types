@@ -18,7 +18,7 @@ export class MainOrganizationCreateDto
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
   @ApiProperty({
     example: 'swager-name',
   })
