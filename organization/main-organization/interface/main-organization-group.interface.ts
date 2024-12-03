@@ -12,7 +12,7 @@ export namespace MainOrganizationInterfaces {
 
   export interface Update {
     id: number;
-    staffNumber?: string;
+    staffNumber?: number;
     name?: string;
   }
 

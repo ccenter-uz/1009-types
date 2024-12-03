@@ -14,12 +14,11 @@ import { MainOrganizationInterfaces } from '../interface/main-organization-group
 import { ApiProperty } from '@nestjs/swagger';
 export class MainOrganizationUpdateDto
   extends IdDto
-  implements MainOrganizationInterfaces.Update
-{
+  implements MainOrganizationInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  staffNumber?: string;
+  staffNumber?: number;
 
   @ApiProperty({
     example: 'swager-name',
