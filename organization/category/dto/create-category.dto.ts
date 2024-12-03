@@ -15,8 +15,8 @@ import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryCreateDto implements CategoryInterfaces.Request {
   @ApiProperty()
-  @IsNumber()
   @IsOptional()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({
