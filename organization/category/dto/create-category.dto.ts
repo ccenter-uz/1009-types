@@ -5,6 +5,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
   IsString,
   Length,
   ValidateNested,
@@ -14,9 +15,9 @@ import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryCreateDto implements CategoryInterfaces.Request {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffNumber: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

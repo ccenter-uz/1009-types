@@ -7,6 +7,7 @@ import {
   IsObject,
   IsString,
   Length,
+  IsOptional,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
@@ -14,9 +15,9 @@ import { ProductServiseCategoryInterfaces } from '../interface/product-service-c
 
 export class ProductServiseCategoryCreateDto implements ProductServiseCategoryInterfaces.Request {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffNumber: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

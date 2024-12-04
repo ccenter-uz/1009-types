@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
@@ -31,9 +33,9 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   index: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffId: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

@@ -7,7 +7,7 @@ export namespace LaneInterfaces {
     regionId: number;
     cityId: number;
     index: number;
-    staffId: number;
+    staffNumber?: string;
     districtId: number;
     name: AppLanguages;
     old_name: AppLanguages;
@@ -19,7 +19,7 @@ export namespace LaneInterfaces {
     regionId?: number;
     cityId?: number;
     index?: number;
-    staffId?: number;
+    staffNumber?: string;
     districtId?: number;
     name?: AppLanguages;
     old_name?: AppLanguages;
@@ -31,7 +31,7 @@ export namespace LaneInterfaces {
     regionId: number;
     cityId: number;
     index: number;
-    staffId: number;
+    staffNumber?: string;
     districtId: number;
     name?: {} | string;
     old_name?: {} | string;

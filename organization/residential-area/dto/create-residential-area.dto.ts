@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
@@ -27,9 +29,9 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   index: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffId: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()

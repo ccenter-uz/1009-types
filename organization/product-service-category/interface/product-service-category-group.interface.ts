@@ -1,19 +1,19 @@
 import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
 export namespace ProductServiseCategoryInterfaces {
   export interface Request {
-    staffNumber: number;
+    staffNumber?: string;
     name: AppLanguages;
   }
 
   export interface Update {
     id: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: AppLanguages;
   }
 
   export interface Response {
     id: number;
-    staffNumber: number;
+    staffNumber?: string;
     name?: {} | string,
     createdAt: Date;
     updatedAt: Date;

@@ -6,20 +6,20 @@ import {
 } from 'types/global/types';
 export namespace NearbyCategoryInterfaces {
   export interface Request {
-    staffNumber: number;
+    staffNumber?: string;
     name: string;
   }
 
   export interface Update {
     id: number;
-    staffNumber?: number;
+    staffNumber?: string;
     name?: string;
   }
 
   export interface Response {
     id: number;
-    staffNumber: number;
-    name?:  string;
+    staffNumber?: string;
+    name?: string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

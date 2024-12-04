@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
@@ -26,9 +28,9 @@ export class VillageCreateDto implements VillageInterfaces.Request {
   index: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffId: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()

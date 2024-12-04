@@ -5,6 +5,8 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
+  IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LanguageRequestDto } from 'types/global';
@@ -17,9 +19,9 @@ export class SubCategoryCreateDto implements SubCategoryInterfaces.Request {
   categoryId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffNumber: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

@@ -18,8 +18,8 @@ export namespace MainOrganizationInterfaces {
 
   export interface Response {
     id: number;
-    staffNumber: string;
-    name?: string;
+    staffNumber?: string;
+    name?: string,
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

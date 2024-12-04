@@ -5,6 +5,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsObject,
+  IsOptional,
   IsString,
   Length,
   ValidateNested,
@@ -18,9 +19,9 @@ export class ProductServiceSubCategoryCreateDto implements ProductServiceSubCate
   productServiceCategoryId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  staffNumber: number;
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

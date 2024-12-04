@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
-export class PassageUpdateDto  extends IdDto implements PassageInterfaces.Update {
+export class PassageUpdateDto extends IdDto implements PassageInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -33,7 +33,7 @@ export class PassageUpdateDto  extends IdDto implements PassageInterfaces.Update
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsOptional()

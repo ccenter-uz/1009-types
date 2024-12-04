@@ -15,12 +15,11 @@ import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryUpdateDto
   extends IdDto
-  implements CategoryInterfaces.Update
-{
+  implements CategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffNumber?: number;
+  staffNumber?: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },

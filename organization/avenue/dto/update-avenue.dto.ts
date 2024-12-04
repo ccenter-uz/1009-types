@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
-export class AvenueUpdateDto  extends IdDto implements AvenueInterfaces.Update {
+export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -33,7 +33,7 @@ export class AvenueUpdateDto  extends IdDto implements AvenueInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  staffId?: number;
+  staffNumber?: string;
 
   @ApiProperty()
   @IsOptional()

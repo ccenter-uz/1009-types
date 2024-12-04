@@ -1,5 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
+import {
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsString,
+  Length,
+  ValidateNested,
+} from 'class-validator';
+import { LanguageDto, LanguageRequestDto } from 'types/global';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 
 export class MainOrganizationCreateDto
@@ -9,7 +20,6 @@ export class MainOrganizationCreateDto
   @IsOptional()
   @IsString()
   staffNumber?: string;
-
   @ApiProperty({
     example: 'swager-name',
   })
