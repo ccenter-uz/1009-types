@@ -85,4 +85,13 @@ export class ListQueryDto extends LanguageRequestDto {
   @IsArray()
   @IsOptional()
   exclude?: number[];
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  category_id?: number;
 }
