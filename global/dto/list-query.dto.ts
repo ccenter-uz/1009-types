@@ -92,5 +92,6 @@ export class ListQueryDto extends LanguageRequestDto {
   })
   @IsNumber()
   @IsOptional()
+  @Type(() => Number)
   category_id?: number;
 }
