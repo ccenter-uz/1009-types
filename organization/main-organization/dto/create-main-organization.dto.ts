@@ -14,9 +14,8 @@ import { LanguageDto, LanguageRequestDto } from 'types/global';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 
 export class MainOrganizationCreateDto
-  implements MainOrganizationInterfaces.Request
-{
-  @ApiProperty()
+  implements MainOrganizationInterfaces.Request {
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

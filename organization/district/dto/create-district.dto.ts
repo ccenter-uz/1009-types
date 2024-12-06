@@ -23,7 +23,7 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @IsNumber()
   cityId: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

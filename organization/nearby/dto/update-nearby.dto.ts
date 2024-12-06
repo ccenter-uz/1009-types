@@ -26,7 +26,7 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
   @IsNumber()
   cityId?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

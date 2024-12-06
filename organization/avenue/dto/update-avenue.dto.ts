@@ -31,7 +31,7 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @IsNumber()
   index?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

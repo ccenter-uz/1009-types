@@ -22,7 +22,7 @@ export class DistrictUpdateDto extends IdDto implements DistrictInterfaces.Updat
   @IsNumber()
   cityId?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

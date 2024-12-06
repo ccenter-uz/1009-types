@@ -21,7 +21,7 @@ export class SubCategoryUpdateDto
   @IsNumber()
   categoryId?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

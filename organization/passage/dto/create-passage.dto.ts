@@ -28,7 +28,7 @@ export class PassageCreateDto implements PassageInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

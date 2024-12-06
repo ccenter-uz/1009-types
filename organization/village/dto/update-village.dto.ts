@@ -31,7 +31,7 @@ export class VillageUpdateDto extends IdDto implements VillageInterfaces.Update 
   @IsNumber()
   index?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

@@ -31,7 +31,7 @@ export class PassageUpdateDto extends IdDto implements PassageInterfaces.Update 
   @IsNumber()
   index?: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

@@ -16,7 +16,7 @@ import { NearbyCategoryInterfaces } from '../interface/nearby-category-group.int
 export class NearbyCategoryUpdateDto
   extends IdDto
   implements NearbyCategoryInterfaces.Update {
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;
