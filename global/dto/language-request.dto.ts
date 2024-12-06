@@ -21,12 +21,4 @@ export class LanguageRequestDto {
   @IsBoolean()
   @IsOptional()
   all_lang?: boolean;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  category_id?: number;
 }
