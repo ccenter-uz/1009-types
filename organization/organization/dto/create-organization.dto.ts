@@ -176,6 +176,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsString()
   nearbyDescription: string;
 
+  @IsNotEmpty()
+  @IsString()
+  role: string;
+
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
