@@ -18,7 +18,7 @@ export class ProductServiceSubCategoryCreateDto implements ProductServiceSubCate
   @IsNumber()
   productServiceCategoryId: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

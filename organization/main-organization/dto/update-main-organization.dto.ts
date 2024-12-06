@@ -15,7 +15,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class MainOrganizationUpdateDto
   extends IdDto
   implements MainOrganizationInterfaces.Update {
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

@@ -32,7 +32,7 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

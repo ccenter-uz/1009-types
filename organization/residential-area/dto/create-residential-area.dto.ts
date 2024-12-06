@@ -28,7 +28,7 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

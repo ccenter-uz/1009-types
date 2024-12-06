@@ -6,6 +6,7 @@ import {
   IsNumber,
   IsObject,
   ValidateNested,
+  IsString,
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
@@ -30,9 +31,9 @@ export class StreetUpdateDto extends IdDto implements StreetInterfaces.Update {
   @IsNumber()
   index?: number;
 
-  @ApiProperty()
+
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty()
