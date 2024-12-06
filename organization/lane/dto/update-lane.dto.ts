@@ -6,6 +6,7 @@ import {
   IsNumber,
   IsObject,
   ValidateNested,
+  IsString,
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
@@ -14,6 +15,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsOptional()
   @IsNumber()
   id: number;
+
 
   @ApiProperty()
   @IsOptional()
@@ -30,9 +32,9 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsNumber()
   index?: number;
 
-  @ApiProperty()
+
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty()

@@ -27,7 +27,7 @@ export class VillageCreateDto implements VillageInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

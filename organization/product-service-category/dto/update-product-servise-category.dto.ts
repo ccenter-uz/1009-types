@@ -16,9 +16,9 @@ import { ProductServiseCategoryInterfaces } from '../interface/product-service-c
 export class ProductServiseCategoryUpdateDto
   extends IdDto
   implements ProductServiseCategoryInterfaces.Update {
-  @ApiProperty()
+
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

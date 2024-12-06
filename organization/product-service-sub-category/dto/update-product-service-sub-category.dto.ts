@@ -21,9 +21,9 @@ export class ProductServiceSubCategoryUpdateDto
   @IsNumber()
   productServiceCategoryId?: number;
 
-  @ApiProperty()
+
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

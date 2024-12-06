@@ -28,7 +28,7 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

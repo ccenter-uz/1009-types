@@ -28,7 +28,7 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

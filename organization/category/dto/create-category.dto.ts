@@ -14,7 +14,7 @@ import { LanguageDto, LanguageRequestDto } from 'types/global';
 import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryCreateDto implements CategoryInterfaces.Request {
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

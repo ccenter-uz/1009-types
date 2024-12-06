@@ -27,7 +27,7 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

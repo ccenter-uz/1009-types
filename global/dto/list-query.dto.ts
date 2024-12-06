@@ -66,23 +66,5 @@ export class ListQueryDto extends LanguageRequestDto {
   @Type(() => Boolean)
   all?: boolean = true;
 
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber({}, { each: true })
-  @Type(() => Number)
-  @IsArray()
-  @IsOptional()
-  include?: number[];
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber({}, { each: true })
-  @Type(() => Number)
-  @IsArray()
-  @IsOptional()
-  exclude?: number[];
+  
 }

@@ -18,7 +18,7 @@ export class SubCategoryCreateDto implements SubCategoryInterfaces.Request {
   @IsNumber()
   categoryId: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

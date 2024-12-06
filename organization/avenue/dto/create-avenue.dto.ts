@@ -28,7 +28,7 @@ export class AvenueCreateDto implements AvenueInterfaces.Request {
   @IsNumber()
   index: number;
 
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;

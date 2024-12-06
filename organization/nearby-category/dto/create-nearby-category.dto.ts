@@ -8,7 +8,7 @@ import { NearbyCategoryInterfaces } from '../interface/nearby-category-group.int
 
 export class NearbyCategoryCreateDto
   implements NearbyCategoryInterfaces.Request {
-  @ApiProperty()
+
   @IsOptional()
   @IsString()
   staffNumber?: string;
