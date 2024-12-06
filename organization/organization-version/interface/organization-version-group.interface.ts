@@ -1,7 +1,7 @@
 import { AppLanguages } from 'types/global/types';
-import { PhoneVersion } from 'types/organization/organization-version/types';
-import * as Multer from 'multer';
-export namespace OrganizationInterfaces {
+import { PhoneVersion } from '../types';
+
+export namespace OrganizationVersionInterfaces {
   export interface Request {
     mainOrganizationId: number;
     subCategoryId: number;
@@ -38,7 +38,7 @@ export namespace OrganizationInterfaces {
     paymentTypes: JSON;
     workTime: JSON;
     transport: JSON;
-    photos: Array<Multer.File>;
+    phones: PhoneVersion;
   }
 
   export interface Update {
@@ -78,7 +78,6 @@ export namespace OrganizationInterfaces {
     paymentTypes?: JSON;
     workTime?: JSON;
     transport?: JSON;
-    photos?: Array<Multer.File>;
   }
 
   export interface Response {

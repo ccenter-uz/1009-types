@@ -1,185 +1,189 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
-  IsJSON,
-  IsNotEmpty,
+  IsOptional,
   IsNumber,
   IsObject,
-  IsOptional,
-  IsString,
   ValidateNested,
+  IsString,
+  IsJSON,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
-import { OrganizationInterfaces } from 'types/organization/organization';
-import * as Multer from 'multer';
-import { PhoneDto } from './create-phone.dto';
-import {Phone} from '../types/index';
+import { IdDto, LanguageDto } from 'types/global';
+import { OrganizationVersionInterfaces } from 'types/organization/organization-version';
 
-export class OrganizationCreateDto implements OrganizationInterfaces.Request {
+export class OrganizationVersionUpdateDto
+  extends IdDto
+  implements OrganizationVersionInterfaces.Update
+{
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
+  @IsNumber()
+  id: number;
+
+  @ApiProperty()
+  @IsOptional()
   @IsNumber()
   mainOrganizationId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   subCategoryId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   productServiceCategoryId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   productServiceSubCategoryId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   regionId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   cityId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   districtId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   villageId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   avenueId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   residentialId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   areaId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   streetId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   laneId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   impasseId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   nearbyId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   segmentId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   sectionId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   name: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   lagelName: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   secret: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   kvartal: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   address: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   home: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   apartment: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   inn: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   bank_number: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   account: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   mail: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   clientId: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   maneger: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   index: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   nearbyDescription: string;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   // @Type(() => LanguageDto)
@@ -192,8 +196,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       cy: 'swagger-old-cy',
     },
   })
-  @IsNotEmpty()
-  @IsObject()
+  @IsOptional()
+  @IsJSON()
   @ValidateNested()
   // @Type(() => LanguageDto)
   workTime: JSON;
@@ -205,29 +209,9 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       cy: 'swagger-new-cy',
     },
   })
-  @IsNotEmpty()
-  @IsObject()
+  @IsOptional()
+  @IsJSON()
   @ValidateNested()
   // @Type(() => LanguageDto)
   transport: JSON;
-
-  @ApiProperty({
-    example: [
-      { phone: '+998901234567', phoneId: 1, action: 'create' },
-      { phone: '+998907654321', phoneId: 2 },
-    ],
-    // description: 'Array of phone objects',
-    type: [PhoneDto],
-  })
-  @IsNotEmpty()
-  @ValidateNested({ each: true })
-  @Type(() => PhoneDto)
-  phone: Phone[];
-
-  @ApiProperty({
-    type: 'array',
-    items: { type: 'string', format: 'binary' },
-    // description: 'Array of images for work time',
-  })
-  photos: Array<Multer.File>;
 }

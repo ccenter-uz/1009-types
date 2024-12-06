@@ -1,3 +1,5 @@
+import { PhoneVersion } from './../types/index';
+// import { PhoneVersion } from './../../../../dist/types/organization/organization-version/types/index.d';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -10,12 +12,11 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
-import { OrganizationInterfaces } from 'types/organization/organization';
-import * as Multer from 'multer';
-import { PhoneDto } from './create-phone.dto';
-import {Phone} from '../types/index';
+import { OrganizationVersionInterfaces } from 'types/organization/organization-version';
 
-export class OrganizationCreateDto implements OrganizationInterfaces.Request {
+export class OrganizationVersionCreateDto
+  implements OrganizationVersionInterfaces.Request
+{
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
@@ -180,7 +181,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
   @IsNotEmpty()
-  @IsObject()
+  @IsJSON()
   @ValidateNested()
   // @Type(() => LanguageDto)
   paymentTypes: JSON;
@@ -193,7 +194,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  @IsObject()
+  @IsJSON()
   @ValidateNested()
   // @Type(() => LanguageDto)
   workTime: JSON;
@@ -206,28 +207,17 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  @IsObject()
+  @IsJSON()
   @ValidateNested()
-  // @Type(() => LanguageDto)
+  @Type(() => LanguageDto)
   transport: JSON;
 
   @ApiProperty({
-    example: [
-      { phone: '+998901234567', phoneId: 1, action: 'create' },
-      { phone: '+998907654321', phoneId: 2 },
-    ],
-    // description: 'Array of phone objects',
-    type: [PhoneDto],
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
   @IsNotEmpty()
-  @ValidateNested({ each: true })
-  @Type(() => PhoneDto)
-  phone: Phone[];
-
-  @ApiProperty({
-    type: 'array',
-    items: { type: 'string', format: 'binary' },
-    // description: 'Array of images for work time',
-  })
-  photos: Array<Multer.File>;
+  @IsObject()
+  @ValidateNested()
+  // @Type(() => PhoneVersion)
+  phones: PhoneVersion;
 }
