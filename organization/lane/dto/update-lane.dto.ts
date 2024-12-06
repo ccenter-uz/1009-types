@@ -15,6 +15,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsNumber()
   id: number;
 
+  
   @ApiProperty()
   @IsOptional()
   @IsNumber()
