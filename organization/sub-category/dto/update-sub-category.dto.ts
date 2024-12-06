@@ -23,7 +23,7 @@ export class SubCategoryUpdateDto
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

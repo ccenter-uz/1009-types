@@ -18,7 +18,7 @@ export class NearbyCategoryUpdateDto
   implements NearbyCategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

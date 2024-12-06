@@ -18,7 +18,7 @@ export class ProductServiseCategoryUpdateDto
   implements ProductServiseCategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({

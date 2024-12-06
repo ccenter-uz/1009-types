@@ -18,7 +18,7 @@ export class CategoryUpdateDto
   implements CategoryInterfaces.Update {
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({
