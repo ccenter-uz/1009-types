@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import {
+  IsArray,
   IsJSON,
   IsNotEmpty,
   IsNumber,
@@ -16,89 +17,106 @@ import { PhoneDto } from './create-phone.dto';
 import {Phone} from '../types/index';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   mainOrganizationId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   subCategoryId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   productServiceCategoryId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   productServiceSubCategoryId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   regionId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   cityId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   districtId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   villageId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   avenueId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   residentialId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   areaId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   streetId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   laneId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   impasseId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   nearbyId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   segmentId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   sectionId: number;
 
   @ApiProperty()
@@ -129,11 +147,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   home: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   apartment: number;
 
   @ApiProperty()
@@ -169,6 +189,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @Type(() => Number)
   index: number;
 
   @ApiProperty()
@@ -176,18 +197,21 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsString()
   nearbyDescription: string;
 
-  @IsNotEmpty()
-  @IsString()
-  role: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // @ApiProperty()
+  role?: string;
 
   @ApiProperty({
+    type: 'object',
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
   @IsNotEmpty()
   @IsObject()
-  @ValidateNested()
-  // @Type(() => LanguageDto)
-  paymentTypes: JSON;
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  paymentTypes: Record<string, string>;
 
   @ApiProperty({
     example: {
@@ -198,11 +222,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   })
   @IsNotEmpty()
   @IsObject()
-  @ValidateNested()
-  // @Type(() => LanguageDto)
-  workTime: JSON;
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  workTime: Record<string, string>;
 
   @ApiProperty({
+    type: 'object',
     example: {
       ru: 'swagger-new-ru',
       uz: 'swagger-new-uz',
@@ -211,9 +237,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   })
   @IsNotEmpty()
   @IsObject()
-  @ValidateNested()
-  // @Type(() => LanguageDto)
-  transport: JSON;
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  transport: Record<string, string>;
+  // transport: JSON;
 
   @ApiProperty({
     example: [
@@ -224,9 +252,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: [PhoneDto],
   })
   @IsNotEmpty()
-  @ValidateNested({ each: true })
-  @Type(() => PhoneDto)
-  phone: Phone[];
+  @IsJSON()
+  phone: PhoneDto[];
 
   @ApiProperty({
     type: 'array',

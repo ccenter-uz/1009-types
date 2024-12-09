@@ -35,9 +35,9 @@ export namespace OrganizationInterfaces {
     maneger: string;
     index: number;
     nearbyDescription: string;
-    paymentTypes: JSON;
-    workTime: JSON;
-    transport: JSON;
+    paymentTypes: {};
+    workTime: {};
+    transport: {};
     photos: Array<Multer.File>;
   }
 
