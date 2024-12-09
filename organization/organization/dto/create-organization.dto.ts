@@ -204,7 +204,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
 
   @ApiProperty({
     type: 'object',
-    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
+    properties: {
+      ru: { type: 'string', example: 'swagger-new-ru' },
+      uz: { type: 'string', example: 'swagger-new-uz' },
+      cy: { type: 'string', example: 'swagger-new-cy' },
+    },
   })
   @IsNotEmpty()
   @IsObject()
@@ -229,10 +233,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
 
   @ApiProperty({
     type: 'object',
-    example: {
-      ru: 'swagger-new-ru',
-      uz: 'swagger-new-uz',
-      cy: 'swagger-new-cy',
+    properties: {
+      ru: { type: 'string', example: 'swagger-new-ru' },
+      uz: { type: 'string', example: 'swagger-new-uz' },
+      cy: { type: 'string', example: 'swagger-new-cy' },
     },
   })
   @IsNotEmpty()
