@@ -12,6 +12,7 @@ import {
 import { Transform, Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
 import { ApiProperty } from '@nestjs/swagger';
+import { StatusEnum } from '../types';
 
 export class ListQueryDto extends LanguageRequestDto {
   @ApiProperty({
@@ -82,11 +83,7 @@ export class ListQueryDto extends LanguageRequestDto {
     }
     return Boolean(value);
   })
-  @IsEnum({
-    INACTIVE: 0,
-    ACTIVE: 1,
-    ALL: 2,
-  })
+  @IsEnum(StatusEnum)
   @IsOptional()
   status: number = 2;
 }
