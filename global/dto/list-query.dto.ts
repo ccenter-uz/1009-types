@@ -2,6 +2,7 @@ import {
   IsArray,
   IsBoolean,
   IsDateString,
+  IsEnum,
   IsInt,
   IsNumber,
   IsOptional,
@@ -75,9 +76,17 @@ export class ListQueryDto extends LanguageRequestDto {
     type: Number,
     required: false,
   })
-  @IsInt()
-  @Min(1)
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return parseInt(value);
+    }
+    return Boolean(value);
+  })
+  @IsEnum({
+    INACTIVE: 0,
+    ACTIVE: 1,
+    ALL: 2,
+  })
   @IsOptional()
-  @Type(() => Number)
   status: number = 2;
 }
