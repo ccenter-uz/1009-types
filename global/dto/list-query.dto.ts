@@ -79,13 +79,13 @@ export class ListQueryDto extends LanguageRequestDto {
   })
   @Transform(({ value }) => {
     if (typeof value === 'string') {
-      return parseInt(value, 10); // Преобразуем строку в число (с основанием 10)
+      return parseInt(value, 10);
     }
-    return value; // Если значение уже число, возвращаем его без изменений
+    return value;
   })
   @IsInt()
-  @IsEnum(StatusEnum) // Указание enum для валидации
+  @IsEnum(StatusEnum)
   @Min(0)
   @IsOptional()
-  status: StatusEnum = StatusEnum.ALL; // Задаём дефолтное значение
+  status: StatusEnum = StatusEnum.ALL;
 }
