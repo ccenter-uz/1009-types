@@ -8,7 +8,7 @@ import {
   IsString,
   Min,
 } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -61,10 +61,13 @@ export class ListQueryDto extends LanguageRequestDto {
     type: Boolean,
     required: false,
   })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
   @IsBoolean()
   @IsOptional()
-  @Type(() => Boolean)
-  all?: boolean = true;
-
-  
+  all?: boolean = false;
 }
