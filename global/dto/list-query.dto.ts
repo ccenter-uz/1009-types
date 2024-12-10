@@ -21,7 +21,7 @@ export class ListQueryDto extends LanguageRequestDto {
   @Min(1)
   @IsOptional()
   @Type(() => Number)
-  page = 1;
+  page: number = 1;
 
   @ApiProperty({
     type: Number,
@@ -31,7 +31,7 @@ export class ListQueryDto extends LanguageRequestDto {
   @Min(1)
   @IsOptional()
   @Type(() => Number)
-  limit = 25;
+  limit: number = 10;
 
   @ApiProperty({
     type: String,
@@ -70,4 +70,14 @@ export class ListQueryDto extends LanguageRequestDto {
   @IsBoolean()
   @IsOptional()
   all?: boolean = false;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsInt()
+  @Min(1)
+  @IsOptional()
+  @Type(() => Number)
+  status: number = 2;
 }
