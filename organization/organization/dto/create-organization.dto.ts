@@ -209,7 +209,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       transfer: true,
       action: 'create',
     },
-    type: 'object',
+    type: PaymentTypesDto,
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
