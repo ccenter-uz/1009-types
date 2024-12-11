@@ -24,97 +24,97 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   mainOrganizationId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   subCategoryId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   productServiceCategoryId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   productServiceSubCategoryId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   regionId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   cityId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   districtId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   villageId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   avenueId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   residentialId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   areaId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   streetId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   laneId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   impasseId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   nearbyId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   segmentId: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
@@ -209,11 +209,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       transfer: true,
       action: 'create',
     },
-    type: PaymentTypesDto,
+    type: 'object',
   })
   @IsNotEmpty()
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
   @IsObject()
-  @ValidateNested()
   @Type(() => PaymentTypesDto)
   paymentTypes: PaymentTypesDto;
 
