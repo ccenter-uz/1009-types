@@ -1,3 +1,4 @@
+import { Delete } from '@nestjs/common';
 export enum AppLanguagesList {
   RU = 'ru',
   UZ = 'uz',
@@ -131,7 +132,7 @@ export const UserPermissions = {
       },
     },
     manage: {
-      "product-services": {
+      'product-services': {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
         [ACCESSESS.UPDATE]: true,
@@ -145,21 +146,21 @@ export const UserPermissions = {
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
-      "main-org": {
+      'main-org': {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
         [ACCESSESS.UPDATE]: true,
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
-      "phone-types": {
+      'phone-types': {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
         [ACCESSESS.UPDATE]: true,
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
-      "nearby-category": {
+      'nearby-category': {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
         [ACCESSESS.UPDATE]: true,
@@ -194,7 +195,7 @@ export const UserPermissions = {
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
-      "residential-area": {
+      'residential-area': {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
         [ACCESSESS.UPDATE]: true,
@@ -277,12 +278,33 @@ export const UserPermissions = {
     },
   },
   client: {},
-}
+};
 
 export const enum ACCESSESS {
-  GET = "get",
-  CREATE = "create",
-  UPDATE = "update",
-  DELETE = "delete",
-  RESTORE = "restore",
+  GET = 'get',
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  RESTORE = 'restore',
+}
+
+export enum CreatedByEnum {
+  Billing = 'billing',
+  Client = 'client',
+  Moderator = 'moderator',
+}
+
+export enum OrganizationStatusEnum {
+  Deleted = '-1',
+  Check = '0',
+  Accepted = '1',
+  Rejected = '2',
+}
+
+export const enum OrganizationVersionActionsEnum {
+  GET = 'get',
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  // RESTORE = 'restore',
 }

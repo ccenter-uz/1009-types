@@ -15,6 +15,7 @@ import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
 import { PhoneDto } from './create-phone.dto';
 import { Phone } from '../types/index';
+import { PaymentTypesDto } from './create-peyment-types.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -197,27 +198,24 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsString()
   nearbyDescription: string;
 
-  // @IsNotEmpty()
-  // @IsString()
-  // @ApiProperty()
   role?: string;
 
   staffNumber?: string;
 
   @ApiProperty({
-    type: 'object',
-    properties: {
-      ru: { type: 'string', example: 'swagger-new-ru' },
-      uz: { type: 'string', example: 'swagger-new-uz' },
-      cy: { type: 'string', example: 'swagger-new-cy' },
+    example: {
+      cash: true,
+      terminal: false,
+      transfer: true,
+      action: 'create',
     },
+    type: PaymentTypesDto,
   })
   @IsNotEmpty()
   @IsObject()
-  @Transform(({ value }) =>
-    typeof value === 'string' ? JSON.parse(value) : value
-  )
-  paymentTypes: Record<string, string>;
+  @ValidateNested()
+  @Type(() => PaymentTypesDto)
+  paymentTypes: PaymentTypesDto;
 
   @ApiProperty({
     example: {

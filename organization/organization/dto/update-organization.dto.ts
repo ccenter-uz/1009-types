@@ -13,6 +13,7 @@ import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
 import { PhoneDto } from './create-phone.dto';
 import { Phone } from '../types';
+import { PaymentTypesDto } from './create-peyment-types.dto';
 export class OrganizationUpdateDto
   extends IdDto
   implements OrganizationInterfaces.Update
@@ -183,13 +184,18 @@ export class OrganizationUpdateDto
   nearbyDescription: string;
 
   @ApiProperty({
-    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
+    example: {
+      cash: true,
+      terminal: false,
+      transfer: true,
+      action: 'create',
+    },
+    type: PaymentTypesDto,
   })
-  @IsOptional()
   @IsObject()
   @ValidateNested()
-  // @Type(() => LanguageDto)
-  paymentTypes: JSON;
+  @Type(() => PaymentTypesDto)
+  paymentTypes: PaymentTypesDto;
 
   @ApiProperty({
     example: {

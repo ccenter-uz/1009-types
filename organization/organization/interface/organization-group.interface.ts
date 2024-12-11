@@ -1,6 +1,8 @@
 import { AppLanguages } from 'types/global/types';
 import { PhoneVersion } from 'types/organization/organization-version/types';
 import * as Multer from 'multer';
+import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
+import { PhoneDto } from '../dto/create-phone.dto';
 export namespace OrganizationInterfaces {
   export interface Request {
     mainOrganizationId: number;
@@ -35,7 +37,7 @@ export namespace OrganizationInterfaces {
     maneger: string;
     index: number;
     nearbyDescription: string;
-    paymentTypes: {};
+    paymentTypes: PaymentTypesDto;
     workTime: {};
     transport: {};
     photos: Array<Multer.File>;
@@ -75,7 +77,8 @@ export namespace OrganizationInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: JSON;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneDto[];
     workTime?: JSON;
     transport?: JSON;
     photos?: Array<Multer.File>;
@@ -115,7 +118,8 @@ export namespace OrganizationInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: JSON;
+    paymentTypes: PaymentTypesDto;
+    phone?: PhoneDto[];
     workTime?: JSON;
     transport?: JSON;
     createdAt: Date;
