@@ -2,15 +2,17 @@ import {
   IsArray,
   IsBoolean,
   IsDateString,
+  IsEnum,
   IsInt,
   IsNumber,
   IsOptional,
   IsString,
   Min,
 } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
 import { ApiProperty } from '@nestjs/swagger';
+import { StatusEnum } from '../types';
 
 export class ListQueryDto extends LanguageRequestDto {
   @ApiProperty({
@@ -21,7 +23,7 @@ export class ListQueryDto extends LanguageRequestDto {
   @Min(1)
   @IsOptional()
   @Type(() => Number)
-  page = 1;
+  page: number = 1;
 
   @ApiProperty({
     type: Number,
@@ -31,7 +33,7 @@ export class ListQueryDto extends LanguageRequestDto {
   @Min(1)
   @IsOptional()
   @Type(() => Number)
-  limit = 25;
+  limit: number = 10;
 
   @ApiProperty({
     type: String,
@@ -61,10 +63,29 @@ export class ListQueryDto extends LanguageRequestDto {
     type: Boolean,
     required: false,
   })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
   @IsBoolean()
   @IsOptional()
-  @Type(() => Boolean)
-  all?: boolean = true;
+  all?: boolean = false;
 
-  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return parseInt(value, 10);
+    }
+    return value;
+  })
+  @IsInt()
+  @IsEnum(StatusEnum)
+  @Min(0)
+  @IsOptional()
+  status: StatusEnum = StatusEnum.ALL;
 }
