@@ -202,6 +202,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   // @ApiProperty()
   role?: string;
 
+  staffNumber?: string;
+
   @ApiProperty({
     type: 'object',
     properties: {
