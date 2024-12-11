@@ -14,7 +14,7 @@ import { LanguageDto } from 'types/global';
 import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
 import { PhoneDto } from './create-phone.dto';
-import {Phone} from '../types/index';
+import { Phone } from '../types/index';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -127,7 +127,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  lagelName: string;
+  legelName: string;
 
   @ApiProperty()
   @IsNotEmpty()

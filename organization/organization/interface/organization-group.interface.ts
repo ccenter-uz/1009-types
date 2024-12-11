@@ -21,7 +21,7 @@ export namespace OrganizationInterfaces {
     segmentId: number;
     sectionId: number;
     name: string;
-    lagelName: string;
+    legelName: string;
     secret: string;
     kvartal: string;
     address: string;
@@ -61,7 +61,7 @@ export namespace OrganizationInterfaces {
     segmentId?: number;
     sectionId?: number;
     name?: string;
-    lagelName?: string;
+    legelName?: string;
     secret?: string;
     kvartal?: string;
     address?: string;
@@ -101,7 +101,7 @@ export namespace OrganizationInterfaces {
     segmentId: number;
     sectionId: number;
     name?: string;
-    lagelName?: string;
+    legelName?: string;
     secret?: string;
     kvartal?: string;
     address?: string;

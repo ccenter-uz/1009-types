@@ -115,7 +115,7 @@ export class OrganizationUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsString()
-  lagelName: string;
+  legelName: string;
 
   @ApiProperty()
   @IsOptional()
