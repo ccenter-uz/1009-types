@@ -258,7 +258,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: [PhoneDto],
   })
   @IsNotEmpty()
-  @IsJSON()
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  @IsArray()
   phone: PhoneDto[];
 
   @ApiProperty({
