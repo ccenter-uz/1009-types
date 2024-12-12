@@ -11,14 +11,5 @@ export class CategoryFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  region_id?: number;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
   city_id?: number;
 }

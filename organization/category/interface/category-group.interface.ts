@@ -1,4 +1,11 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
+import {
+  AppLanguages,
+  JsonObject,
+  JsonValue,
+  LanguageRequestType,
+} from 'types/global/types';
+import { CityInterfaces } from 'types/organization/city';
+import { RegionInterfaces } from 'types/organization/region';
 export namespace CategoryInterfaces {
   export interface Request {
     staffNumber?: string;
@@ -14,7 +21,9 @@ export namespace CategoryInterfaces {
   export interface Response {
     id: number;
     staffNumber?: string;
-    name?: {} | string,
+    name?: {} | string;
+    city?: CityInterfaces.Response;
+    region?: RegionInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
