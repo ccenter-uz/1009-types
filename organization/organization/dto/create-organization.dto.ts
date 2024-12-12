@@ -198,8 +198,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsString()
   nearbyDescription: string;
 
+  @IsOptional()
+  @IsString()
   role?: string;
-
+  
+  @IsOptional()
+  @IsString()
   staffNumber?: string;
 
   @ApiProperty({
