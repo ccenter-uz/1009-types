@@ -1,10 +1,11 @@
-import { City, Region } from '@prisma/client';
 import {
   AppLanguages,
   JsonObject,
   JsonValue,
   LanguageRequestType,
 } from 'types/global/types';
+import { CityInterfaces } from 'types/organization/city';
+import { RegionInterfaces } from 'types/organization/region';
 export namespace DistrictInterfaces {
   export interface Request {
     regionId: number;
@@ -36,8 +37,8 @@ export namespace DistrictInterfaces {
     name?: {} | string;
     old_name?: {} | string;
     new_name?: {} | string;
-    region?: Region;
-    city?: City;
+    region?: RegionInterfaces.Response;
+    city?: CityInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
