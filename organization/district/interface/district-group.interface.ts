@@ -1,3 +1,4 @@
+import { City, Region } from '@prisma/client';
 import {
   AppLanguages,
   JsonObject,
@@ -35,6 +36,8 @@ export namespace DistrictInterfaces {
     name?: {} | string;
     old_name?: {} | string;
     new_name?: {} | string;
+    region?: Region;
+    city?: City;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
