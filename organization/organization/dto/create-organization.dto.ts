@@ -16,6 +16,7 @@ import * as Multer from 'multer';
 import { PhoneDto } from './create-phone.dto';
 import { Phone } from '../types/index';
 import { PaymentTypesDto } from './create-peyment-types.dto';
+import { PhotoLinkDto } from './file-upload-dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -201,7 +202,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsOptional()
   @IsString()
   role?: string;
-  
+
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -263,6 +264,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
+    // console.log(value, 'value')
+
     typeof value === 'string' ? JSON.parse(value) : value
   )
   @IsArray()
@@ -274,4 +277,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     // description: 'Array of images for work time',
   })
   photos: Array<Multer.File>;
+
+  @IsOptional()
+  @IsArray()
+  @ValidateNested()
+  @Type(() => PhotoLinkDto)
+  PhotoLink: PhotoLinkDto[];
 }
