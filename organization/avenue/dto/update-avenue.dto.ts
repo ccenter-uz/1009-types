@@ -31,7 +31,6 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @IsNumber()
   index?: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -61,7 +60,7 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name?: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -74,5 +73,5 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name?: LanguageDto;
+  newName?: LanguageDto;
 }

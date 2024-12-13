@@ -1,11 +1,7 @@
 import {
-  IsEnum,
-  IsNotEmpty,
-  IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -15,8 +11,8 @@ import { ProductServiseCategoryInterfaces } from '../interface/product-service-c
 
 export class ProductServiseCategoryUpdateDto
   extends IdDto
-  implements ProductServiseCategoryInterfaces.Update {
-
+  implements ProductServiseCategoryInterfaces.Update
+{
   @IsOptional()
   @IsString()
   staffNumber?: string;

@@ -27,7 +27,6 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsNumber()
   index: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -57,7 +56,7 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -70,5 +69,5 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

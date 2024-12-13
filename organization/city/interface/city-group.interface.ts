@@ -1,4 +1,4 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 export namespace CityInterfaces {
   export interface Request {
     regionId: number;
@@ -14,7 +14,7 @@ export namespace CityInterfaces {
   export interface Response {
     id: number;
     regionId: number;
-    name?: {} | string,
+    name?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

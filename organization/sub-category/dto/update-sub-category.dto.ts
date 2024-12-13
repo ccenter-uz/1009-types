@@ -1,12 +1,9 @@
 import { SubCategoryInterfaces } from 'types/organization/sub-category';
 import {
-  IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -15,12 +12,12 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class SubCategoryUpdateDto
   extends IdDto
-  implements SubCategoryInterfaces.Update {
+  implements SubCategoryInterfaces.Update
+{
   @ApiProperty()
   @IsOptional()
   @IsNumber()
   categoryId?: number;
-
 
   @IsOptional()
   @IsString()

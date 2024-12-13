@@ -59,7 +59,7 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -72,5 +72,5 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

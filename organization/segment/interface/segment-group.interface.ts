@@ -1,4 +1,4 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 export namespace SegmentInterfaces {
   export interface Request {
     name: AppLanguages;
