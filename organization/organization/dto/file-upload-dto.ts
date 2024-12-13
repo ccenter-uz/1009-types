@@ -9,3 +9,12 @@ export class PhotoLinkDto {
   link: string;
     
 }
+export type PictureType = {
+  // Picture: {
+    id?: number;
+    link?: string;
+    createdAt?: Date;
+    updatedAt?: Date;
+    OrganizationId?: number;
+  // }[];
+};

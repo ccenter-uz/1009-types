@@ -23,6 +23,7 @@ export class PhoneDto {
 
 export type PhoneType = {
   phones: {
+    id?: number;
     phone?: string;
     phoneId?: number;
     action?: string;
