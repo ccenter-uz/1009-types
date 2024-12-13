@@ -129,7 +129,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  legelName: string;
+  legalName: string;
 
   @ApiProperty()
   @IsNotEmpty()
