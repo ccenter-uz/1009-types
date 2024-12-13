@@ -20,3 +20,11 @@ export class PhoneDto {
   @IsOptional()
   action?: string;
 }
+
+export type PhoneType = {
+  phones: {
+    phone?: string;
+    phoneId?: number;
+    action?: string;
+  }[];
+};

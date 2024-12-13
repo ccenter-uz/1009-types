@@ -13,7 +13,7 @@ import {
 import { LanguageDto } from 'types/global';
 import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
-import { PhoneDto } from './create-phone.dto';
+import { PhoneDto, PhoneType } from './create-phone.dto';
 import { Phone } from '../types/index';
 import { PaymentTypesDto } from './create-peyment-types.dto';
 import { PhotoLinkDto } from './file-upload-dto';
@@ -255,21 +255,18 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   // transport: JSON;
 
   @ApiProperty({
-    example: [
-      { phone: '+998901234567', phoneId: 1, action: 'create' },
-      { phone: '+998907654321', phoneId: 2 },
-    ],
-    // description: 'Array of phone objects',
-    type: [PhoneDto],
+    example: {
+      phones: [
+        { phone: '+998901234567', phoneId: 1, action: 'create' },
+        { phone: '+998907654321', phoneId: 2 },
+      ],
+    },
+    // // description: 'Array of phone objects',
+    type: 'object',
   })
   @IsNotEmpty()
-  @Transform(({ value }) =>
-    // console.log(value, 'value')
-
-    typeof value === 'string' ? JSON.parse(value) : value
-  )
-  @IsArray()
-  phone: PhoneDto[];
+  // @IsArray()
+  phone: PhoneType | string;
 
   @ApiProperty({
     type: 'array',
