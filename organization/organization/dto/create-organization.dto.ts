@@ -255,14 +255,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   // transport: JSON;
 
   @ApiProperty({
+    type: Object,
     example: {
       phones: [
         { phone: '+998901234567', phoneId: 1, action: 'create' },
         { phone: '+998907654321', phoneId: 2 },
       ],
     },
-    // // description: 'Array of phone objects',
-    type: 'object',
   })
   @IsNotEmpty()
   // @IsArray()
