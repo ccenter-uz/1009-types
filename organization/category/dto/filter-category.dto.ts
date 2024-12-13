@@ -11,5 +11,5 @@ export class CategoryFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  city_id?: number;
+  cityId?: number;
 }

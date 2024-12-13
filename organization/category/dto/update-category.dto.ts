@@ -37,5 +37,5 @@ export class CategoryUpdateDto
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  city_id?: number;
+  cityId?: number;
 }

@@ -35,5 +35,5 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  city_id?: number;
+  cityId?: number;
 }
