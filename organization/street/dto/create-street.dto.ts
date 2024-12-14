@@ -23,9 +23,9 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   cityId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  districtId: number;
+  districtId?: number;
 
   @ApiProperty()
   @IsNotEmpty()

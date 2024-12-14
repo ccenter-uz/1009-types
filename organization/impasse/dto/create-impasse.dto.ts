@@ -32,9 +32,9 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   staffNumber?: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  districtId: number;
+  districtId?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
