@@ -6,7 +6,7 @@ export namespace ImpasseInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name: AppLanguages;
     oldName: AppLanguages;
     newName: AppLanguages;
@@ -30,7 +30,7 @@ export namespace ImpasseInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name?: {} | string;
     oldName?: {} | string;
     newName?: {} | string;

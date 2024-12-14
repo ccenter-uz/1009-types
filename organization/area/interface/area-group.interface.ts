@@ -1,6 +1,4 @@
-import {
-  AppLanguages,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 
 export namespace AreaInterfaces {
   export interface Request {
@@ -8,7 +6,7 @@ export namespace AreaInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name: AppLanguages;
     oldName: AppLanguages;
     newName: AppLanguages;
@@ -32,7 +30,7 @@ export namespace AreaInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name?: {} | string;
     oldName?: {} | string;
     newName?: {} | string;
