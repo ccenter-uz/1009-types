@@ -1,6 +1,4 @@
-import {
-  AppLanguages,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 
 export namespace PassageInterfaces {
   export interface Request {
@@ -10,8 +8,8 @@ export namespace PassageInterfaces {
     staffNumber?: string;
     districtId: number;
     name: AppLanguages;
-    old_name: AppLanguages;
-    new_name: AppLanguages;
+    oldName: AppLanguages;
+    newName: AppLanguages;
   }
 
   export interface Update {
@@ -22,8 +20,8 @@ export namespace PassageInterfaces {
     staffNumber?: string;
     districtId?: number;
     name?: AppLanguages;
-    old_name?: AppLanguages;
-    new_name?: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Response {
@@ -34,8 +32,8 @@ export namespace PassageInterfaces {
     staffNumber?: string;
     districtId: number;
     name?: {} | string;
-    old_name?: {} | string;
-    new_name?: {} | string;
+    oldName?: {} | string;
+    newName?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

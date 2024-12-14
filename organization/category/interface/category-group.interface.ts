@@ -1,9 +1,4 @@
-import {
-  AppLanguages,
-  JsonObject,
-  JsonValue,
-  LanguageRequestType,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
 import { RegionInterfaces } from 'types/organization/region';
 export namespace CategoryInterfaces {

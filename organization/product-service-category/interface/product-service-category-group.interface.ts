@@ -1,4 +1,4 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 export namespace ProductServiseCategoryInterfaces {
   export interface Request {
     staffNumber?: string;
@@ -14,7 +14,7 @@ export namespace ProductServiseCategoryInterfaces {
   export interface Response {
     id: number;
     staffNumber?: string;
-    name?: {} | string,
+    name?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

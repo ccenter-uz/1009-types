@@ -1,11 +1,8 @@
 import {
-  IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -15,8 +12,8 @@ import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryUpdateDto
   extends IdDto
-  implements CategoryInterfaces.Update {
-
+  implements CategoryInterfaces.Update
+{
   @IsOptional()
   @IsString()
   staffNumber?: string;

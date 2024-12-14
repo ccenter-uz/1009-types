@@ -1,11 +1,7 @@
 import {
-  IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
-  IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';

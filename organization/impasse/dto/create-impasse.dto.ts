@@ -17,7 +17,6 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsNumber()
   regionId: number;
 
-
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
@@ -28,7 +27,6 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsNumber()
   index: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -37,7 +35,6 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   districtId: number;
-
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -59,7 +56,7 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -72,5 +69,5 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

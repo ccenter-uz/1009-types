@@ -1,11 +1,8 @@
 import {
-  IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -13,7 +10,10 @@ import { IdDto, LanguageDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { DistrictInterfaces } from '../interface/district-group.interface';
 
-export class DistrictUpdateDto extends IdDto implements DistrictInterfaces.Update {
+export class DistrictUpdateDto
+  extends IdDto
+  implements DistrictInterfaces.Update
+{
   @ApiProperty()
   @IsNumber()
   regionId?: number;
@@ -21,7 +21,6 @@ export class DistrictUpdateDto extends IdDto implements DistrictInterfaces.Updat
   @ApiProperty()
   @IsNumber()
   cityId?: number;
-
 
   @IsOptional()
   @IsString()
@@ -49,7 +48,7 @@ export class DistrictUpdateDto extends IdDto implements DistrictInterfaces.Updat
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -61,5 +60,5 @@ export class DistrictUpdateDto extends IdDto implements DistrictInterfaces.Updat
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

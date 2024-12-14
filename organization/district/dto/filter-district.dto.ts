@@ -11,7 +11,7 @@ export class DistrictFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  region_id?: number;
+  regionId?: number;
 
   @ApiProperty({
     type: Number,
@@ -20,5 +20,5 @@ export class DistrictFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  city_id?: number;
+  cityId?: number;
 }

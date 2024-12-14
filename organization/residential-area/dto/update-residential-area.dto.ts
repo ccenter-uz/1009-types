@@ -10,7 +10,10 @@ import {
 } from 'class-validator';
 import { IdDto, LanguageDto } from 'types/global';
 
-export class ResidentialAreaUpdateDto extends IdDto implements ResidentialAreaInterfaces.Update {
+export class ResidentialAreaUpdateDto
+  extends IdDto
+  implements ResidentialAreaInterfaces.Update
+{
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -30,7 +33,6 @@ export class ResidentialAreaUpdateDto extends IdDto implements ResidentialAreaIn
   @IsOptional()
   @IsNumber()
   index?: number;
-
 
   @IsOptional()
   @IsString()
@@ -61,7 +63,7 @@ export class ResidentialAreaUpdateDto extends IdDto implements ResidentialAreaIn
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name?: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -74,5 +76,5 @@ export class ResidentialAreaUpdateDto extends IdDto implements ResidentialAreaIn
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name?: LanguageDto;
+  newName?: LanguageDto;
 }

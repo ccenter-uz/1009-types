@@ -1,11 +1,8 @@
 import {
-  IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -26,7 +23,6 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
   @IsNumber()
   cityId?: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -38,5 +34,4 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
-
 }

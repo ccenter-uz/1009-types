@@ -1,4 +1,3 @@
-import { SubCategoryInterfaces } from 'types/organization/sub-category';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -9,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { LanguageDto } from 'types/global';
 import { NearbyInterfaces } from '../interface/nearby-group.interface';
 
 export class NearbyCreateDto implements NearbyInterfaces.Request {
@@ -28,7 +27,6 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @IsNumber()
   cityId: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -41,6 +39,4 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
-
-
 }

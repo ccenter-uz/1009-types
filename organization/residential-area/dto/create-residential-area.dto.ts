@@ -11,12 +11,13 @@ import {
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
 
-export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Request {
+export class ResidentialAreaCreateDto
+  implements ResidentialAreaInterfaces.Request
+{
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   regionId: number;
-
 
   @ApiProperty()
   @IsNotEmpty()
@@ -28,7 +29,6 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @IsNumber()
   index: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -37,7 +37,6 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @IsNotEmpty()
   @IsNumber()
   districtId: number;
-
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -59,7 +58,7 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -72,5 +71,5 @@ export class ResidentialAreaCreateDto implements ResidentialAreaInterfaces.Reque
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

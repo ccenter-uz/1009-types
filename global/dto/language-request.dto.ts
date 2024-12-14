@@ -15,10 +15,10 @@ export class LanguageRequestDto {
   @IsString()
   @IsOptional()
   @IsEnum(LanguageRequestEnum)
-  lang_code?: LanguageRequestType;
+  langCode?: LanguageRequestType;
 
   @ApiProperty({ type: Boolean, required: false })
   @IsBoolean()
   @IsOptional()
-  all_lang?: boolean;
+  allLang?: boolean;
 }

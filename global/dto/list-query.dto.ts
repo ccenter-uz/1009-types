@@ -49,7 +49,7 @@ export class ListQueryDto extends LanguageRequestDto {
   })
   @IsDateString()
   @IsOptional()
-  date_from?: Date | string;
+  dateFrom?: Date | string;
 
   @ApiProperty({
     type: Number,
@@ -57,7 +57,7 @@ export class ListQueryDto extends LanguageRequestDto {
   })
   @IsDateString()
   @IsOptional()
-  date_to?: Date | string;
+  dateTo?: Date | string;
 
   @ApiProperty({
     type: Boolean,

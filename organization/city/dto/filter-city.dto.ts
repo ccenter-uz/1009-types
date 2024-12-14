@@ -14,5 +14,5 @@ export class CityFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  region_id?: number;
+  regionId?: number;
 }
