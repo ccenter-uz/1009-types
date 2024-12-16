@@ -7,7 +7,7 @@ import {
   IsObject,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { LanguageDto } from 'types/global';
 
 export class CityCreateDto implements CityInterfaces.Request {
   @ApiProperty()

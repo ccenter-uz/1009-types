@@ -27,15 +27,14 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsNumber()
   index: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  districtId: number;
+  districtId?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -57,7 +56,7 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -70,5 +69,5 @@ export class LaneCreateDto implements LaneInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

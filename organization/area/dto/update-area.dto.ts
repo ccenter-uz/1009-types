@@ -61,7 +61,7 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name?: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -74,5 +74,5 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name?: LanguageDto;
+  newName?: LanguageDto;
 }

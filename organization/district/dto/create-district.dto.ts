@@ -1,4 +1,3 @@
-import { SubCategoryInterfaces } from 'types/organization/sub-category';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -9,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { LanguageDto } from 'types/global';
 import { DistrictInterfaces } from '../interface/district-group.interface';
 
 export class DistrictCreateDto implements DistrictInterfaces.Request {
@@ -22,7 +21,6 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   cityId: number;
-
 
   @IsOptional()
   @IsString()
@@ -53,7 +51,7 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -66,5 +64,5 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

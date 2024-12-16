@@ -1,4 +1,3 @@
-import { AppLanguages, JsonObject, JsonValue, LanguageRequestType } from 'types/global/types';
 export namespace SectionInterfaces {
   export interface Request {
     name: string;

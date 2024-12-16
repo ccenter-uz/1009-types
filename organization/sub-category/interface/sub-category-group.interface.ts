@@ -1,9 +1,4 @@
-import {
-  AppLanguages,
-  JsonObject,
-  JsonValue,
-  LanguageRequestType,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 export namespace SubCategoryInterfaces {
   export interface Request {
     categoryId: number;

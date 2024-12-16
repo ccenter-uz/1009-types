@@ -23,15 +23,14 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   cityId: number;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  districtId: number;
+  districtId?: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   index: number;
-
 
   @IsOptional()
   @IsString()
@@ -57,7 +56,7 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -70,5 +69,5 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

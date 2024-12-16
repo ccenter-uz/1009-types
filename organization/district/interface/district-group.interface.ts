@@ -1,9 +1,6 @@
-import {
-  AppLanguages,
-  JsonObject,
-  JsonValue,
-  LanguageRequestType,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
+import { CityInterfaces } from 'types/organization/city';
+import { RegionInterfaces } from 'types/organization/region';
 export namespace DistrictInterfaces {
   export interface Request {
     regionId: number;
@@ -11,8 +8,8 @@ export namespace DistrictInterfaces {
     staffNumber?: string;
     index: number;
     name: AppLanguages;
-    old_name: AppLanguages;
-    new_name: AppLanguages;
+    oldName: AppLanguages;
+    newName: AppLanguages;
   }
 
   export interface Update {
@@ -22,8 +19,8 @@ export namespace DistrictInterfaces {
     staffNumber?: string;
     index?: number;
     name?: AppLanguages;
-    old_name?: AppLanguages;
-    new_name?: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Response {
@@ -33,8 +30,10 @@ export namespace DistrictInterfaces {
     staffNumber?: string;
     index: number;
     name?: {} | string;
-    old_name?: {} | string;
-    new_name?: {} | string;
+    oldName?: {} | string;
+    newName?: {} | string;
+    region?: RegionInterfaces.Response;
+    city?: CityInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

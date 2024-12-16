@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class ProductServiceSubCategoryFilterDto extends ListQueryDto {
+export class CategoryFilterDto extends ListQueryDto {
   @ApiProperty({
     type: Number,
     required: false,
@@ -11,5 +11,5 @@ export class ProductServiceSubCategoryFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  categoryId?: number;
+  cityId?: number;
 }

@@ -1,9 +1,3 @@
-import {
-  AppLanguages,
-  JsonObject,
-  JsonValue,
-  LanguageRequestType,
-} from 'types/global/types';
 export namespace NearbyCategoryInterfaces {
   export interface Request {
     staffNumber?: string;

@@ -17,7 +17,6 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsNumber()
   regionId: number;
 
-
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
@@ -28,16 +27,14 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsNumber()
   index: number;
 
-
   @IsOptional()
   @IsString()
   staffNumber?: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  districtId: number;
-
+  districtId?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -59,7 +56,7 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name: LanguageDto;
+  oldName: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -72,5 +69,5 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name: LanguageDto;
+  newName: LanguageDto;
 }

@@ -16,7 +16,6 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsNumber()
   id: number;
 
-
   @ApiProperty()
   @IsOptional()
   @IsNumber()
@@ -31,7 +30,6 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsOptional()
   @IsNumber()
   index?: number;
-
 
   @IsOptional()
   @IsString()
@@ -62,7 +60,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  old_name?: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -75,5 +73,5 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  new_name?: LanguageDto;
+  newName?: LanguageDto;
 }

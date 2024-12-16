@@ -1,6 +1,4 @@
-import {
-  AppLanguages,
-} from 'types/global/types';
+import { AppLanguages } from 'types/global/types';
 
 export namespace ImpasseInterfaces {
   export interface Request {
@@ -8,10 +6,10 @@ export namespace ImpasseInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name: AppLanguages;
-    old_name: AppLanguages;
-    new_name: AppLanguages;
+    oldName: AppLanguages;
+    newName: AppLanguages;
   }
 
   export interface Update {
@@ -22,8 +20,8 @@ export namespace ImpasseInterfaces {
     staffNumber?: string;
     districtId?: number;
     name?: AppLanguages;
-    old_name?: AppLanguages;
-    new_name?: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Response {
@@ -32,10 +30,10 @@ export namespace ImpasseInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name?: {} | string;
-    old_name?: {} | string;
-    new_name?: {} | string;
+    oldName?: {} | string;
+    newName?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

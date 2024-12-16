@@ -6,10 +6,10 @@ export namespace StreetInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name: AppLanguages;
-    old_name: AppLanguages;
-    new_name: AppLanguages;
+    oldName: AppLanguages;
+    newName: AppLanguages;
   }
 
   export interface Update {
@@ -20,8 +20,8 @@ export namespace StreetInterfaces {
     staffNumber?: string;
     districtId?: number;
     name?: AppLanguages;
-    old_name?: AppLanguages;
-    new_name?: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Response {
@@ -30,10 +30,10 @@ export namespace StreetInterfaces {
     cityId: number;
     index: number;
     staffNumber?: string;
-    districtId: number;
+    districtId?: number;
     name?: {} | string;
-    old_name?: {} | string;
-    new_name?: {} | string;
+    oldName?: {} | string;
+    newName?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

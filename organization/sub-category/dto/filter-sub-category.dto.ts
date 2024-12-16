@@ -1,16 +1,6 @@
-import { SubCategoryInterfaces } from 'types/organization/sub-category';
-import {
-  IsEnum,
-  IsNotEmpty,
-  IsNumber,
-  IsObject,
-  IsOptional,
-  IsString,
-  Length,
-  ValidateNested,
-} from 'class-validator';
+import { IsNumber, IsOptional } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto, ListQueryDto } from 'types/global';
+import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class SubCategoryFilterDto extends ListQueryDto {
@@ -21,5 +11,5 @@ export class SubCategoryFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
-  category_id?: number;
+  categoryId?: number;
 }
