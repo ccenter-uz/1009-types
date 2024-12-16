@@ -1,5 +1,12 @@
-export type PhoneVersion = {
+export type Phone = {
   phone: string;
   phoneId: number;
-  action: string;
+  action?: string;
 };
+
+
+// export type Phone = {
+//   phone: string;
+//   phoneId: number;
+//   action: string;
+// };

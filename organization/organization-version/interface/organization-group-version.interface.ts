@@ -1,8 +1,11 @@
-import { AppLanguages } from 'types/global/types';
-import { PhoneVersion } from '../types';
-
+import { AppLanguages, JsonValue } from 'types/global/types';
+import * as Multer from 'multer';
+import { PaymentTypesDto } from '../dto/create-peyment-types-version.dto';
+import { PhoneDto, PhoneType } from '../dto/create-phone-version.dto';
+import { PictureType } from '../dto/file-upload-version.dto';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
+    id: number;
     mainOrganizationId: number;
     subCategoryId: number;
     productServiceCategoryId: number;
@@ -20,25 +23,32 @@ export namespace OrganizationVersionInterfaces {
     nearbyId: number;
     segmentId: number;
     sectionId: number;
-    name: string;
-    lagelName: string;
-    secret: string;
-    kvartal: string;
-    address: string;
-    home: number;
-    apartment: number;
-    inn: string;
-    bank_number: string;
-    account: string;
-    mail: string;
-    clientId: string;
-    maneger: string;
-    index: number;
-    nearbyDescription: string;
-    paymentTypes: JSON;
-    workTime: JSON;
-    transport: JSON;
-    phones: PhoneVersion;
+    name?: string;
+    legalName?: string;
+    secret?: string;
+    kvartal?: string;
+    address?: string;
+    home?: number;
+    apartment?: number;
+    inn?: string;
+    bank_number?: string;
+    account?: string;
+    mail?: string;
+    clientId?: string;
+    maneger?: string;
+    index?: number;
+    staffNumber?: string;
+    status: string;
+    createdBy: string;
+    nearbyDescription?: string;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneType[];
+    Picture: PictureType[];
+    workTime?: JsonValue | string;
+    transport?: JsonValue | string;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: Date;
   }
 
   export interface Update {
@@ -61,7 +71,7 @@ export namespace OrganizationVersionInterfaces {
     segmentId?: number;
     sectionId?: number;
     name?: string;
-    lagelName?: string;
+    legalName?: string;
     secret?: string;
     kvartal?: string;
     address?: string;
@@ -75,9 +85,11 @@ export namespace OrganizationVersionInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: JSON;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneDto[];
     workTime?: JSON;
     transport?: JSON;
+    photos?: Array<Multer.File>;
   }
 
   export interface Response {
@@ -100,7 +112,7 @@ export namespace OrganizationVersionInterfaces {
     segmentId: number;
     sectionId: number;
     name?: string;
-    lagelName?: string;
+    legalName?: string;
     secret?: string;
     kvartal?: string;
     address?: string;
@@ -114,9 +126,11 @@ export namespace OrganizationVersionInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: JSON;
-    workTime?: JSON;
-    transport?: JSON;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneType[];
+    Picture: PictureType[];
+    workTime?: JsonValue | string;
+    transport?: JsonValue | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
