@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNotEmpty, IsOptional, IsNumber, IsBoolean } from 'class-validator';
 
-export class PaymentTypesDto {
+export class PaymentTypesVersionDto {
 
   @ApiProperty({ example: true })
   //   @IsString()

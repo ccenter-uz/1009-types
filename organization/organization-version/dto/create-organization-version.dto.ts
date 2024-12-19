@@ -13,10 +13,10 @@ import {
 import { LanguageDto } from 'types/global';
 import { OrganizationVersionInterfaces } from 'types/organization/organization-version';
 import * as Multer from 'multer';
-import { PhoneDto, PhoneType } from './create-phone-version.dto';
+import { PhoneVersionDto, PhoneType } from './create-phone-version.dto';
 import { Phone } from '../types/index';
-import { PaymentTypesDto } from './create-peyment-types-version.dto';
-import { PhotoLinkDto } from './file-upload-version.dto';
+import { PaymentTypesVersionDto } from './create-peyment-types-version.dto';
+import { PhotoLinkVersionDto } from './file-upload-version.dto';
 
 // export class OrganizationCreateDto
 //   implements OrganizationVersionInterfaces.Request

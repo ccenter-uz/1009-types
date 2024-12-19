@@ -1,7 +1,7 @@
 import { AppLanguages, JsonValue } from 'types/global/types';
 import * as Multer from 'multer';
-import { PaymentTypesDto } from '../dto/create-peyment-types-version.dto';
-import { PhoneDto, PhoneType } from '../dto/create-phone-version.dto';
+import { PaymentTypesVersionDto } from '../dto/create-peyment-types-version.dto';
+import { PhoneVersionDto, PhoneType } from '../dto/create-phone-version.dto';
 import { PictureType } from '../dto/file-upload-version.dto';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
@@ -41,7 +41,7 @@ export namespace OrganizationVersionInterfaces {
     status: string;
     createdBy: string;
     nearbyDescription?: string;
-    paymentTypes?: PaymentTypesDto;
+    paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     Picture?: PictureType[];
     workTime?: JsonValue | string;
@@ -85,11 +85,14 @@ export namespace OrganizationVersionInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: PaymentTypesDto;
-    phone?: PhoneDto[];
-    workTime?: JSON;
-    transport?: JSON;
+    paymentTypes?: PaymentTypesVersionDto;
+    workTime?: {};
+    transport?: {};
     photos?: Array<Multer.File>;
+    deletePicture?: number[];
+    createdAt?: Date;
+    updatedAt?: Date;
+    deletedAt?: Date;
   }
 
   export interface Response {
@@ -126,7 +129,7 @@ export namespace OrganizationVersionInterfaces {
     maneger?: string;
     index?: number;
     nearbyDescription?: string;
-    paymentTypes?: PaymentTypesDto;
+    paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     Picture: PictureType[];
     workTime?: JsonValue | string;
