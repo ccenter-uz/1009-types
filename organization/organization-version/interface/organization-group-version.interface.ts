@@ -43,7 +43,7 @@ export namespace OrganizationVersionInterfaces {
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
-    Picture: PictureType[];
+    Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     createdAt: Date;
