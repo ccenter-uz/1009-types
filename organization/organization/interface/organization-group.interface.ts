@@ -3,7 +3,6 @@ import * as Multer from 'multer';
 import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
 import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
 import { PictureType } from '../dto/file-upload-dto';
-import { Area } from '@prisma/client';
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
