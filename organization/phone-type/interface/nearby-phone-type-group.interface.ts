@@ -1,19 +1,20 @@
+import { AppLanguages } from 'types/global/types';
 export namespace PhoneTypeInterfaces {
   export interface Request {
     staffNumber?: string;
-    name: string;
+    name: AppLanguages;
   }
 
   export interface Update {
     id: number;
     staffNumber?: string;
-    name?: string;
+    name?: AppLanguages;
   }
 
   export interface Response {
     id: number;
     staffNumber?: string;
-    name?: string;
+    name?: {} | string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
