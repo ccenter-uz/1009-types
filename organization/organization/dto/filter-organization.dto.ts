@@ -9,7 +9,7 @@ import { Type } from 'class-transformer';
 import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class SubCategoryFilterDto extends ListQueryDto {
+export class OrganizationFilterDto extends ListQueryDto {
   @ApiProperty({
     type: String,
   })
