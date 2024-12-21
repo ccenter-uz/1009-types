@@ -45,8 +45,14 @@ export class OrganizationFilterDto extends ListQueryDto {
     }
     return Boolean(value);
   })
-  @IsBoolean()
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
   @IsOptional()
+  @IsBoolean()
   bounded?: boolean;
 
   @ApiProperty({
@@ -133,6 +139,7 @@ export class OrganizationFilterDto extends ListQueryDto {
   })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   nearbyId: number;
 
   @ApiProperty({
@@ -149,6 +156,7 @@ export class OrganizationFilterDto extends ListQueryDto {
   })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   phoneType: number;
 
   @ApiProperty({
