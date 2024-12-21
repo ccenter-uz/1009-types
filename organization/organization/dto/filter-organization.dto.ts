@@ -11,89 +11,119 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class OrganizationFilterDto extends ListQueryDto {
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  address: string;
+  address?: string;
 
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  apartment: string;
+  apartment?: string;
 
-  @ApiProperty({ type: Boolean })
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
-  belongAbonent: boolean;
+  belongAbonent?: boolean;
 
-  @ApiProperty({ type: Boolean })
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
-  bounded: boolean;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  categoryId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  categoryTuId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  cityId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  districtId: number;
+  bounded?: boolean;
 
   @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  categoryId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  categoryTuId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  cityId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  districtId?: number;
+
+  @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  home: string;
+  home?: string;
 
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  kvartal: string;
+  kvartal?: string;
 
-  @ApiProperty({ type: Number })
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  mainOrg: number;
+  mainOrg?: number;
 
-  @ApiProperty({ type: Boolean })
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
-  mine: boolean;
+  mine?: boolean;
 
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  name: string;
+  name?: string;
 
   @ApiProperty({
+    required: false,
     type: Number,
   })
   @IsOptional()
@@ -101,40 +131,54 @@ export class OrganizationFilterDto extends ListQueryDto {
   nearbyId: Number;
 
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  phone: string;
+  phone?: string;
 
   @ApiProperty({
+    required: false,
     type: Number,
   })
   @IsOptional()
   @IsNumber()
   phoneType: Number;
 
-  @ApiProperty({ type: Number })
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  regionId: number;
+  regionId?: number;
 
-  @ApiProperty({ type: Number })
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  subCategoryId: number;
+  subCategoryId?: number;
 
-  @ApiProperty({ type: Number })
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  subCategoryTuId: number;
+  subCategoryTuId?: number;
 
-  @ApiProperty({ type: Number })
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  villageId: number;
+  villageId?: number;
 }
