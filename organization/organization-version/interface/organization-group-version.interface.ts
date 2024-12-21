@@ -131,7 +131,7 @@ export namespace OrganizationVersionInterfaces {
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
-    Picture: PictureType[];
+    Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     createdAt: Date;

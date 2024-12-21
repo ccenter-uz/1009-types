@@ -1,6 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsString, IsOptional, ValidateNested, IsObject } from 'class-validator';
 import { PhoneTypeInterfaces } from '../interface/nearby-phone-type-group.interface';
+import { Type } from 'class-transformer';
+import { LanguageDto } from 'types/global';
 
 export class PhoneTypeCreateDto
   implements PhoneTypeInterfaces.Request
@@ -10,9 +12,11 @@ export class PhoneTypeCreateDto
   staffNumber?: string;
 
   @ApiProperty({
-    example: 'swager-name',
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
   @IsNotEmpty()
-  @IsString()
-  name: string;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  name: LanguageDto;
 }
