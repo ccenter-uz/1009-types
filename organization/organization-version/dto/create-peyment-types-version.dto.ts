@@ -7,25 +7,25 @@ export class PaymentTypesVersionDto {
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  id: number;
+  id?: number;
 
   @ApiProperty({ example: true })
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  cash: boolean;
+  cash?: boolean;
 
   @ApiProperty({ example: true })
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  terminal: boolean;
+  terminal?: boolean;
 
   @ApiProperty({ example: true })
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  transfer: boolean;
+  transfer?: boolean;
 
   @ApiProperty({
     example: 'create',

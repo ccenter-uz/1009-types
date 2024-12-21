@@ -52,7 +52,7 @@ export namespace OrganizationVersionInterfaces {
   }
 
   export interface Update {
-    id: number;
+    id?: number;
     mainOrganizationId?: number;
     subCategoryId?: number;
     productServiceCategoryId?: number;
