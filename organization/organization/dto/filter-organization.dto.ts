@@ -5,7 +5,7 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -36,12 +36,17 @@ export class OrganizationFilterDto extends ListQueryDto {
   belongAbonent?: boolean;
 
   @ApiProperty({
-    required: false,
     type: Boolean,
+    required: false,
   })
-  @IsOptional()
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
   @IsBoolean()
-  @Type(() => Boolean)
+  @IsOptional()
   bounded?: boolean;
 
   @ApiProperty({
@@ -128,7 +133,7 @@ export class OrganizationFilterDto extends ListQueryDto {
   })
   @IsOptional()
   @IsNumber()
-  nearbyId: Number;
+  nearbyId: number;
 
   @ApiProperty({
     required: false,
@@ -144,7 +149,7 @@ export class OrganizationFilterDto extends ListQueryDto {
   })
   @IsOptional()
   @IsNumber()
-  phoneType: Number;
+  phoneType: number;
 
   @ApiProperty({
     required: false,
@@ -181,4 +186,8 @@ export class OrganizationFilterDto extends ListQueryDto {
   @IsNumber()
   @Type(() => Number)
   villageId?: number;
+  
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 }
