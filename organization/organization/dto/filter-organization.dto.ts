@@ -1,164 +1,201 @@
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
-import { Type } from 'class-transformer';
+import {
+  IsBoolean,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { Transform, Type } from 'class-transformer';
 import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class SubCategoryFilterDto extends ListQueryDto {
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  categoryId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  subCategoryId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  productServiceCategoryId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  productServiceSubCategoryId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  regionId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  cityId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  districtId: number;
-
-  @ApiProperty({ type: Number })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  villageId: number;
-
+export class OrganizationFilterDto extends ListQueryDto {
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  phone: string;
+  address?: string;
 
   @ApiProperty({
+    required: false,
     type: String,
   })
   @IsOptional()
   @IsString()
-  phoneOld: string;
+  apartment?: string;
 
   @ApiProperty({
-    type: String,
+    required: false,
+    type: Boolean,
   })
   @IsOptional()
-  @IsString()
-  kvartal: string;
+  @IsBoolean()
+  @Type(() => Boolean)
+  belongAbonent?: boolean;
 
   @ApiProperty({
-    type: String,
+    type: Boolean,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
   })
   @IsOptional()
-  @IsString()
-  home: string;
+  @IsBoolean()
+  bounded?: boolean;
 
   @ApiProperty({
-    type: String,
-  })
-  @IsOptional()
-  @IsString()
-  apartment: string;
-
-  @ApiProperty({
-    type: String,
-  })
-  @IsOptional()
-  @IsString()
-  clientId: string;
-
-  @ApiProperty({
-    type: String,
-  })
-  @IsOptional()
-  @IsString()
-  address: string;
-
-  @ApiProperty({
+    required: false,
     type: Number,
   })
   @IsOptional()
   @IsNumber()
-  nearbyId: Number;
+  @Type(() => Number)
+  categoryId?: number;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // avenueId: number;
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  categoryTuId?: number;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // residentialId: number;
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  cityId?: number;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // areaId: number;
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  districtId?: number;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // streetId: number;
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsOptional()
+  @IsString()
+  home?: string;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // laneId: number;
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsOptional()
+  @IsString()
+  kvartal?: string;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // impasseId: number;
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  mainOrg?: number;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // nearbyId: number;
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
+  @IsOptional()
+  @IsBoolean()
+  @Type(() => Boolean)
+  mine?: boolean;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // segmentId: number;
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsOptional()
+  @IsString()
+  name?: string;
 
-  // @ApiProperty({ type :Number})
-  // @IsOptional()
-  // @IsNumber()
-  // @Type(() => Number)
-  // sectionId: number;
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  nearbyId: number;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsOptional()
+  @IsString()
+  phone?: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  phoneType: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  regionId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  subCategoryId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  subCategoryTuId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  villageId?: number;
+  
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 }

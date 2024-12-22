@@ -4,6 +4,7 @@ import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
 import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
 import { PictureType } from '../dto/file-upload-dto';
 import { ProductServiceType, ProductServiceTypeResponce } from '../dto/create-product-service.dto';
+import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
     mainOrganizationId: number;
@@ -130,6 +131,8 @@ export namespace OrganizationInterfaces {
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
+
+    area?: AreaInterfaces.Response;
   }
 
   export interface ResponseWithoutPagination {
