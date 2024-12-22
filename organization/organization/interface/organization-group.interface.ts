@@ -19,7 +19,6 @@ export namespace OrganizationInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    nearbyId: number;
     segmentId: number;
     sectionId: number;
     passageId: number;
@@ -60,7 +59,6 @@ export namespace OrganizationInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    nearbyId?: number;
     segmentId?: number;
     sectionId?: number;
     passageId?: number;
@@ -101,7 +99,6 @@ export namespace OrganizationInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    nearbyId: number;
     segmentId: number;
     sectionId: number;
     passageId: number;

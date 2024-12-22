@@ -105,11 +105,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   impasseId: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  nearbyId: number;
+
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
