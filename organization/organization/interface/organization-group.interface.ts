@@ -37,7 +37,6 @@ export namespace OrganizationInterfaces {
     clientId: string;
     manager: string;
     index: number;
-    nearbyDescription: string;
     paymentTypes: PaymentTypesDto;
     workTime: {};
     transport: {};

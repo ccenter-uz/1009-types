@@ -17,6 +17,9 @@ import { PhoneVersionDto, PhoneType } from './create-phone-version.dto';
 import { Phone } from '../types';
 import { PaymentTypesVersionDto } from './create-peyment-types-version.dto';
 import { PhotoLinkVersionDto } from './file-upload-version.dto';
+import { ProductServiceVersionType } from './create-product-service-version.dto';
+import { NearbeesVersionType } from './create-nearbees-version.dto';
+import { PictureVersionType } from './update-picture-version.dto';
 export class OrganizationVersionUpdateDto
   extends IdDto
   implements OrganizationVersionInterfaces.Update
@@ -31,13 +34,13 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  subCategoryId?: number;
+  subCategoryId: number;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  productServiceCategoryId?: number;
+  productServiceCategoryId: number;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
@@ -109,12 +112,6 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  nearbyId: number;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
   segmentId: number;
 
   @ApiProperty({ example: 1, required: false })
@@ -123,83 +120,87 @@ export class OrganizationVersionUpdateDto
   @Type(() => Number)
   sectionId: number;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  passageId: number;
+
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   name: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
+  @IsOptional()
+  @IsString()
+  description: string;
+
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   legalName: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   secret: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   kvartal: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   address: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
-  @IsNumber()
-  // @Type(() => Number)
+  @IsString()
   home: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
-  @IsNumber()
-  // @Type(() => Number)
+  @IsString()
   apartment: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   inn: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  bank_number: string;
+  bankNumber: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   account: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   mail: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   clientId: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  maneger?: string;
+  manager: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  index?: number;
-
-  @ApiProperty({ required: false })
-  @IsOptional()
-  @IsString()
-  nearbyDescription?: string;
+  index: number;
 
   @IsOptional()
   @IsString()
@@ -216,8 +217,8 @@ export class OrganizationVersionUpdateDto
       transfer: true,
       action: 'create',
     },
-    required: false,
     type: PaymentTypesVersionDto,
+    required: false,
   })
   @IsOptional()
   @Transform(({ value }) =>
@@ -243,8 +244,8 @@ export class OrganizationVersionUpdateDto
   workTime: Record<string, string>;
 
   @ApiProperty({
-    type: Object,
-    example: {
+    type: 'object',
+    properties: {
       ru: { type: 'string', example: 'swagger-new-ru' },
       uz: { type: 'string', example: 'swagger-new-uz' },
       cy: { type: 'string', example: 'swagger-new-cy' },
@@ -257,38 +258,62 @@ export class OrganizationVersionUpdateDto
     typeof value === 'string' ? JSON.parse(value) : value
   )
   transport: Record<string, string>;
-  // transport: JSON;
 
   @ApiProperty({
     type: Object,
     example: {
       phones: [
-        { phone: '+998901234567', phoneId: 1, action: 'create' },
-        { phone: '+998907654321', phoneId: 2, action: 'create' },
+        { phone: '+998901234567', phoneTypeId: 1, isSecret: false },
+        { phone: '+998907654321', phoneTypeId: 2, isSecret: true },
       ],
     },
     required: false,
   })
   @IsOptional()
-  // @IsArray()
   phone: PhoneType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      productServices: [
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 1 },
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 2 },
+      ],
+    },
+    required: false,
+  })
+  @IsOptional()
+  productService: ProductServiceVersionType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      nearbees: [
+        { description: 'nearbees', nearbyId: 1 },
+        { description: 'nearbees2', nearbyId: 2 },
+      ],
+    },
+    required: false,
+  })
+  @IsOptional()
+  nearby: NearbeesVersionType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      pictures: [{ link: 'dasdsafds' }, { link: 'dasdsafds' }],
+    },
+    required: false,
+  })
+  @IsOptional()
+  picture: PictureVersionType | string;
 
   @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
     required: false,
-    // description: 'Array of images for work time',
   })
   photos: Array<Multer.File>;
-
-  @ApiProperty({
-    type: 'array',
-    items: { type: 'string' },
-    required: false,
-    // description: 'Array of images for work time',
-  })
-  @IsOptional()
-  delete_photos: Array<string>;
 
   @IsOptional()
   @IsArray()

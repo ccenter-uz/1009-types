@@ -91,7 +91,6 @@ export namespace OrganizationVersionInterfaces {
     clientId?: string;
     manager?: string;
     index?: number;
-    nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
     transport?: {};

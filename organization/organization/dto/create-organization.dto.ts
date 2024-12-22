@@ -199,10 +199,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   index: number;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  nearbyDescription: string;
+
 
   @IsOptional()
   @IsString()
@@ -257,7 +254,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     typeof value === 'string' ? JSON.parse(value) : value
   )
   transport: Record<string, string>;
-  // transport: JSON;
+
 
   @ApiProperty({
     type: Object,
@@ -269,7 +266,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  // @IsArray()
   phone: PhoneType | string;
 
   @ApiProperty({
@@ -282,7 +278,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  // @IsArray()
   productService: ProductServiceType | string;
 
   @ApiProperty({
@@ -295,13 +290,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  // @IsArray()
   nearby: NearbeesType | string;
 
   @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
-    // description: 'Array of images for work time',
   })
   photos: Array<Multer.File>;
 
