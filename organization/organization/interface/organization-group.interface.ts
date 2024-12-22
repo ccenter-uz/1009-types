@@ -3,8 +3,7 @@ import * as Multer from 'multer';
 import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
 import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
 import { PictureType } from '../dto/file-upload-dto';
-import { ProductServiceType } from '../dto/create-product-service.dto';
-import { NearbeesType } from '../dto/create-nearbees.dto';
+import { ProductServiceType, ProductServiceTypeResponce } from '../dto/create-product-service.dto';
 export namespace OrganizationInterfaces {
   export interface Request {
     mainOrganizationId: number;
@@ -123,8 +122,8 @@ export namespace OrganizationInterfaces {
     createdBy: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
-    productService: ProductServiceType[];
-    nearby: NearbeesType[];
+    // ProductServices?: ProductServiceTypeResponce[];
+    // Nearbees?: NearbeesType[];
     Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;

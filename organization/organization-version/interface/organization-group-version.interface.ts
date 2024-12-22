@@ -3,7 +3,10 @@ import * as Multer from 'multer';
 import { PaymentTypesVersionDto } from '../dto/create-peyment-types-version.dto';
 import { PhoneVersionDto, PhoneType } from '../dto/create-phone-version.dto';
 import { PictureType } from '../dto/file-upload-version.dto';
-import { NearbeesType } from 'types/organization/organization/dto/create-nearbees.dto';
+import {
+  NearbeesType,
+  NearbeesTypeResponse,
+} from 'types/organization/organization/dto/create-nearbees.dto';
 import { ProductServiceType } from 'types/organization/organization/dto/create-product-service.dto';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
@@ -43,13 +46,14 @@ export namespace OrganizationVersionInterfaces {
     createdBy: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;
-    productService: ProductServiceType[];
-    nearby: NearbeesType[];
+    productService?: ProductServiceType[];
+    nearbees?: NearbeesTypeResponse[];
     phone?: PhoneType[];
     Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
-
+    // ProductServices?: ProductServiceTypeR[];
+    // Nearbees?: NearbeesType[];
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
@@ -102,8 +106,6 @@ export namespace OrganizationVersionInterfaces {
     id: number;
     mainOrganizationId: number;
     subCategoryId: number;
-    productServiceCategoryId: number;
-    productServiceSubCategoryId: number;
     regionId: number;
     cityId: number;
     districtId: number;
@@ -135,7 +137,7 @@ export namespace OrganizationVersionInterfaces {
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
-    Picture?: PictureType[];
+    PictureVersion?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     createdAt: Date;

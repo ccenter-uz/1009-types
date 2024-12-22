@@ -24,5 +24,14 @@ export type ProductServiceType = {
   productServices: {
     categoryId?: number;
     subCategoryId?: number;
+    link :string
+  }[];
+};
+
+export type ProductServiceTypeResponce = {
+  productServices: {
+    ProductServiceCategoryId?: number;
+    ProductServiceSubCategoryId?: number;
+    link: string;
   }[];
 };
