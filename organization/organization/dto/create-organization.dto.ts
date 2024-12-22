@@ -282,8 +282,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: Object,
     example: {
       productServices: [
-        { category: 1, subCategory: 1 },
-        { category: 1, subCategory: 2 },
+        { categoryId: 1, subCategoryId: 1 },
+        { categoryId: 1, subCategoryId: 2 },
       ],
     },
   })
@@ -295,8 +295,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: Object,
     example: {
       nearbees: [
-        { description: 'nearbees', nearby: 1 },
-        { description: 'nearbees2', nearby: 2 },
+        { description: 'nearbees', nearbyId: 1 },
+        { description: 'nearbees2', nearbyId: 2 },
       ],
     },
   })

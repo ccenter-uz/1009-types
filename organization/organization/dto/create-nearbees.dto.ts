@@ -17,14 +17,14 @@ export class NearbeesDto {
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  nearby?: number;
+  nearbyId?: number;
 }
 
 
 
 export type NearbeesType = {
-  phones: {
-    category?: number;
-    subCategory?: number;
+  nearbees: {
+    description?: number;
+    nearbyId?: number;
   }[];
 };

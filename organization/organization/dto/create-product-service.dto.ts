@@ -12,17 +12,17 @@ export class ProductServiceDto {
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  category?: number;
+  categoryId?: number;
 
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  subCategory?: number;
+  subCategoryId?: number;
 }
 
 export type ProductServiceType = {
-  phones: {
-    category?: number;
-    subCategory?: number;
+  productServices: {
+    categoryId?: number;
+    subCategoryId?: number;
   }[];
 };
