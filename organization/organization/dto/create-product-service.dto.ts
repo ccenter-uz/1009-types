@@ -12,25 +12,25 @@ export class ProductServiceDto {
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  categoryId?: number;
+  productServiceCategoryId?: number;
 
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  subCategoryId?: number;
+  productServiceSubCategoryId?: number;
 }
 
 export type ProductServiceType = {
   productServices: {
-    categoryId?: number;
-    subCategoryId?: number;
-    link :string
+    productServiceCategoryId?: number;
+    productServiceSubCategoryId?: number;
+    link: string;
   }[];
 };
 
 export type ProductServiceTypeResponce = {
   productServices: {
-    ProductServiceCategoryId?: number;
+    productServiceCategoryId?: number;
     ProductServiceSubCategoryId?: number;
     link: string;
   }[];

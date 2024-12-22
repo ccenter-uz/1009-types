@@ -105,8 +105,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   impasseId: number;
 
-
-
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
@@ -278,8 +276,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: Object,
     example: {
       productServices: [
-        { categoryId: 1, subCategoryId: 1 },
-        { categoryId: 1, subCategoryId: 2 },
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 1 },
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 2 },
       ],
     },
   })
