@@ -151,14 +151,14 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ required: false })
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  home: number;
+  // @Type(() => Number)
+  home: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  apartment: number;
+  // @Type(() => Number)
+  apartment: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
