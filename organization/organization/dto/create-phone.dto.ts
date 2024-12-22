@@ -1,31 +1,34 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsNotEmpty, IsOptional, IsNumber } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsString, IsNotEmpty, IsOptional, IsNumber, IsBoolean } from 'class-validator';
 
 export class PhoneDto {
   @ApiProperty({ example: '+998901234567' })
   @IsString()
   @IsOptional()
-  phone: string;
+  phone?: string;
 
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
-  phoneId: number;
+  phoneTypeId?: number;
 
   @ApiProperty({
-    example: 'create',
+    example: true,
     required: false,
   })
-  @IsString()
+  @IsBoolean()
   @IsOptional()
-  action?: string;
+  @Type(() => Boolean)
+  isSecret?: boolean;
 }
 
 export type PhoneType = {
   phones: {
     id?: number;
     phone?: string;
-    phoneId?: number;
-    action?: string;
+    phoneTypeId?: number;
+    isSecret?: boolean;
   }[];
 };
+  

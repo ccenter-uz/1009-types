@@ -17,6 +17,8 @@ import { PhoneDto, PhoneType } from './create-phone.dto';
 import { Phone } from '../types/index';
 import { PaymentTypesDto } from './create-peyment-types.dto';
 import { PhotoLinkDto } from './file-upload-dto';
+import { ProductServiceType } from './create-product-service.dto';
+import { NearbeesType } from './create-nearbees.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -121,10 +123,21 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   sectionId: number;
 
+  @ApiProperty({ example: 1 })
+  @IsNotEmpty()
+  @IsNumber()
+  @Type(() => Number)
+  passageId: number;
+
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
   name: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  description: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -149,14 +162,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  @Type(() => Number)
-  home: number;
+  home: string;
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  apartment: number;
+  @IsString()
+  apartment: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -166,7 +177,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  bank_number: string;
+  bankNumber: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -186,7 +197,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  maneger: string;
+  manager: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -258,14 +269,40 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     type: Object,
     example: {
       phones: [
-        { phone: '+998901234567', phoneId: 1, action: 'create' },
-        { phone: '+998907654321', phoneId: 2 },
+        { phone: '+998901234567', phoneTypeId: 1, isSecret: false },
+        { phone: '+998907654321', phoneTypeId: 2, isSecret: true },
       ],
     },
   })
   @IsNotEmpty()
   // @IsArray()
   phone: PhoneType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      productServices: [
+        { category: 1, subCategory: 1 },
+        { category: 1, subCategory: 2 },
+      ],
+    },
+  })
+  @IsNotEmpty()
+  // @IsArray()
+  productService: ProductServiceType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      nearbees: [
+        { description: 'nearbees', nearby: 1 },
+        { description: 'nearbees2', nearby: 2 },
+      ],
+    },
+  })
+  @IsNotEmpty()
+  // @IsArray()
+  nearby: NearbeesType | string;
 
   @ApiProperty({
     type: 'array',
