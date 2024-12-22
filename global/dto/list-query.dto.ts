@@ -88,4 +88,8 @@ export class ListQueryDto extends LanguageRequestDto {
   @Min(0)
   @IsOptional()
   status: StatusEnum = StatusEnum.ALL;
+
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
 }
