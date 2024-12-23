@@ -45,7 +45,7 @@ export namespace OrganizationInterfaces {
   }
 
   export interface Update {
-    id: number;
+    id?: number;
     mainOrganizationId?: number;
     subCategoryId?: number;
     regionId?: number;
