@@ -302,10 +302,10 @@ export enum CreatedByEnum {
 }
 
 export enum OrganizationStatusEnum {
-  Deleted = '-1',
-  Check = '0',
-  Accepted = '1',
-  Rejected = '2',
+  Deleted = -1,
+  Check = 0,
+  Accepted = 1,
+  Rejected = 2,
 }
 
 export const enum OrganizationVersionActionsEnum {
