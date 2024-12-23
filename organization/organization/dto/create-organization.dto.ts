@@ -37,18 +37,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
-  productServiceCategoryId: number;
-
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  productServiceSubCategoryId: number;
-
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
   regionId: number;
 
   @ApiProperty({ example: 1 })

@@ -42,7 +42,7 @@ export namespace OrganizationVersionInterfaces {
     manager?: string;
     index?: number;
     staffNumber?: string;
-    status: string;
+    status: number;
     createdBy: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;

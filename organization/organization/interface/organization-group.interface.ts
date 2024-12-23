@@ -119,7 +119,7 @@ export namespace OrganizationInterfaces {
     index?: number;
     nearbyDescription?: string;
     staffNumber?: string;
-    status: string;
+    status: number;
     createdBy: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
