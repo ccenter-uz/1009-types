@@ -1,15 +1,86 @@
 import {
   IsBoolean,
+  IsDateString,
+  IsEnum,
+  IsInt,
   IsNotEmpty,
   IsNumber,
   IsOptional,
   IsString,
+  Min,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { ListQueryDto } from 'types/global';
+import {
+  LanguageRequestDto,
+  ListQueryDto,
+  OrganizationStatusEnum,
+  StatusEnum,
+} from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class OrganizationFilterDto extends ListQueryDto {
+export class OrganizationFilterDto extends LanguageRequestDto {
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsInt()
+  @Min(1)
+  @IsOptional()
+  @Type(() => Number)
+  page: number = 1;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsInt()
+  @Min(1)
+  @IsOptional()
+  @Type(() => Number)
+  limit: number = 10;
+
+  @ApiProperty({
+    type: String,
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  search?: string;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsDateString()
+  @IsOptional()
+  dateFrom?: Date | string;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsDateString()
+  @IsOptional()
+  dateTo?: Date | string;
+
+  @ApiProperty({
+    type: Boolean,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
+  @IsBoolean()
+  @IsOptional()
+  all?: boolean = false;
+
+  @IsOptional()
+  @IsString()
+  staffNumber?: string;
+
   @ApiProperty({
     required: false,
     type: String,
@@ -199,7 +270,19 @@ export class OrganizationFilterDto extends ListQueryDto {
   @Type(() => Number)
   villageId?: number;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return parseInt(value, 10);
+    }
+    return value;
+  })
+  @IsInt()
+  @IsEnum(OrganizationStatusEnum)
+  @Min(-1)
   @IsOptional()
-  @IsString()
-  staffNumber?: string;
+  status: OrganizationStatusEnum = OrganizationStatusEnum.Check;
 }
