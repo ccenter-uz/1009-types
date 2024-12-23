@@ -30,20 +30,19 @@ export class OrganizationFilterDto extends ListQueryDto {
     required: false,
     type: Boolean,
   })
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  belongAbonent?: boolean;
-
-  @ApiProperty({
-    type: Boolean,
-    required: false,
-  })
   @Transform(({ value }) => {
     if (typeof value === 'string') {
       return value.toLowerCase() === 'true';
     }
     return Boolean(value);
+  })
+  @IsOptional()
+  @IsBoolean()
+  belongAbonent?: boolean;
+
+  @ApiProperty({
+    type: Boolean,
+    required: false,
   })
   @Transform(({ value }) => {
     if (typeof value === 'string') {
@@ -120,9 +119,14 @@ export class OrganizationFilterDto extends ListQueryDto {
     required: false,
     type: Boolean,
   })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
   @IsOptional()
   @IsBoolean()
-  @Type(() => Boolean)
   mine?: boolean;
 
   @ApiProperty({
@@ -194,7 +198,7 @@ export class OrganizationFilterDto extends ListQueryDto {
   @IsNumber()
   @Type(() => Number)
   villageId?: number;
-  
+
   @IsOptional()
   @IsString()
   staffNumber?: string;
