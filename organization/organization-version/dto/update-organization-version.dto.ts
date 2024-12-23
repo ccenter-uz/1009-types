@@ -244,11 +244,10 @@ export class OrganizationVersionUpdateDto
   workTime: Record<string, string>;
 
   @ApiProperty({
-    type: 'object',
-    properties: {
-      ru: { type: 'string', example: 'swagger-new-ru' },
-      uz: { type: 'string', example: 'swagger-new-uz' },
-      cy: { type: 'string', example: 'swagger-new-cy' },
+    example: {
+      ru: 'swagger-old-ru',
+      uz: 'swagger-old-uz',
+      cy: 'swagger-old-cy',
     },
     required: false,
   })

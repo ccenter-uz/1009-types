@@ -76,6 +76,7 @@ export namespace OrganizationInterfaces {
     description?: string;
     manager?: string;
     index?: number;
+    role? : string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneDto[];

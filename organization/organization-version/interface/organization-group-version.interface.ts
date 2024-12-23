@@ -93,7 +93,7 @@ export namespace OrganizationVersionInterfaces {
     index?: number;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
-    transport?: {};
+    transport?: {}; 
     photos?: Array<Multer.File>;
     deletePicture?: number[];
     createdAt?: Date;
@@ -133,7 +133,6 @@ export namespace OrganizationVersionInterfaces {
     clientId?: string;
     manager?: string;
     index?: number;
-    nearbyDescription?: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     PictureVersion?: PictureType[];
