@@ -23,7 +23,7 @@ export class ConfirmDto {
   @ApiProperty({ example: 'Nearbees' })
   @IsNumber()
   @IsOptional()
-  status?: string;
+  status?: number;
 
   @IsNumber()
   @IsOptional()
