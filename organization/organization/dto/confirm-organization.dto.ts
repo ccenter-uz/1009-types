@@ -20,7 +20,7 @@ export class ConfirmDto {
   @IsOptional()
   staffNumber?: string;
 
-  @ApiProperty({ example: 'Nearbees' })
+  @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
   status?: number;

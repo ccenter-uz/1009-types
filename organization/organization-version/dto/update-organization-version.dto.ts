@@ -218,9 +218,11 @@ export class OrganizationVersionUpdateDto
 
   @ApiProperty({
     example: {
-      ru: 'swagger-old-ru',
-      uz: 'swagger-old-uz',
-      cy: 'swagger-old-cy',
+      dayoffs: ['Monday'],
+      lunchFrom: '13:00',
+      lunchTo: '14:00',
+      worktimeFrom: '10:00',
+      worktimeTo: '19:00',
     },
     required: false,
   })
@@ -233,9 +235,9 @@ export class OrganizationVersionUpdateDto
 
   @ApiProperty({
     example: {
-      ru: 'swagger-old-ru',
-      uz: 'swagger-old-uz',
-      cy: 'swagger-old-cy',
+      bus: '127 AVTOBUS',
+      metroStation: 'Tinchlik metro',
+      microBus: '130M',
     },
     required: false,
   })

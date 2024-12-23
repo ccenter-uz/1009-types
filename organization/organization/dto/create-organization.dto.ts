@@ -187,8 +187,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   index: number;
 
-
-
   @IsOptional()
   @IsString()
   role?: string;
@@ -216,9 +214,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
 
   @ApiProperty({
     example: {
-      ru: 'swagger-old-ru',
-      uz: 'swagger-old-uz',
-      cy: 'swagger-old-cy',
+      dayoffs: ['Monday'],
+      lunchFrom: '13:00',
+      lunchTo: '14:00',
+      worktimeFrom: '10:00',
+      worktimeTo: '19:00',
     },
   })
   @IsNotEmpty()
@@ -231,9 +231,9 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({
     type: 'object',
     properties: {
-      ru: { type: 'string', example: 'swagger-new-ru' },
-      uz: { type: 'string', example: 'swagger-new-uz' },
-      cy: { type: 'string', example: 'swagger-new-cy' },
+      bus: { type: 'string', example: '127 AVTOBUS' },
+      metroStation: { type: 'string', example: 'Tinchlik metro' },
+      microBus: { type: 'string', example: '130M' },
     },
   })
   @IsNotEmpty()
@@ -242,7 +242,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     typeof value === 'string' ? JSON.parse(value) : value
   )
   transport: Record<string, string>;
-
 
   @ApiProperty({
     type: Object,
