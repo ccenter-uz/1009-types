@@ -1,24 +1,31 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNotEmpty, IsOptional, IsNumber, IsBoolean } from 'class-validator';
 
-export class PaymentTypesDto {
-  @ApiProperty({ example: true })
-  //   @IsString()
-  @IsBoolean()
-  @IsOptional()
-  cash: boolean;
+export class PaymentTypesVersionDto {
 
   @ApiProperty({ example: true })
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  terminal: boolean;
+  id?: number;
 
   @ApiProperty({ example: true })
   //   @IsString()
   @IsBoolean()
   @IsOptional()
-  transfer: boolean;
+  cash?: boolean;
+
+  @ApiProperty({ example: true })
+  //   @IsString()
+  @IsBoolean()
+  @IsOptional()
+  terminal?: boolean;
+
+  @ApiProperty({ example: true })
+  //   @IsString()
+  @IsBoolean()
+  @IsOptional()
+  transfer?: boolean;
 
   @ApiProperty({
     example: 'create',

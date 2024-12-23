@@ -17,6 +17,8 @@ import { PhoneDto, PhoneType } from './create-phone.dto';
 import { Phone } from '../types/index';
 import { PaymentTypesDto } from './create-peyment-types.dto';
 import { PhotoLinkDto } from './file-upload-dto';
+import { ProductServiceType } from './create-product-service.dto';
+import { NearbeesType } from './create-nearbees.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -107,12 +109,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
-  nearbyId: number;
-
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
   segmentId: number;
 
   @ApiProperty({ example: 1 })
@@ -121,10 +117,21 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   sectionId: number;
 
+  @ApiProperty({ example: 1 })
+  @IsNotEmpty()
+  @IsNumber()
+  @Type(() => Number)
+  passageId: number;
+
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
   name: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  description: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -148,15 +155,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  home: number;
+  @IsString()
+  home: string;
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  apartment: number;
+  @IsString()
+  apartment: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -166,7 +171,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  bank_number: string;
+  bankNumber: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -186,7 +191,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  maneger: string;
+  manager: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -194,10 +199,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   index: number;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  nearbyDescription: string;
+
 
   @IsOptional()
   @IsString()
@@ -252,25 +254,47 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     typeof value === 'string' ? JSON.parse(value) : value
   )
   transport: Record<string, string>;
-  // transport: JSON;
+
 
   @ApiProperty({
     type: Object,
     example: {
       phones: [
-        { phone: '+998901234567', phoneId: 1, action: 'create' },
-        { phone: '+998907654321', phoneId: 2 },
+        { phone: '+998901234567', phoneTypeId: 1, isSecret: false },
+        { phone: '+998907654321', phoneTypeId: 2, isSecret: true },
       ],
     },
   })
   @IsNotEmpty()
-  // @IsArray()
   phone: PhoneType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      productServices: [
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 1 },
+        { productServiceCategoryId: 1, productServiceSubCategoryId: 2 },
+      ],
+    },
+  })
+  @IsNotEmpty()
+  productService: ProductServiceType | string;
+
+  @ApiProperty({
+    type: Object,
+    example: {
+      nearbees: [
+        { description: 'nearbees', nearbyId: 1 },
+        { description: 'nearbees2', nearbyId: 2 },
+      ],
+    },
+  })
+  @IsNotEmpty()
+  nearby: NearbeesType | string;
 
   @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
-    // description: 'Array of images for work time',
   })
   photos: Array<Multer.File>;
 

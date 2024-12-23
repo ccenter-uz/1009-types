@@ -135,13 +135,13 @@ export class OrganizationUpdateDto
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  home: number;
+  // @IsNumber()
+  home: string;
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  apartment: number;
+  // @IsNumber()
+  apartment: string;
 
   @ApiProperty()
   @IsOptional()
