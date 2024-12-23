@@ -1,4 +1,6 @@
 import { AppLanguages } from 'types/global/types';
+import { CityInterfaces } from 'types/organization/city';
+import { RegionInterfaces } from 'types/organization/region';
 export namespace NearbyInterfaces {
   export interface Request {
     nearbyCategoryId: number;
@@ -24,6 +26,8 @@ export namespace NearbyInterfaces {
     cityId: number;
     staffNumber?: string;
     name?: {} | string;
+    region?: RegionInterfaces.Response;
+    city?: CityInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
