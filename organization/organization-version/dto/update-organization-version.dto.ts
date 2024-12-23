@@ -40,18 +40,6 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  productServiceCategoryId: number;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  productServiceSubCategoryId: number;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
   regionId: number;
 
   @ApiProperty({ example: 1, required: false })
