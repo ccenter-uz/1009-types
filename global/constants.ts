@@ -237,6 +237,13 @@ export const UserPermissions = {
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
+      segment: {
+        [ACCESSESS.GET]: true,
+        [ACCESSESS.CREATE]: true,
+        [ACCESSESS.UPDATE]: true,
+        [ACCESSESS.DELETE]: true,
+        [ACCESSESS.RESTORE]: true,
+      },
     },
   },
   operator: {
