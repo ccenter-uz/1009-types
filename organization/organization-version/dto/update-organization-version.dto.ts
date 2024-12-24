@@ -192,7 +192,6 @@ export class OrganizationVersionUpdateDto
       cash: true,
       terminal: false,
       transfer: true,
-      action: 'create',
     },
     type: PaymentTypesVersionDto,
     required: false,

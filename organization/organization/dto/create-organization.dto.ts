@@ -191,7 +191,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       cash: true,
       terminal: false,
       transfer: true,
-      action: 'create',
     },
     type: PaymentTypesDto,
   })
