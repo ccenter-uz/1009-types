@@ -103,10 +103,7 @@ export class OrganizationUpdateDto
   @IsNumber()
   segmentId: number;
 
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  sectionId: number;
+
 
   @ApiProperty()
   @IsOptional()
