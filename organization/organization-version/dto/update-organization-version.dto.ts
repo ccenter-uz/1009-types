@@ -106,12 +106,6 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  sectionId: number;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
   passageId: number;
 
   @ApiProperty({ example: 1, required: false })
@@ -173,11 +167,6 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsString()
   mail: string;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsString()
-  clientId: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()

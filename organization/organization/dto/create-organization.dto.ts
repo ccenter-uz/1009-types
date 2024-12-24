@@ -99,11 +99,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   segmentId: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
-  sectionId: number;
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
@@ -171,10 +166,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsString()
   mail: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  clientId: string;
 
   @ApiProperty()
   @IsNotEmpty()
