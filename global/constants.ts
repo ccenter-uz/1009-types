@@ -308,6 +308,13 @@ export enum OrganizationStatusEnum {
   Rejected = 2,
 }
 
+export enum OrganizationMethodEnum {
+  Delete = 'delete',
+  Create = 'create',
+  Update = 'update',
+  Restore = 'restore',
+}
+
 export const enum OrganizationVersionActionsEnum {
   GET = 'get',
   CREATE = 'create',
