@@ -106,12 +106,6 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  sectionId: number;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
   passageId: number;
 
   @ApiProperty({ example: 1, required: false })
@@ -177,11 +171,6 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  clientId: string;
-
-  @ApiProperty({ example: 1, required: false })
-  @IsOptional()
-  @IsString()
   manager: string;
 
   @ApiProperty({ example: 1, required: false })
@@ -203,7 +192,6 @@ export class OrganizationVersionUpdateDto
       cash: true,
       terminal: false,
       transfer: true,
-      action: 'create',
     },
     type: PaymentTypesVersionDto,
     required: false,
