@@ -20,7 +20,6 @@ export namespace OrganizationInterfaces {
     laneId: number;
     impasseId: number;
     segmentId: number;
-    sectionId: number;
     passageId: number;
     name: string;
     legalName: string;
@@ -34,7 +33,6 @@ export namespace OrganizationInterfaces {
     bankNumber: string;
     account: string;
     mail: string;
-    clientId: string;
     manager: string;
     index: number;
     paymentTypes: PaymentTypesDto;
@@ -59,7 +57,6 @@ export namespace OrganizationInterfaces {
     laneId?: number;
     impasseId?: number;
     segmentId?: number;
-    sectionId?: number;
     passageId?: number;
     name?: string;
     legalName?: string;
@@ -100,7 +97,6 @@ export namespace OrganizationInterfaces {
     laneId: number;
     impasseId: number;
     segmentId: number;
-    sectionId: number;
     passageId: number;
     name?: string;
     legalName?: string;
