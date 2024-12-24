@@ -51,7 +51,7 @@ export namespace OrganizationVersionInterfaces {
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     // ProductServices?: ProductServiceTypeR[];
-    // Nearbees?: NearbeesType[];
+    // Nearbees?: NearbeesType[];w
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
