@@ -1,4 +1,6 @@
 import { AppLanguages } from 'types/global/types';
+import { CityInterfaces } from 'types/organization/city';
+import { RegionInterfaces } from 'types/organization/region';
 
 export namespace PassageInterfaces {
   export interface Request {
@@ -34,6 +36,8 @@ export namespace PassageInterfaces {
     name?: {} | string;
     oldName?: {} | string;
     newName?: {} | string;
+    region?: RegionInterfaces.Response;
+    city?: CityInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
