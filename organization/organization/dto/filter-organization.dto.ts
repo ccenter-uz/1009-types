@@ -284,5 +284,5 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   @IsEnum(OrganizationStatusEnum)
   @Min(-1)
   @IsOptional()
-  status: OrganizationStatusEnum = OrganizationStatusEnum.Check;
+  status: OrganizationStatusEnum = OrganizationStatusEnum.Accepted;
 }
