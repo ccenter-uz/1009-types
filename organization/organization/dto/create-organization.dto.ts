@@ -99,7 +99,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   segmentId: number;
 
-
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
@@ -109,51 +108,111 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   name: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   description: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   legalName: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   secret: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   kvartal: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   address: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   home: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   apartment: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   inn: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   bankNumber: string;
 
   @ApiProperty()
@@ -164,12 +223,23 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   mail: string;
-
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   manager: string;
 
   @ApiProperty()
