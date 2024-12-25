@@ -199,6 +199,12 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   inn: string;
 
   @ApiProperty({ example: 1, required: false })
