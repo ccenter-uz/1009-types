@@ -111,41 +111,89 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   name: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   description: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   legalName: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   secret: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   kvartal: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   address: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   home: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   apartment: string;
 
   @ApiProperty({ example: 1, required: false })
@@ -156,21 +204,45 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   bankNumber: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   account: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   mail: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   manager: string;
 
   @ApiProperty({ example: 1, required: false })
