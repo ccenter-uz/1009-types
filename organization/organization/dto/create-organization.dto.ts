@@ -218,6 +218,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   account: string;
 
   @ApiProperty()
