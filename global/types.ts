@@ -49,9 +49,20 @@ export type PermissionType =
   | PermissionsEnum.DELETE_DATA
   | PermissionsEnum.RESTORE_DATA;
 
+export type NearbeesType = {
+  nearbees: {
+    description?: number;
+    nearbyId?: number;
+  }[];
+};
 
-  export enum StatusEnum {
-    ACTIVE = 1,
-    INACTIVE = 0,
-    ALL = 2,
-  }
+export type NearbeesTypeResponse = {
+  // nearbees: string;
+  description: string;
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date;
+  OrganizationId: number;
+  NearbyId: number;
+}[];

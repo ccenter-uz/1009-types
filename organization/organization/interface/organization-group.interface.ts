@@ -3,7 +3,10 @@ import * as Multer from 'multer';
 import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
 import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
 import { PictureType } from '../dto/file-upload-dto';
-import { ProductServiceType, ProductServiceTypeResponce } from '../dto/create-product-service.dto';
+import {
+  ProductServiceType,
+  ProductServiceTypeResponce,
+} from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
@@ -11,22 +14,22 @@ export namespace OrganizationInterfaces {
     subCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId: number;
-    villageId: number;
-    avenueId: number;
-    residentialId: number;
-    areaId: number;
-    streetId: number;
-    laneId: number;
-    impasseId: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
     segmentId: number;
-    passageId: number;
+    passageId?: number;
     name: string;
     legalName: string;
     secret: string;
-    kvartal: string;
+    kvartal?: string;
     address: string;
-    home: string;
+    home?: string;
     apartment: string;
     description: string;
     inn: string;
@@ -35,11 +38,11 @@ export namespace OrganizationInterfaces {
     mail: string;
     manager: string;
     index: number;
-    paymentTypes: PaymentTypesDto;
+    paymentTypes?: PaymentTypesDto;
     workTime: {};
     transport: {};
     photos: Array<Multer.File>;
-    // phone: PhoneDto[];
+    // phone: PhoneDto[] | string;
   }
 
   export interface Update {
@@ -73,7 +76,7 @@ export namespace OrganizationInterfaces {
     description?: string;
     manager?: string;
     index?: number;
-    role? : string;
+    role?: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneDto[];

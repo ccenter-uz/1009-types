@@ -1,6 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsString, IsNotEmpty, IsOptional, IsNumber, IsBoolean } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsOptional,
+  IsNumber,
+  IsBoolean,
+} from 'class-validator';
 
 export class PhoneDto {
   @ApiProperty({ example: '+998901234567' })
@@ -31,4 +37,3 @@ export type PhoneType = {
     isSecret?: boolean;
   }[];
 };
-  

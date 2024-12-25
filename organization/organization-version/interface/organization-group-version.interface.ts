@@ -1,12 +1,8 @@
-import { AppLanguages, JsonValue } from 'types/global/types';
+import { JsonValue, NearbeesTypeResponse } from 'types/global/types';
 import * as Multer from 'multer';
 import { PaymentTypesVersionDto } from '../dto/create-peyment-types-version.dto';
-import { PhoneVersionDto, PhoneType } from '../dto/create-phone-version.dto';
+import { PhoneType } from '../dto/create-phone-version.dto';
 import { PictureType } from '../dto/file-upload-version.dto';
-import {
-  NearbeesType,
-  NearbeesTypeResponse,
-} from 'types/organization/organization/dto/create-nearbees.dto';
 import { ProductServiceType } from 'types/organization/organization/dto/create-product-service.dto';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
@@ -15,38 +11,37 @@ export namespace OrganizationVersionInterfaces {
     subCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId: number;
-    villageId: number;
-    avenueId: number;
-    residentialId: number;
-    areaId: number;
-    streetId: number;
-    laneId: number;
-    impasseId: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
     segmentId: number;
-    passageId: number;
-    name?: string;
-    legalName?: string;
-    secret?: string;
+    passageId?: number;
+    name: string;
+    legalName: string;
+    secret: string;
     kvartal?: string;
     address?: string;
     home?: string;
-    apartment?: string;
-    description?: string;
-    inn?: string;
-    bankNumber?: string;
+    apartment: string;
+    description: string;
+    inn: string;
+    bankNumber: string;
     account?: string;
-    mail?: string;
-    manager?: string;
-    index?: number;
+    mail: string;
+    manager: string;
+    index: number;
     staffNumber?: string;
     status: number;
     createdBy: string;
-    nearbyDescription?: string;
-    paymentTypes?: PaymentTypesVersionDto;
-    productService?: ProductServiceType[];
-    nearbees?: NearbeesTypeResponse[];
-    phone?: PhoneType[];
+    paymentTypes: PaymentTypesVersionDto;
+    productService: ProductServiceType[];
+    nearbees: NearbeesTypeResponse[];
+    phone: PhoneType[];
     Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
@@ -89,7 +84,7 @@ export namespace OrganizationVersionInterfaces {
     index?: number;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
-    transport?: {}; 
+    transport?: {};
     photos?: Array<Multer.File>;
     deletePicture?: number[];
     createdAt?: Date;

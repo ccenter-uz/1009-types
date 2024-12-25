@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
   IsArray,
-  IsJSON,
   IsNotEmpty,
   IsNumber,
   IsObject,
@@ -10,15 +9,14 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { NearbeesType } from 'types/global';
 import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
-import { PhoneDto, PhoneType } from './create-phone.dto';
-import { Phone } from '../types/index';
+import { PhoneType } from './create-phone.dto';
+
 import { PaymentTypesDto } from './create-peyment-types.dto';
 import { PhotoLinkDto } from './file-upload-dto';
 import { ProductServiceType } from './create-product-service.dto';
-import { NearbeesType } from './create-nearbees.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -99,7 +97,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   segmentId: number;
 
-
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
   @IsNumber()
@@ -165,7 +162,6 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNotEmpty()
   @IsString()
   mail: string;
-
 
   @ApiProperty()
   @IsNotEmpty()

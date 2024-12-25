@@ -322,3 +322,9 @@ export const enum OrganizationVersionActionsEnum {
   DELETE = 'delete',
   // RESTORE = 'restore',
 }
+
+export enum StatusEnum {
+  ACTIVE = 1,
+  INACTIVE = 0,
+  ALL = 2,
+}
