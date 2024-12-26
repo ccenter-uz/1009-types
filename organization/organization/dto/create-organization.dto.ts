@@ -51,47 +51,47 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNumber()
   districtId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  villageId: number;
+  villageId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  avenueId: number;
+  avenueId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  residentialId: number;
+  residentialId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  areaId: number;
+  areaId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  streetId: number;
+  streetId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  laneId: number;
+  laneId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  impasseId: number;
+  impasseId?: number;
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
@@ -99,11 +99,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   segmentId: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @ApiProperty({ example: 1, required: false })
+  @Transform(({ value }) => (value ? value : undefined))
+  @IsOptional()
   @IsNumber()
-  @Type(() => Number)
-  passageId: number;
+  passageId?: number;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -149,8 +149,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   secret: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -158,7 +158,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  kvartal: string;
+  kvartal?: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -171,8 +171,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   address: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -180,7 +180,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  home: string;
+  home?: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -215,8 +215,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   bankNumber: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -224,7 +224,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  account: string;
+  account?: string;
 
   @ApiProperty()
   @IsNotEmpty()
