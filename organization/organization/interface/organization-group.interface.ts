@@ -3,7 +3,10 @@ import * as Multer from 'multer';
 import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
 import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
 import { PictureType } from '../dto/file-upload-dto';
-import { ProductServiceType, ProductServiceTypeResponce } from '../dto/create-product-service.dto';
+import {
+  ProductServiceType,
+  ProductServiceTypeResponce,
+} from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
@@ -11,7 +14,7 @@ export namespace OrganizationInterfaces {
     subCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId: number;
+    districtId?: number;
     villageId: number;
     avenueId: number;
     residentialId: number;
@@ -73,7 +76,7 @@ export namespace OrganizationInterfaces {
     description?: string;
     manager?: string;
     index?: number;
-    role? : string;
+    role?: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneDto[];

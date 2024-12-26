@@ -46,10 +46,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   cityId: number;
 
   @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  districtId: number;
+  districtId?: number;
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
