@@ -8,8 +8,8 @@ export namespace DistrictInterfaces {
     staffNumber?: string;
     index: number;
     name: AppLanguages;
-    oldName: AppLanguages;
-    newName: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Update {

@@ -52,11 +52,11 @@ export class AreaCreateDto implements AreaInterfaces.Request {
       cy: 'swagger-old-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  oldName: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -65,9 +65,9 @@ export class AreaCreateDto implements AreaInterfaces.Request {
       cy: 'swagger-new-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  newName: LanguageDto;
+  newName?: LanguageDto;
 }

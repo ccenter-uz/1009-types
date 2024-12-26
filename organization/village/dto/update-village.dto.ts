@@ -52,6 +52,7 @@ export class VillageUpdateDto
   @Type(() => LanguageDto)
   name?: LanguageDto;
 
+  
   @ApiProperty({
     example: {
       ru: 'swagger-old-ru',

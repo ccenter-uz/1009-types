@@ -49,6 +49,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @Type(() => LanguageDto)
   name?: LanguageDto;
 
+  
   @ApiProperty({
     example: {
       ru: 'swagger-old-ru',
