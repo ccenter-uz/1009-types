@@ -1,5 +1,7 @@
+
 import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
+import { NearbyCategoryInterfaces } from 'types/organization/nearby-category';
 import { RegionInterfaces } from 'types/organization/region';
 export namespace NearbyInterfaces {
   export interface Request {
@@ -28,6 +30,7 @@ export namespace NearbyInterfaces {
     name?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
+    category?: NearbyCategoryInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
