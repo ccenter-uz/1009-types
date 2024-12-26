@@ -10,8 +10,8 @@ export namespace AvenueInterfaces {
     staffNumber?: string;
     districtId?: number;
     name: AppLanguages;
-    oldName: AppLanguages;
-    newName: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
   }
 
   export interface Update {
