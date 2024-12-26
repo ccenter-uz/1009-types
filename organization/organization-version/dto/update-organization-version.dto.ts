@@ -55,45 +55,52 @@ export class OrganizationVersionUpdateDto
   districtId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   villageId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   avenueId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   residentialId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   areaId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   streetId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   laneId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   impasseId: number;
 
   @ApiProperty({ example: 1, required: false })
@@ -103,9 +110,10 @@ export class OrganizationVersionUpdateDto
   segmentId: number;
 
   @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
-  @Type(() => Number)
   passageId: number;
 
   @ApiProperty({ example: 1, required: false })
