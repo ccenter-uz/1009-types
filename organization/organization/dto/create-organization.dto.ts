@@ -52,43 +52,43 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   districtId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   villageId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   avenueId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   residentialId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   areaId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   streetId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   laneId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   impasseId?: number;
@@ -100,7 +100,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   segmentId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   passageId?: number;
