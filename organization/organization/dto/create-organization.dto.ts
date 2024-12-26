@@ -46,49 +46,49 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   cityId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   districtId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   villageId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   avenueId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   residentialId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   areaId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   streetId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   laneId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   impasseId?: number;
@@ -100,7 +100,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   segmentId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
   @IsOptional()
   @IsNumber()
   passageId?: number;
