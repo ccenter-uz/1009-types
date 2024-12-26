@@ -45,6 +45,7 @@ export class DistrictUpdateDto
       cy: 'swagger-old-cy',
     },
   })
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
@@ -57,6 +58,7 @@ export class DistrictUpdateDto
       cy: 'swagger-new-cy',
     },
   })
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
