@@ -15,7 +15,7 @@ export namespace OrganizationVersionInterfaces {
     subCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId: number;
+    districtId?: number;
     villageId: number;
     avenueId: number;
     residentialId: number;
@@ -89,7 +89,7 @@ export namespace OrganizationVersionInterfaces {
     index?: number;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
-    transport?: {}; 
+    transport?: {};
     photos?: Array<Multer.File>;
     deletePicture?: number[];
     createdAt?: Date;
