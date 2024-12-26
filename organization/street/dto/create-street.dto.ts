@@ -45,6 +45,7 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @Type(() => LanguageDto)
   name: LanguageDto;
 
+  
   @ApiProperty({
     example: {
       ru: 'swagger-old-ru',
@@ -52,11 +53,11 @@ export class StreetCreateDto implements StreetInterfaces.Request {
       cy: 'swagger-old-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  oldName: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -65,9 +66,9 @@ export class StreetCreateDto implements StreetInterfaces.Request {
       cy: 'swagger-new-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  newName: LanguageDto;
+  newName?: LanguageDto;
 }

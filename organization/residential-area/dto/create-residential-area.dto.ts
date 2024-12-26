@@ -47,6 +47,7 @@ export class ResidentialAreaCreateDto
   @Type(() => LanguageDto)
   name: LanguageDto;
 
+  
   @ApiProperty({
     example: {
       ru: 'swagger-old-ru',
@@ -54,11 +55,11 @@ export class ResidentialAreaCreateDto
       cy: 'swagger-old-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  oldName: LanguageDto;
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
@@ -67,9 +68,9 @@ export class ResidentialAreaCreateDto
       cy: 'swagger-new-cy',
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  newName: LanguageDto;
+  newName?: LanguageDto;
 }
