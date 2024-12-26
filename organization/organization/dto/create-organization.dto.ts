@@ -46,7 +46,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   cityId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => (value ? value : undefined))
+  @Transform(({ value }) => console.log(value))
   @IsOptional()
   @IsNumber()
   districtId?: number;
