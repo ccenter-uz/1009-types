@@ -45,7 +45,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   cityId: number;
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
