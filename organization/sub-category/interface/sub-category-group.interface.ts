@@ -1,4 +1,5 @@
 import { AppLanguages } from 'types/global/types';
+import { CategoryInterfaces } from 'types/organization/category';
 export namespace SubCategoryInterfaces {
   export interface Request {
     categoryId: number;
@@ -18,6 +19,7 @@ export namespace SubCategoryInterfaces {
     categoryId: number;
     staffNumber?: string;
     name?: {} | string;
+    category: CategoryInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
