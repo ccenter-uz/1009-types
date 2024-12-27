@@ -22,7 +22,7 @@ export class NearbeesDto {
 
 export type NearbeesType = {
   nearbees: {
-    description?: number;
+    description?: string;
     nearbyId?: number;
   }[];
 };

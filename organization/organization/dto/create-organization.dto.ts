@@ -46,52 +46,60 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   cityId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value, 'VALUE IN ORG CREATE DTO'))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   districtId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  villageId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  villageId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  avenueId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  avenueId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  residentialId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  residentialId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  areaId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  areaId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  streetId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  streetId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  laneId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  laneId?: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  impasseId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  impasseId?: number;
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
@@ -99,11 +107,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   segmentId: number;
 
-  @ApiProperty({ example: 1 })
-  @IsNotEmpty()
-  @IsNumber()
+  @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
-  passageId: number;
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  passageId?: number;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -149,8 +158,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   secret: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -158,7 +167,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  kvartal: string;
+  kvartal?: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -171,8 +180,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   address: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -180,7 +189,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  home: string;
+  home?: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -215,8 +224,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   bankNumber: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -224,7 +233,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, '')
       .replace(/\\+/g, '')
   )
-  account: string;
+  account?: string;
 
   @ApiProperty()
   @IsNotEmpty()
