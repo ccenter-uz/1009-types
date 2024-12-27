@@ -46,49 +46,57 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   cityId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   districtId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   villageId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   avenueId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   residentialId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   areaId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   streetId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   laneId?: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   impasseId?: number;
@@ -100,7 +108,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   segmentId: number;
 
   @ApiProperty({ example: 1, required: false })
-  @Transform(({ value }) => console.log(value))
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
   passageId?: number;
