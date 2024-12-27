@@ -1,5 +1,6 @@
 import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
+import { DistrictInterfaces } from 'types/organization/district';
 import { RegionInterfaces } from 'types/organization/region';
 
 export namespace AvenueInterfaces {
@@ -38,6 +39,7 @@ export namespace AvenueInterfaces {
     newName?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
+    district?: DistrictInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
