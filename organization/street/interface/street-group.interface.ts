@@ -1,4 +1,3 @@
-import { District } from '@prisma/client';
 import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
 import { DistrictInterfaces } from 'types/organization/district';
