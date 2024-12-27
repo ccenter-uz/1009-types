@@ -1,5 +1,7 @@
+import { District } from '@prisma/client';
 import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
+import { DistrictInterfaces } from 'types/organization/district';
 import { RegionInterfaces } from 'types/organization/region';
 
 export namespace StreetInterfaces {
@@ -38,6 +40,7 @@ export namespace StreetInterfaces {
     newName?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
+    district?: DistrictInterfaces.Response;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
