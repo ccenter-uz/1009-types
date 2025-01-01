@@ -1,145 +1,145 @@
-import { AppLanguages, JsonValue } from "types/global/types"
-import * as Multer from "multer"
-import { PaymentTypesDto } from "../dto/create-peyment-types.dto"
-import { PhoneDto, PhoneType } from "../dto/create-phone.dto"
-import { PictureType } from "../dto/file-upload-dto"
+import { AppLanguages, JsonValue } from 'types/global/types';
+import * as Multer from 'multer';
+import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
+import { PhoneDto, PhoneType } from '../dto/create-phone.dto';
+import { PictureType } from '../dto/file-upload-dto';
 import {
   ProductServiceType,
   ProductServiceTypeResponce,
-} from "../dto/create-product-service.dto"
-import { AreaInterfaces } from "types/organization/area"
+} from '../dto/create-product-service.dto';
+import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
-    mainOrganizationId: number
-    subCategoryId: number
-    regionId: number
-    cityId: number
-    districtId?: number
-    villageId?: number
-    avenueId?: number
-    residentialId?: number
-    areaId?: number
-    streetId?: number
-    laneId?: number
-    impasseId?: number
-    segmentId: number
-    passageId?: number
-    name: string
-    legalName: string
-    secret: string
-    kvartal?: string
-    address: string
-    home?: string
-    apartment: string
-    description: string
-    inn: string
-    bankNumber: string
-    account?: string
-    mail: string
-    manager: string
-    index: number
-    paymentTypes: PaymentTypesDto
-    workTime: {}
-    transport: {}
-    photos: Array<Multer.File>
+    mainOrganizationId: number;
+    subCategoryId: number;
+    regionId: number;
+    cityId: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
+    segmentId: number;
+    passageId?: number;
+    name: string;
+    legalName: string;
+    secret: string;
+    kvartal?: string;
+    address: string;
+    home?: string;
+    apartment: string;
+    description: string;
+    inn: string;
+    bankNumber: string;
+    account?: string;
+    mail: string;
+    manager: string;
+    index: number;
+    paymentTypes: PaymentTypesDto;
+    workTime: {};
+    transport: {};
+    photos: Array<Multer.File>;
     // phone: PhoneDto[];
   }
 
   export interface Update {
-    id?: number
-    mainOrganizationId?: number
-    subCategoryId?: number
-    regionId?: number
-    cityId?: number
-    districtId?: number
-    villageId?: number
-    avenueId?: number
-    residentialId?: number
-    areaId?: number
-    streetId?: number
-    laneId?: number
-    impasseId?: number
-    segmentId?: number
-    passageId?: number
-    name?: string
-    legalName?: string
-    secret?: string
-    kvartal?: string
-    address?: string
-    home?: string
-    apartment?: string
-    inn?: string
-    bankNumber?: string
-    account?: string
-    mail?: string
-    clientId?: string
-    description?: string
-    manager?: string
-    index: number
-    role?: string
-    nearbyDescription?: string
-    paymentTypes?: PaymentTypesDto
-    phone?: PhoneDto[]
-    workTime?: JSON
-    transport?: JSON
-    photos?: Array<Multer.File>
+    id?: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
+    segmentId?: number;
+    passageId?: number;
+    name?: string;
+    legalName?: string;
+    secret?: string;
+    kvartal?: string;
+    address?: string;
+    home?: string;
+    apartment?: string;
+    inn?: string;
+    bankNumber?: string;
+    account?: string;
+    mail?: string;
+    clientId?: string;
+    description?: string;
+    manager?: string;
+    index?: number;
+    role?: string;
+    nearbyDescription?: string;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneDto[];
+    workTime?: JSON;
+    transport?: JSON;
+    photos?: Array<Multer.File>;
   }
 
   export interface Response {
-    id: number
-    mainOrganizationId: number
-    subCategoryId: number
-    regionId: number
-    cityId: number
-    districtId: number
-    villageId: number
-    avenueId: number
-    residentialId: number
-    areaId: number
-    streetId: number
-    laneId: number
-    impasseId: number
-    segmentId: number
-    passageId: number
-    name?: string
-    legalName?: string
-    secret?: string
-    kvartal?: string
-    address?: string
-    home?: string
-    apartment?: string
-    description?: string
-    inn?: string
-    bankNumber?: string
-    account?: string
-    mail?: string
-    clientId?: string
-    manager?: string
-    index: number
-    nearbyDescription?: string
-    staffNumber?: string
-    status: number
-    createdBy: string
-    paymentTypes?: PaymentTypesDto
-    phone?: PhoneType[]
+    id: number;
+    mainOrganizationId: number;
+    subCategoryId: number;
+    regionId: number;
+    cityId: number;
+    districtId: number;
+    villageId: number;
+    avenueId: number;
+    residentialId: number;
+    areaId: number;
+    streetId: number;
+    laneId: number;
+    impasseId: number;
+    segmentId: number;
+    passageId: number;
+    name?: string;
+    legalName?: string;
+    secret?: string;
+    kvartal?: string;
+    address?: string;
+    home?: string;
+    apartment?: string;
+    description?: string;
+    inn?: string;
+    bankNumber?: string;
+    account?: string;
+    mail?: string;
+    clientId?: string;
+    manager?: string;
+    index: number;
+    nearbyDescription?: string;
+    staffNumber?: string;
+    status: number;
+    createdBy: string;
+    paymentTypes?: PaymentTypesDto;
+    phone?: PhoneType[];
     // ProductServices?: ProductServiceTypeResponce[];
     // Nearbees?: NearbeesType[];
-    Picture?: PictureType[]
-    workTime?: JsonValue | string
-    transport?: JsonValue | string
-    createdAt: Date
-    updatedAt: Date
-    deletedAt: Date
+    Picture?: PictureType[];
+    workTime?: JsonValue | string;
+    transport?: JsonValue | string;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: Date;
 
-    area?: AreaInterfaces.Response
+    area?: AreaInterfaces.Response;
   }
 
   export interface ResponseWithoutPagination {
-    totalDocs: number
-    data: Response[]
+    totalDocs: number;
+    data: Response[];
   }
 
   export interface ResponseWithPagination extends ResponseWithoutPagination {
-    totalPage: number
+    totalPage: number;
   }
 }
