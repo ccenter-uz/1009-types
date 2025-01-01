@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { ApiProperty } from "@nestjs/swagger"
+import { Type } from "class-transformer"
 import {
   IsOptional,
   IsNumber,
@@ -7,13 +7,13 @@ import {
   ValidateNested,
   IsString,
   IsJSON,
-} from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
-import { OrganizationInterfaces } from 'types/organization/organization';
-import * as Multer from 'multer';
-import { PhoneDto } from './create-phone.dto';
-import { Phone } from '../types';
-import { PaymentTypesDto } from './create-peyment-types.dto';
+} from "class-validator"
+import { IdDto, LanguageDto } from "types/global"
+import { OrganizationInterfaces } from "types/organization/organization"
+import * as Multer from "multer"
+import { PhoneDto } from "./create-phone.dto"
+import { Phone } from "../types"
+import { PaymentTypesDto } from "./create-peyment-types.dto"
 export class OrganizationUpdateDto
   extends IdDto
   implements OrganizationInterfaces.Update
@@ -21,222 +21,220 @@ export class OrganizationUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  id: number;
+  id: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  mainOrganizationId: number;
+  mainOrganizationId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  subCategoryId: number;
+  subCategoryId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  productServiceCategoryId: number;
+  productServiceCategoryId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  productServiceSubCategoryId: number;
+  productServiceSubCategoryId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  regionId: number;
+  regionId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  cityId: number;
+  cityId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  districtId: number;
+  districtId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  villageId: number;
+  villageId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  avenueId: number;
+  avenueId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  residentialId: number;
+  residentialId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  areaId: number;
+  areaId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  streetId: number;
+  streetId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  laneId: number;
+  laneId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  impasseId: number;
+  impasseId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  nearbyId: number;
+  nearbyId: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  segmentId: number;
-
-
+  segmentId: number
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  name: string;
+  name: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  legelName: string;
+  legelName: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  secret: string;
+  secret: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  kvartal: string;
+  kvartal: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  address: string;
+  address: string
 
   @ApiProperty()
   @IsOptional()
   // @IsNumber()
-  home: string;
+  home: string
 
   @ApiProperty()
   @IsOptional()
   // @IsNumber()
-  apartment: string;
+  apartment: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  inn: string;
+  inn: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  bank_number: string;
+  bank_number: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  account: string;
+  account: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  mail: string;
+  mail: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  clientId: string;
+  clientId: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  maneger: string;
+  maneger: string
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: number;
+  index: bigint
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  nearbyDescription: string;
+  nearbyDescription: string
 
   @ApiProperty({
     example: {
       cash: true,
       terminal: false,
       transfer: true,
-      action: 'create',
+      action: "create",
     },
     type: PaymentTypesDto,
   })
   @IsObject()
   @ValidateNested()
   @Type(() => PaymentTypesDto)
-  paymentTypes: PaymentTypesDto;
+  paymentTypes: PaymentTypesDto
 
   @ApiProperty({
     example: {
-      dayoffs: ['Monday'],
-      lunchFrom: '13:00',
-      lunchTo: '14:00',
-      worktimeFrom: '10:00',
-      worktimeTo: '19:00',
+      dayoffs: ["Monday"],
+      lunchFrom: "13:00",
+      lunchTo: "14:00",
+      worktimeFrom: "10:00",
+      worktimeTo: "19:00",
     },
   })
   @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  workTime: JSON;
+  workTime: JSON
 
   @ApiProperty({
     example: {
-      bus: '127 AVTOBUS',
-      metroStation: 'Tinchlik metro',
+      bus: "127 AVTOBUS",
+      metroStation: "Tinchlik metro",
     },
   })
   @IsOptional()
   @IsObject()
   @ValidateNested()
   // @Type(() => LanguageDto)
-  transport: JSON;
+  transport: JSON
 
   @ApiProperty({
     example: [
-      { phone: '+998901234567', phoneId: 1, action: 'create' },
-      { phone: '+998907654321', phoneId: 2 },
+      { phone: "+998901234567", phoneId: 1, action: "create" },
+      { phone: "+998907654321", phoneId: 2 },
     ],
     // description: 'Array of phone objects',
     type: [PhoneDto],
   })
   @ValidateNested({ each: true })
   @Type(() => PhoneDto)
-  phone: Phone[];
+  phone: Phone[]
 
   @ApiProperty({
-    type: 'array',
-    items: { type: 'string', format: 'binary' },
+    type: "array",
+    items: { type: "string", format: "binary" },
     // description: 'Array of images for work time',
   })
-  photos: Array<Multer.File>;
+  photos: Array<Multer.File>
 }

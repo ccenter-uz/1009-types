@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { Transform, Type } from 'class-transformer';
+import { ApiProperty } from "@nestjs/swagger"
+import { Transform, Type } from "class-transformer"
 import {
   IsArray,
   IsJSON,
@@ -9,14 +9,14 @@ import {
   IsOptional,
   IsString,
   ValidateNested,
-} from 'class-validator';
-import { LanguageDto } from 'types/global';
-import { OrganizationVersionInterfaces } from 'types/organization/organization-version';
-import * as Multer from 'multer';
-import { PhoneVersionDto, PhoneType } from './create-phone-version.dto';
-import { Phone } from '../types/index';
-import { PaymentTypesVersionDto } from './create-peyment-types-version.dto';
-import { PhotoLinkVersionDto } from './file-upload-version.dto';
+} from "class-validator"
+import { LanguageDto } from "types/global"
+import { OrganizationVersionInterfaces } from "types/organization/organization-version"
+import * as Multer from "multer"
+import { PhoneVersionDto, PhoneType } from "./create-phone-version.dto"
+import { Phone } from "../types/index"
+import { PaymentTypesVersionDto } from "./create-peyment-types-version.dto"
+import { PhotoLinkVersionDto } from "./file-upload-version.dto"
 
 // export class OrganizationCreateDto
 //   implements OrganizationVersionInterfaces.Request
@@ -194,7 +194,7 @@ import { PhotoLinkVersionDto } from './file-upload-version.dto';
 //   @IsNotEmpty()
 //   @IsNumber()
 //   @Type(() => Number)
-//   index: number;
+//   index: bigint;
 
 //   @ApiProperty()
 //   @IsNotEmpty()
