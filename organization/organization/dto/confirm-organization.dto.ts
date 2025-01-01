@@ -16,6 +16,7 @@ export class ConfirmDto {
   @IsNumber()
   @IsOptional()
   role?: string;
+
   @IsNumber()
   @IsOptional()
   staffNumber?: string;
