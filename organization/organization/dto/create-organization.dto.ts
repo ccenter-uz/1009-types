@@ -261,7 +261,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
-  index: bigint
+  index: number
 
   @IsOptional()
   @IsString()

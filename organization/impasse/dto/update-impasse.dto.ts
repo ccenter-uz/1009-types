@@ -32,7 +32,7 @@ export class ImpasseUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

@@ -32,7 +32,7 @@ export class ResidentialAreaUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

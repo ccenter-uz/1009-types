@@ -25,7 +25,7 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  index: bigint
+  index: number
 
   @IsOptional()
   @IsString()

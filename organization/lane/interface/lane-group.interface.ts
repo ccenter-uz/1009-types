@@ -7,7 +7,7 @@ export namespace LaneInterfaces {
   export interface Request {
     regionId: number
     cityId: number
-    index: bigint
+    index: number
     staffNumber?: string
     districtId?: number
     name: AppLanguages
@@ -19,7 +19,7 @@ export namespace LaneInterfaces {
     id: number
     regionId?: number
     cityId?: number
-    index: bigint
+    index: number
     staffNumber?: string
     districtId?: number
     name?: AppLanguages
@@ -31,7 +31,7 @@ export namespace LaneInterfaces {
     id: number
     regionId: number
     cityId: number
-    index: bigint
+    index: number
     staffNumber?: string
     districtId?: number
     name?: {} | string

@@ -263,7 +263,7 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  index: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

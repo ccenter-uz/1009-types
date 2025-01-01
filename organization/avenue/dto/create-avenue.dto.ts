@@ -25,7 +25,7 @@ export class AvenueCreateDto implements AvenueInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  index: bigint
+  index: number
 
   @IsOptional()
   @IsString()

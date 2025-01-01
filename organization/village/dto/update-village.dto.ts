@@ -32,7 +32,7 @@ export class VillageUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

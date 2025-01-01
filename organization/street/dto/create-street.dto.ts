@@ -30,7 +30,7 @@ export class StreetCreateDto implements StreetInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  index: bigint
+  index: number
 
   @IsOptional()
   @IsString()

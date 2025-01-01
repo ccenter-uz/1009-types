@@ -29,7 +29,7 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

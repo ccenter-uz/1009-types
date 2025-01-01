@@ -171,7 +171,7 @@ export class OrganizationUpdateDto
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @ApiProperty()
   @IsOptional()

@@ -28,7 +28,7 @@ export class DistrictUpdateDto
 
   @ApiProperty()
   @IsNumber()
-  index: bigint
+  index?: number
 
   @ApiProperty({
     example: { ru: "swagger-ru", uz: "swagger-uz", cy: "swagger-cy" },

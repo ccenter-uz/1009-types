@@ -6,7 +6,7 @@ export namespace DistrictInterfaces {
     regionId: number
     cityId: number
     staffNumber?: string
-    index: bigint
+    index: number
     name: AppLanguages
     oldName?: AppLanguages
     newName?: AppLanguages
@@ -17,7 +17,7 @@ export namespace DistrictInterfaces {
     regionId?: number
     cityId?: number
     staffNumber?: string
-    index: bigint
+    index: number
     name?: AppLanguages
     oldName?: AppLanguages
     newName?: AppLanguages
@@ -28,7 +28,7 @@ export namespace DistrictInterfaces {
     regionId: number
     cityId: number
     staffNumber?: string
-    index: bigint
+    index: number
     name?: {} | string
     oldName?: {} | string
     newName?: {} | string

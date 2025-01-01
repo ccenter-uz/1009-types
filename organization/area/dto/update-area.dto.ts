@@ -29,7 +29,7 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  index?: bigint
+  index?: number
 
   @IsOptional()
   @IsString()

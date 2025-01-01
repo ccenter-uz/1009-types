@@ -25,7 +25,7 @@ export class PassageCreateDto implements PassageInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  index: bigint
+  index: number
 
   @IsOptional()
   @IsString()
