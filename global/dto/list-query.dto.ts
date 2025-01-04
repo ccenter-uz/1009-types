@@ -39,8 +39,14 @@ export class ListQueryDto extends LanguageRequestDto {
     type: String,
     required: false,
   })
+  @Transform(({ value }) => {
+    if (value == 'undefined') {
+      return undefined;
+    }
+  })
   @IsString()
   @IsOptional()
+  @Type(() => String)
   search?: string;
 
   @ApiProperty({
