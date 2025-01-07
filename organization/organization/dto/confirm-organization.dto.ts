@@ -21,6 +21,14 @@ export class ConfirmDto {
   @IsOptional()
   staffNumber?: string;
 
+  @ApiProperty({
+    example: 'confirm',
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  descrioption?: string;
+
   @ApiProperty({ example: 1 })
   @IsNumber()
   @IsOptional()
