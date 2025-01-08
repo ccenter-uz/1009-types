@@ -1,4 +1,9 @@
-import { IsObject, IsOptional, ValidateNested } from 'class-validator';
+import {
+  IsObject,
+  IsOptional,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
 import { SegmentInterfaces } from '../interface/segment-group.interface';
@@ -9,11 +14,12 @@ export class SegmentUpdateDto
   implements SegmentInterfaces.Request
 {
   @ApiProperty({
-    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
+    type: String,
   })
   @IsOptional()
-  @IsObject()
+  @IsString()
   @ValidateNested()
-  @Type(() => LanguageDto)
-  name: LanguageDto;
+  @Type(() => String)
+  @ValidateNested()
+  name: string;
 }

@@ -22,28 +22,28 @@ import { NearbeesType } from "./create-nearbees.dto"
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  mainOrganizationId: number
+  mainOrganizationId?: number
 
   @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  subCategoryId: number
+  subCategoryId?: number
 
   @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  regionId: number
+  regionId?: number
 
   @ApiProperty({ example: 1 })
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  cityId: number
+  cityId?: number
 
   @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
@@ -126,7 +126,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   name: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -134,10 +134,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, "")
       .replace(/\\+/g, "")
   )
-  description: string
+  description?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -145,10 +145,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, "")
       .replace(/\\+/g, "")
   )
-  legalName: string
+  legalName?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -156,7 +156,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, "")
       .replace(/\\+/g, "")
   )
-  secret: string
+  secret?: string
 
   @ApiProperty({ required: false })
   @IsOptional()
@@ -192,7 +192,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   home?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -200,7 +200,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, "")
       .replace(/\\+/g, "")
   )
-  apartment: string
+  apartment?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -247,7 +247,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   mail: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(({ value }) =>
     value
@@ -255,13 +255,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       .replace(/\\+["]/g, "")
       .replace(/\\+/g, "")
   )
-  manager: string
+  manager?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
-  index: number
+  index?: number
 
   @IsOptional()
   @IsString()
@@ -296,12 +296,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       worktimeTo: "19:00",
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @Transform(({ value }) =>
     typeof value === "string" ? JSON.parse(value) : value
   )
-  workTime: Record<string, string>
+  workTime?: Record<string, string>
 
   @ApiProperty({
     type: "object",
@@ -311,12 +311,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
       microBus: { type: "string", example: "130M" },
     },
   })
-  @IsNotEmpty()
+  @IsOptional()
   @IsObject()
   @Transform(({ value }) =>
     typeof value === "string" ? JSON.parse(value) : value
   )
-  transport: Record<string, string>
+  transport?: Record<string, string>
 
   @ApiProperty({
     type: Object,
