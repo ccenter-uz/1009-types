@@ -15,7 +15,6 @@ export class SegmentCreateDto implements SegmentInterfaces.Request {
   })
   @IsNotEmpty()
   @IsString()
-  @ValidateNested()
   @Type(() => String)
   name: string;
 }
