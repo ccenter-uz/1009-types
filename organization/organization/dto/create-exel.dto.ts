@@ -17,4 +17,5 @@ export interface CreateExelData {
   address: string;
   mail: string;
   createdBy: string;
+  status: number;
 }
