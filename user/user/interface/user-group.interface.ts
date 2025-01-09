@@ -1,4 +1,5 @@
-import { PermissionType } from 'types/global';
+import { ErrorStatusInLogin, PermissionType } from 'types/global';
+import { RoleInterfaces } from 'types/user/role';
 
 export namespace UserInterfaces {
   export interface LogInRequest {
@@ -42,6 +43,8 @@ export namespace UserInterfaces {
     roleId: number;
     numericId: string;
     status: number;
+    role?: RoleInterfaces.Response;
+    error?: ErrorStatusInLogin;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

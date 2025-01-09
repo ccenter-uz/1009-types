@@ -49,9 +49,13 @@ export type PermissionType =
   | PermissionsEnum.DELETE_DATA
   | PermissionsEnum.RESTORE_DATA;
 
+export enum StatusEnum {
+  ACTIVE = 1,
+  INACTIVE = 0,
+  ALL = 2,
+}
 
-  export enum StatusEnum {
-    ACTIVE = 1,
-    INACTIVE = 0,
-    ALL = 2,
-  }
+export type ErrorStatusInLogin = {
+  code: number;
+  error: string;
+};
