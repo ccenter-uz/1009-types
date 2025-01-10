@@ -29,7 +29,16 @@ export class UserUpdateDto extends IdDto implements UserInterfaces.Update {
   @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
     message: ErrorMessageForPassword,
   })
-  password?: string;
+  oldPassword?: string;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  @Length(8, 20)
+  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
+    message: ErrorMessageForPassword,
+  })
+  newPassword?: string;
 
   @ApiProperty()
   @IsOptional()
