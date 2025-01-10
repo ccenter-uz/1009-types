@@ -10,4 +10,6 @@ export class GetOneDto extends LanguageRequestDto {
 
   @IsOptional()
   filter?: any;
+
+  // kjnhk
 }
