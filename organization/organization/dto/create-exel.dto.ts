@@ -7,7 +7,10 @@ export class ExcelData {
   @ApiProperty({ description: 'Start date in ISO string format' })
   START: string;
 
-  @ApiProperty({ description: 'Stop date in ISO string format or null', nullable: true })
+  @ApiProperty({
+    description: 'Stop date in ISO string format or null',
+    nullable: true,
+  })
   STOP: string | null;
 
   @ApiProperty({ description: 'Client name (optional)', required: false })
@@ -39,6 +42,9 @@ export class scriptResponse {
   @ApiProperty({ description: 'New organizations data', type: [ExcelData] })
   new: ExcelData[] | [];
 
-  @ApiProperty({ description: 'Deactivated organizations data', type: [ExcelData] })
+  @ApiProperty({
+    description: 'Deactivated organizations data',
+    type: [ExcelData],
+  })
   deactive: ExcelData[] | [];
 }
