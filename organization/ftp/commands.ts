@@ -1,3 +1,3 @@
 export enum FtpServiceCommands {
-  READ_FILES = 'READ_FILES',
+  POST_ORGANIZATIONS = 'POST_ORGANIZATIONS',
 }
