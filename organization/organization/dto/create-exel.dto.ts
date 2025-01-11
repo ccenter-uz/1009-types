@@ -26,6 +26,6 @@ export interface ExcelData {
   //   : '1111@gmail.uz'
 }
 export interface scriptResponse {
-  create: ExcelData[] | [];
+  new: ExcelData[] | [];
   deactive: ExcelData[] | [];
 }
