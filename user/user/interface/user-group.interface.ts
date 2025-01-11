@@ -10,6 +10,11 @@ export namespace UserInterfaces {
   export interface LogInResponse {
     accessToken: string;
     permissions: any;
+    role: string;
+  }
+
+  export interface GetMeResponse {
+    id: number;
   }
 
   export interface CheckUserPermissionRequest {
