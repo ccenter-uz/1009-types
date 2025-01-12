@@ -10,10 +10,10 @@ import {
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
     districtId?: number;
     villageId?: number;
     avenueId?: number;
@@ -25,23 +25,23 @@ export namespace OrganizationInterfaces {
     segmentId: number;
     passageId?: number;
     name: string;
-    legalName: string;
-    secret: string;
+    legalName?: string;
+    secret?: string;
     kvartal?: string;
     address: string;
     home?: string;
-    apartment: string;
-    description: string;
+    apartment?: string;
+    description?: string;
     inn: string;
     bankNumber: string;
     account?: string;
     mail: string;
-    manager: string;
-    index: number;
+    manager?: string;
+    index?: number;
     paymentTypes: PaymentTypesDto;
-    workTime: {};
-    transport: {};
-    photos: Array<Multer.File>;
+    workTime?: {};
+    transport?: {};
+    photos?: Array<Multer.File>;
     // phone: PhoneDto[];
   }
 

@@ -11,10 +11,10 @@ import { ProductServiceType } from 'types/organization/organization/dto/create-p
 export namespace OrganizationVersionInterfaces {
   export interface Request {
     id: number;
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
     districtId?: number;
     villageId?: number;
     avenueId?: number;
@@ -38,7 +38,7 @@ export namespace OrganizationVersionInterfaces {
     account?: string;
     mail?: string;
     manager?: string;
-    index: number;
+    index?: number;
     staffNumber?: string;
     status: number;
     createdBy: string;
