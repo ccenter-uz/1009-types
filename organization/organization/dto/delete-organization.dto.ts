@@ -8,4 +8,9 @@ export class OrganizationDeleteDto extends DeleteDto {
   @IsOptional()
   @Type(() => String)
   role?: string;
+
+  @IsString()
+  @IsOptional()
+  @Type(() => String)
+  deleteReason?: string;
 }

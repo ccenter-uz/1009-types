@@ -119,6 +119,7 @@ export namespace OrganizationInterfaces {
     nearbyDescription?: string;
     staffNumber?: string;
     status: number;
+    deleteReason?: string;
     createdBy: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
