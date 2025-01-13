@@ -9,6 +9,10 @@ export class OrganizationDeleteDto extends DeleteDto {
   @Type(() => String)
   role?: string;
 
+  @ApiProperty({
+    type: String,
+    required: false,
+  })
   @IsString()
   @IsOptional()
   @Type(() => String)
