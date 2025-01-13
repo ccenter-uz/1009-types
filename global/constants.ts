@@ -266,6 +266,9 @@ export const UserPermissions = {
       add: {
         [ACCESSESS.CREATE]: true,
       },
+      edit: {
+        [ACCESSESS.UPDATE]: true,
+      },
     },
     monitoring: {
       user: {
