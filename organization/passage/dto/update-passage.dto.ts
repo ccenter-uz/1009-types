@@ -31,8 +31,8 @@ export class PassageUpdateDto
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  index?: number
+  @IsString()
+  index?: string
 
   @IsOptional()
   @IsString()

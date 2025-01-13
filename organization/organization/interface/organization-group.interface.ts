@@ -37,7 +37,7 @@ export namespace OrganizationInterfaces {
     account?: string;
     mail: string;
     manager?: string;
-    index?: number;
+    index?: string;
     paymentTypes: PaymentTypesDto;
     workTime?: {};
     transport?: {};
@@ -75,7 +75,7 @@ export namespace OrganizationInterfaces {
     clientId?: string;
     description?: string;
     manager?: string;
-    index?: number;
+    index?: string;
     role?: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
@@ -115,7 +115,7 @@ export namespace OrganizationInterfaces {
     mail?: string;
     clientId?: string;
     manager?: string;
-    index: number;
+    index: string;
     nearbyDescription?: string;
     staffNumber?: string;
     status: number;

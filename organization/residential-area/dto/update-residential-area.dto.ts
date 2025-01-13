@@ -31,8 +31,8 @@ export class ResidentialAreaUpdateDto
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  index?: number
+  @IsString()
+  index?: string
 
   @IsOptional()
   @IsString()

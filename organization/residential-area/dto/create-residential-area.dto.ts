@@ -26,8 +26,8 @@ export class ResidentialAreaCreateDto
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  index: number
+  @IsString()
+  index: string
 
   @IsOptional()
   @IsString()

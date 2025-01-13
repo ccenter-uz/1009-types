@@ -29,8 +29,8 @@ export class StreetCreateDto implements StreetInterfaces.Request {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  index: number
+  @IsString()
+  index: string
 
   @IsOptional()
   @IsString()

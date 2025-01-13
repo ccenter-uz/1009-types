@@ -28,8 +28,8 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  index?: number
+  @IsString()
+  index?: string
 
   @IsOptional()
   @IsString()

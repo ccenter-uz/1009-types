@@ -24,8 +24,8 @@ export class VillageCreateDto implements VillageInterfaces.Request {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  index: number
+  @IsString()
+  index: string
 
   @IsOptional()
   @IsString()
