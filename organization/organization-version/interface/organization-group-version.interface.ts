@@ -38,7 +38,7 @@ export namespace OrganizationVersionInterfaces {
     account?: string;
     mail?: string;
     manager?: string;
-    index?: number;
+    index?: string;
     staffNumber?: string;
     status: number;
     createdBy: string;
@@ -86,7 +86,7 @@ export namespace OrganizationVersionInterfaces {
     account?: string;
     mail?: string;
     manager?: string;
-    index?: number;
+    index?: string;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
     transport?: {};
@@ -127,7 +127,7 @@ export namespace OrganizationVersionInterfaces {
     mail?: string;
     clientId?: string;
     manager?: string;
-    index: number;
+    index: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     PictureVersion?: PictureType[];

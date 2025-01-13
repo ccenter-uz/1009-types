@@ -259,9 +259,9 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  index?: number
+  @IsString()
+  @Type(() => String)
+  index?: string
 
   @IsOptional()
   @IsString()

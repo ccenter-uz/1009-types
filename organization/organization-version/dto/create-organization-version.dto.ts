@@ -192,9 +192,9 @@ import { PhotoLinkVersionDto } from "./file-upload-version.dto"
 
 //   @ApiProperty()
 //   @IsNotEmpty()
-//   @IsNumber()
-//   @Type(() => Number)
-//   index: number;
+//   @IsString()
+//   @Type(() => String)
+//   index: string;
 
 //   @ApiProperty()
 //   @IsNotEmpty()

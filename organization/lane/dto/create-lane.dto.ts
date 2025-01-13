@@ -24,8 +24,8 @@ export class LaneCreateDto implements LaneInterfaces.Request {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  index: number
+  @IsString()
+  index: string
 
   @IsOptional()
   @IsString()

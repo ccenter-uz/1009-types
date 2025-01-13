@@ -28,8 +28,8 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  index: number
+  @IsString()
+  index: string
 
   @ApiProperty({
     example: { ru: "swagger-ru", uz: "swagger-uz", cy: "swagger-cy" },
