@@ -101,7 +101,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNumber()
   impasseId?: number;
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
@@ -125,7 +125,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   name: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -136,7 +136,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   description?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -147,7 +147,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   legalName?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -191,7 +191,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   home?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -202,7 +202,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   apartment?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -213,7 +213,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   inn?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -235,7 +235,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   account?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -246,7 +246,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   mail?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -257,7 +257,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   manager?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsOptional()
   @IsString()
   @Type(() => String)
@@ -357,6 +357,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
+    required: false,
   })
   photos: Array<Multer.File>;
 
