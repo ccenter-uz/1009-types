@@ -1,16 +1,16 @@
 export namespace SegmentInterfaces {
   export interface Request {
-    name: String;
+    name: string;
   }
 
   export interface Update {
     id: number;
-    name?: String;
+    name?: string;
   }
 
   export interface Response {
     id: number;
-    name?:  string;
+    name?: string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
