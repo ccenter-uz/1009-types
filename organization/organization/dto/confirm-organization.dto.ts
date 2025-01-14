@@ -27,7 +27,7 @@ export class ConfirmDto {
   })
   @IsString()
   @IsOptional()
-  description?: string;
+  rejectReason?: string;
 
   @ApiProperty({ example: 1 })
   @IsNumber()

@@ -43,6 +43,7 @@ export class ListQueryDto extends LanguageRequestDto {
     if (value == 'undefined') {
       return undefined;
     }
+    return value;
   })
   @IsString()
   @IsOptional()
