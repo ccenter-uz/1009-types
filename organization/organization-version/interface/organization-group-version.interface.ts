@@ -23,7 +23,7 @@ export namespace OrganizationVersionInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    segmentId: number;
+    segmentId?: number;
     passageId?: number;
     name?: string;
     legalName?: string;
@@ -111,7 +111,7 @@ export namespace OrganizationVersionInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    segmentId: number;
+    segmentId?: number;
     passageId: number;
     name?: string;
     legalName?: string;
