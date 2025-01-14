@@ -18,7 +18,6 @@ export class SegmentUpdateDto
   })
   @IsOptional()
   @IsString()
-  @ValidateNested()
   @Type(() => String)
   name: string;
 }
