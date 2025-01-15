@@ -23,7 +23,7 @@ export namespace OrganizationVersionInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    segmentId: number;
+    segmentId?: number;
     passageId?: number;
     name?: string;
     legalName?: string;
@@ -51,7 +51,7 @@ export namespace OrganizationVersionInterfaces {
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     // ProductServices?: ProductServiceTypeR[];
-    // Nearbees?: NearbeesType[];w
+    // Nearbees?: NearbeesType[];
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
@@ -111,7 +111,7 @@ export namespace OrganizationVersionInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    segmentId: number;
+    segmentId?: number;
     passageId: number;
     name?: string;
     legalName?: string;

@@ -22,7 +22,7 @@ export namespace OrganizationInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    segmentId: number;
+    segmentId?: number;
     passageId?: number;
     name: string;
     legalName?: string;
@@ -32,10 +32,10 @@ export namespace OrganizationInterfaces {
     home?: string;
     apartment?: string;
     description?: string;
-    inn: string;
-    bankNumber: string;
+    inn?: string;
+    bankNumber?: string;
     account?: string;
-    mail: string;
+    mail?: string;
     manager?: string;
     index?: string;
     paymentTypes: PaymentTypesDto;
@@ -99,7 +99,7 @@ export namespace OrganizationInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    segmentId: number;
+    segmentId?: number;
     passageId: number;
     name?: string;
     legalName?: string;
