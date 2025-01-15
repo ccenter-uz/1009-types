@@ -41,6 +41,13 @@ export namespace UserInterfaces {
     numericId?: string;
   }
 
+  export interface UpdateMe {
+    id: number;
+    fullName?: string;
+    phoneNumber?: string;
+    password?: string;
+  }
+
   export interface Response {
     id: number;
     fullName: string;
