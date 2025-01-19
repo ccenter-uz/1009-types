@@ -66,9 +66,13 @@ export type RolesType =
   | Roles.OPERATOR
   | Roles.USER;
 
-export type UserLogType = {
-  id: number;
-  numericId: string;
-  fullName: string;
-  role: string;
+export type LogDataType = {
+  user: {
+    id: number;
+    numericId: string;
+    fullName: string;
+    role: string;
+  };
+  path: string;
+  method: string;
 };
