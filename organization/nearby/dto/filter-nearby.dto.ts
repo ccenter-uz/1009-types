@@ -13,6 +13,7 @@ export class NearbyFilterDto extends CityRegionFilterDto {
     if (value == 'undefined') {
       return undefined;
     }
+    return value;
   })
   @IsNumber()
   @IsOptional()
