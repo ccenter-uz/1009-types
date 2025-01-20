@@ -35,4 +35,13 @@ export class CategoryUpdateDto
   @IsOptional()
   @Type(() => Number)
   cityId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  regionId?: number;
 }
