@@ -12,6 +12,7 @@ export class NearbyFilterDto extends ListQueryDto {
     if (value == 'undefined') {
       return undefined;
     }
+    return value;
   })
   @IsNumber()
   @IsOptional()
