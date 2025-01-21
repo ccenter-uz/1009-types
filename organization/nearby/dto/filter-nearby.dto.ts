@@ -2,8 +2,9 @@ import { IsNumber, IsOptional } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
 import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
+import { CityRegionFilterDto } from 'types/global-filters/city-region-filter';
 
-export class NearbyFilterDto extends ListQueryDto {
+export class NearbyFilterDto extends CityRegionFilterDto {
   @ApiProperty({
     type: Number,
     required: false,
@@ -12,6 +13,7 @@ export class NearbyFilterDto extends ListQueryDto {
     if (value == 'undefined') {
       return undefined;
     }
+    return value;
   })
   @IsNumber()
   @IsOptional()
