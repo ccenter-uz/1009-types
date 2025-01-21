@@ -1,12 +1,13 @@
 import {
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   Length,
   Matches,
   MaxLength,
 } from 'class-validator';
-import { ErrorMessageForPassword, IdDto } from 'types/global';
+import { ErrorMessageForPassword, IdDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { UserInterfaces } from '../interface/user-group.interface';
 
@@ -49,4 +50,8 @@ export class UserUpdateDto extends IdDto implements UserInterfaces.Update {
   @IsOptional()
   @IsString()
   numericId?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

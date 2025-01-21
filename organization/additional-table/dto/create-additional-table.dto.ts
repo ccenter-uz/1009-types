@@ -9,9 +9,11 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
-import { CategoryInterfaces } from '../interface/category-group.interface';
+import { AdditionalTableInterfaces } from '../interface/additional-table-group.interface';
 
-export class CategoryCreateDto implements CategoryInterfaces.Request {
+export class AdditionalTableCreateDto
+  implements AdditionalTableInterfaces.Request
+{
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -26,20 +28,16 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   name: LanguageDto;
 
   @ApiProperty({
-    type: Number,
-    required: false,
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  cityId?: number;
+  @IsNotEmpty()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  content: LanguageDto;
 
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
+  @ApiProperty()
+  @IsNotEmpty()
   @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  regionId?: number;
+  additionalId: number;
 }

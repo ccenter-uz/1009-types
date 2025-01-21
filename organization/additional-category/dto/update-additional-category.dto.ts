@@ -1,5 +1,4 @@
 import {
-  IsNumber,
   IsObject,
   IsOptional,
   IsString,
@@ -8,11 +7,11 @@ import {
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
-import { CategoryInterfaces } from '../interface/category-group.interface';
+import { AdditionalCategoryInterfaces } from '../interface/additional-category-group.interface';
 
-export class CategoryUpdateDto
+export class AdditionalCategoryUpdateDto
   extends IdDto
-  implements CategoryInterfaces.Update
+  implements AdditionalCategoryInterfaces.Update
 {
   @IsOptional()
   @IsString()
@@ -26,22 +25,4 @@ export class CategoryUpdateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  cityId?: number;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  regionId?: number;
 }

@@ -1,4 +1,4 @@
-import { LanguageRequestEnum, PermissionsEnum } from './constants';
+import { LanguageRequestEnum, PermissionsEnum, Roles } from './constants';
 
 export type JsonObject = { [Key in string]?: JsonValue };
 
@@ -58,4 +58,21 @@ export enum StatusEnum {
 export type ErrorStatusInLogin = {
   code: number;
   error: string;
+};
+
+export type RolesType =
+  | Roles.ADMIN
+  | Roles.MODERATOR
+  | Roles.OPERATOR
+  | Roles.USER;
+
+export type LogDataType = {
+  user: {
+    id: number;
+    numericId: string;
+    fullName: string;
+    role: string;
+  };
+  path: string;
+  method: string;
 };

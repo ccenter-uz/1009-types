@@ -2,16 +2,17 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
   IsNotEmpty,
-  IsNumber,
   IsObject,
   IsOptional,
   IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
-import { CategoryInterfaces } from '../interface/category-group.interface';
+import { AdditionalCategoryInterfaces } from '../interface/additional-category-group.interface';
 
-export class CategoryCreateDto implements CategoryInterfaces.Request {
+export class AdditionalCategoryCreateDto
+  implements AdditionalCategoryInterfaces.Request
+{
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -24,22 +25,4 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  cityId?: number;
-
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  regionId?: number;
 }

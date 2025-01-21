@@ -8,11 +8,11 @@ import {
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
-import { CategoryInterfaces } from '../interface/category-group.interface';
+import { AdditionalInterfaces } from '../interface/additional-group.interface';
 
-export class CategoryUpdateDto
+export class AdditionalUpdateDto
   extends IdDto
-  implements CategoryInterfaces.Update
+  implements AdditionalInterfaces.Update
 {
   @IsOptional()
   @IsString()
@@ -28,20 +28,25 @@ export class CategoryUpdateDto
   name: LanguageDto;
 
   @ApiProperty({
-    type: Number,
-    required: false,
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsNumber()
   @IsOptional()
-  @Type(() => Number)
-  cityId?: number;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  warning: LanguageDto;
 
   @ApiProperty({
-    type: Number,
-    required: false,
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsNumber()
   @IsOptional()
-  @Type(() => Number)
-  regionId?: number;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  mention: LanguageDto;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  additionalCategoryId?: number;
 }
