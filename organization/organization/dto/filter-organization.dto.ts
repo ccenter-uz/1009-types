@@ -5,6 +5,7 @@ import {
   IsInt,
   IsNotEmpty,
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   Min,
@@ -13,6 +14,7 @@ import { Transform, Type } from 'class-transformer';
 import {
   LanguageRequestDto,
   ListQueryDto,
+  LogDataType,
   OrganizationStatusEnum,
   StatusEnum,
 } from 'types/global';
@@ -289,4 +291,8 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   @IsOptional()
   @IsString()
   role?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

@@ -3,12 +3,18 @@ import {
   IsDateString,
   IsEnum,
   IsInt,
+  IsObject,
   IsOptional,
   IsString,
   Min,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { CreatedByEnum, LanguageRequestDto, OrganizationStatusEnum } from 'types/global';
+import {
+  CreatedByEnum,
+  LanguageRequestDto,
+  LogDataType,
+  OrganizationStatusEnum,
+} from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UnconfirmOrganizationFilterDto extends LanguageRequestDto {
@@ -85,4 +91,8 @@ export class UnconfirmOrganizationFilterDto extends LanguageRequestDto {
   @IsString()
   @IsOptional()
   createdBy?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

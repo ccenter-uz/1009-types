@@ -6,7 +6,9 @@ import {
   IsOptional,
   IsNumber,
   IsBoolean,
+  IsObject,
 } from 'class-validator';
+import { LogDataType } from 'types/global';
 
 export class ConfirmDto {
   @IsNumber()
@@ -37,4 +39,8 @@ export class ConfirmDto {
   @IsNumber()
   @IsOptional()
   organizationId?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

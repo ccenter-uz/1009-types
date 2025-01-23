@@ -9,7 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
 export class AreaCreateDto implements AreaInterfaces.Request {
   @ApiProperty()
@@ -70,4 +70,8 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
