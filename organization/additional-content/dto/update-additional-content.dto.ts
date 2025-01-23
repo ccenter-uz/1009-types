@@ -6,14 +6,14 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { AdditionalContentInterfaces } from '../interface/additional-content-group.interface';
 
 export class AdditionalContentUpdateDto
   extends IdDto
   implements AdditionalContentInterfaces.Update
-{ 
+{
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -40,4 +40,8 @@ export class AdditionalContentUpdateDto
   @IsOptional()
   @IsNumber()
   additionalId?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
