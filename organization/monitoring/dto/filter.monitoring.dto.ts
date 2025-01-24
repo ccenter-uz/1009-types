@@ -12,4 +12,20 @@ export class MonitoringFilterDto extends ListQueryDto {
   @IsOptional()
   @Type(() => Number)
   organizationId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @Type(() => Number)
+  roleId: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @Type(() => Number)
+  userId: number;
 }
