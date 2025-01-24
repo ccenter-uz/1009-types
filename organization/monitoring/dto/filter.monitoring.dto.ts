@@ -18,6 +18,7 @@ export class MonitoringFilterDto extends ListQueryDto {
     required: false,
   })
   @IsNumber()
+  @IsOptional()
   @Type(() => Number)
   roleId: number;
 
@@ -26,6 +27,7 @@ export class MonitoringFilterDto extends ListQueryDto {
     required: false,
   })
   @IsNumber()
+  @IsOptional()
   @Type(() => Number)
   userId: number;
 }
