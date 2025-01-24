@@ -4,18 +4,18 @@ export namespace MonitoringInterfaces {
   export interface Response {
     id: number;
     userId: number;
-    userNumericId: number;
+    userNumericId: string;
     userFullName: string;
     userRole: string;
     organizationId: number;
     organizationName: string;
     method: string;
     path: string;
-    request: JsonObject;
-    response: JsonObject;
+    request: string;
+    response: string;
     status: number;
     duration: number;
-    timestamp: Date;
+    createdAt: Date;
   }
 
   export interface ResponseWithoutPagination {
