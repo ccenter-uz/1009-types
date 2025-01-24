@@ -6,7 +6,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { CategoryInterfaces } from '../interface/category-group.interface';
 
@@ -35,4 +35,17 @@ export class CategoryUpdateDto
   @IsOptional()
   @Type(() => Number)
   cityId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  regionId?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

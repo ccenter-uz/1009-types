@@ -1,6 +1,7 @@
-import { IsInt, IsOptional, Min } from 'class-validator';
+import { IsInt, IsObject, IsOptional, IsString, Min } from 'class-validator';
 import { Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
+import { LogDataType } from '../types';
 
 export class GetOneDto extends LanguageRequestDto {
   @IsInt()
@@ -11,5 +12,11 @@ export class GetOneDto extends LanguageRequestDto {
   @IsOptional()
   filter?: any;
 
-  // kjnhk
+  @IsOptional()
+  @IsString()
+  role?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

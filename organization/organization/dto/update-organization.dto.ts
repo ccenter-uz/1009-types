@@ -170,8 +170,8 @@ export class OrganizationUpdateDto
 
   @ApiProperty()
   @IsOptional()
-  @IsNumber()
-  index?: number
+  @IsString()
+  index?: string
 
   @ApiProperty()
   @IsOptional()

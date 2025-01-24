@@ -5,6 +5,7 @@ import {
   IsEnum,
   IsInt,
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   Min,
@@ -12,7 +13,7 @@ import {
 import { Transform, Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
 import { ApiProperty } from '@nestjs/swagger';
-import { StatusEnum } from '../types';
+import { LogDataType, StatusEnum } from '../types';
 
 export class ListQueryDto extends LanguageRequestDto {
   @ApiProperty({
@@ -43,6 +44,7 @@ export class ListQueryDto extends LanguageRequestDto {
     if (value == 'undefined') {
       return undefined;
     }
+    return value;
   })
   @IsString()
   @IsOptional()
@@ -98,4 +100,8 @@ export class ListQueryDto extends LanguageRequestDto {
   @IsOptional()
   @IsString()
   staffNumber?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

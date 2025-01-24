@@ -3,12 +3,17 @@ import {
   IsDateString,
   IsEnum,
   IsInt,
+  IsObject,
   IsOptional,
   IsString,
   Min,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { LanguageRequestDto, OrganizationStatusEnum } from 'types/global';
+import {
+  LanguageRequestDto,
+  LogDataType,
+  OrganizationStatusEnum,
+} from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class MyOrganizationFilterDto extends LanguageRequestDto {
@@ -89,4 +94,12 @@ export class MyOrganizationFilterDto extends LanguageRequestDto {
   @Min(-1)
   @IsOptional()
   status: OrganizationStatusEnum;
+
+  @IsOptional()
+  @IsString()
+  role?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

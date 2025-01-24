@@ -5,7 +5,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { ProductServiseCategoryInterfaces } from '../interface/product-service-category-group.interface';
 
@@ -25,4 +25,8 @@ export class ProductServiseCategoryUpdateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

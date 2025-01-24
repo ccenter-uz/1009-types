@@ -11,10 +11,10 @@ import { ProductServiceType } from 'types/organization/organization/dto/create-p
 export namespace OrganizationVersionInterfaces {
   export interface Request {
     id: number;
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
     districtId?: number;
     villageId?: number;
     avenueId?: number;
@@ -23,7 +23,7 @@ export namespace OrganizationVersionInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    segmentId: number;
+    segmentId?: number;
     passageId?: number;
     name?: string;
     legalName?: string;
@@ -38,7 +38,7 @@ export namespace OrganizationVersionInterfaces {
     account?: string;
     mail?: string;
     manager?: string;
-    index: number;
+    index?: string;
     staffNumber?: string;
     status: number;
     createdBy: string;
@@ -51,7 +51,7 @@ export namespace OrganizationVersionInterfaces {
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     // ProductServices?: ProductServiceTypeR[];
-    // Nearbees?: NearbeesType[];w
+    // Nearbees?: NearbeesType[];
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
@@ -86,7 +86,7 @@ export namespace OrganizationVersionInterfaces {
     account?: string;
     mail?: string;
     manager?: string;
-    index?: number;
+    index?: string;
     paymentTypes?: PaymentTypesVersionDto;
     workTime?: {};
     transport?: {};
@@ -111,7 +111,7 @@ export namespace OrganizationVersionInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    segmentId: number;
+    segmentId?: number;
     passageId: number;
     name?: string;
     legalName?: string;
@@ -127,7 +127,7 @@ export namespace OrganizationVersionInterfaces {
     mail?: string;
     clientId?: string;
     manager?: string;
-    index: number;
+    index: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     PictureVersion?: PictureType[];
@@ -147,3 +147,5 @@ export namespace OrganizationVersionInterfaces {
     totalPage: number;
   }
 }
+
+// change

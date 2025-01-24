@@ -1,11 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
 import {
-  IsString,
-  IsNotEmpty,
   IsOptional,
   IsNumber,
-  IsBoolean,
 } from 'class-validator';
 
 export class ProductServiceDto {

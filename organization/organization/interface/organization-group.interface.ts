@@ -10,10 +10,10 @@ import {
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
   export interface Request {
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
     districtId?: number;
     villageId?: number;
     avenueId?: number;
@@ -22,26 +22,26 @@ export namespace OrganizationInterfaces {
     streetId?: number;
     laneId?: number;
     impasseId?: number;
-    segmentId: number;
+    segmentId?: number;
     passageId?: number;
     name: string;
-    legalName: string;
-    secret: string;
+    legalName?: string;
+    secret?: string;
     kvartal?: string;
     address: string;
     home?: string;
-    apartment: string;
-    description: string;
-    inn: string;
-    bankNumber: string;
+    apartment?: string;
+    description?: string;
+    inn?: string;
+    bankNumber?: string;
     account?: string;
-    mail: string;
-    manager: string;
-    index: number;
+    mail?: string;
+    manager?: string;
+    index?: string;
     paymentTypes: PaymentTypesDto;
-    workTime: {};
-    transport: {};
-    photos: Array<Multer.File>;
+    workTime?: {};
+    transport?: {};
+    photos?: Array<Multer.File>;
     // phone: PhoneDto[];
   }
 
@@ -75,7 +75,7 @@ export namespace OrganizationInterfaces {
     clientId?: string;
     description?: string;
     manager?: string;
-    index?: number;
+    index?: string;
     role?: string;
     nearbyDescription?: string;
     paymentTypes?: PaymentTypesDto;
@@ -99,7 +99,7 @@ export namespace OrganizationInterfaces {
     streetId: number;
     laneId: number;
     impasseId: number;
-    segmentId: number;
+    segmentId?: number;
     passageId: number;
     name?: string;
     legalName?: string;
@@ -115,10 +115,11 @@ export namespace OrganizationInterfaces {
     mail?: string;
     clientId?: string;
     manager?: string;
-    index: number;
+    index: string;
     nearbyDescription?: string;
     staffNumber?: string;
     status: number;
+    deleteReason?: string;
     createdBy: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];

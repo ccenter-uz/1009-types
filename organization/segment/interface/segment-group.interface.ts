@@ -1,17 +1,16 @@
-import { AppLanguages } from 'types/global/types';
 export namespace SegmentInterfaces {
   export interface Request {
-    name: AppLanguages;
+    name: string;
   }
 
   export interface Update {
     id: number;
-    name?: AppLanguages;
+    name?: string;
   }
 
   export interface Response {
     id: number;
-    name?: {} | string;
+    name?: string;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

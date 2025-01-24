@@ -262,10 +262,19 @@ export const UserPermissions = {
         [ACCESSESS.GET]: true,
         [ACCESSESS.UPDATE]: true,
         [ACCESSESS.DELETE]: true,
+
       },
       add: {
         [ACCESSESS.CREATE]: true,
       },
+      edit: {
+        [ACCESSESS.UPDATE]: true,
+      },
+      waitings: {
+        [ACCESSESS.GET]: true,
+        [ACCESSESS.UPDATE]: true,
+        [ACCESSESS.DELETE]: true,
+      }
     },
     monitoring: {
       user: {

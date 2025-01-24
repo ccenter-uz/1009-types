@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   Length,
@@ -9,7 +10,7 @@ import {
   MaxLength,
 } from 'class-validator';
 import { UserInterfaces } from '../interface/user-group.interface';
-import { ErrorMessageForPassword } from 'types/global';
+import { ErrorMessageForPassword, LogDataType } from 'types/global';
 
 export class UserCreateDto implements UserInterfaces.Request {
   @ApiProperty()
@@ -41,4 +42,8 @@ export class UserCreateDto implements UserInterfaces.Request {
   @IsOptional()
   @IsString()
   numericId?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

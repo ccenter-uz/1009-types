@@ -7,10 +7,14 @@ export namespace UserInterfaces {
     password: string;
   }
 
-
+  export interface LogInResponse {
+    accessToken: string;
+    permissions: any;
+    role: string;
+  }
 
   export interface GetMeResponse {
-    id :number
+    id: number;
   }
 
   export interface CheckUserPermissionRequest {
@@ -35,6 +39,13 @@ export namespace UserInterfaces {
     password?: string;
     roleId?: number;
     numericId?: string;
+  }
+
+  export interface UpdateMe {
+    id: number;
+    fullName?: string;
+    phoneNumber?: string;
+    password?: string;
   }
 
   export interface Response {

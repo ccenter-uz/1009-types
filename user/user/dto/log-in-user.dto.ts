@@ -26,4 +26,7 @@ export class UserLogInDto implements UserInterfaces.LogInRequest {
     message: ErrorMessageForPassword,
   })
   password: string;
+
+  @IsOptional()
+  logData: any;
 }
