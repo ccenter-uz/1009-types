@@ -1,5 +1,3 @@
-import { JsonObject } from 'types/global';
-
 export namespace MonitoringInterfaces {
   export interface UserResponse {
     id: number;
