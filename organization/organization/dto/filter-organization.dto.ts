@@ -273,6 +273,15 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   villageId?: number;
 
   @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  streetId?: number;
+
+  @ApiProperty({
     type: Number,
     required: false,
   })
