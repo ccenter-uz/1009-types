@@ -76,3 +76,8 @@ export type LogDataType = {
   path: string;
   method: string;
 };
+
+export enum OrderEnum {
+  NAME='name',
+  ORDER_NUMBER='orderNumber'
+}
