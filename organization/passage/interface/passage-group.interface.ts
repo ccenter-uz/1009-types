@@ -40,6 +40,7 @@ export namespace PassageInterfaces {
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
     district?: DistrictInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

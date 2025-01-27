@@ -19,6 +19,7 @@ export namespace CategoryInterfaces {
     name?: {} | string;
     city?: CityInterfaces.Response;
     region?: RegionInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
