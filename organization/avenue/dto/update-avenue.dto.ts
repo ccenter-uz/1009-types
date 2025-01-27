@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsString,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
 export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @ApiProperty()
@@ -74,4 +74,8 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

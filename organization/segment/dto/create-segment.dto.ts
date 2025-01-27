@@ -3,10 +3,11 @@ import { Type } from 'class-transformer';
 import {
   IsNotEmpty,
   IsObject,
+  IsOptional,
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { SegmentInterfaces } from '../interface/segment-group.interface';
 
 export class SegmentCreateDto implements SegmentInterfaces.Request {
@@ -17,4 +18,8 @@ export class SegmentCreateDto implements SegmentInterfaces.Request {
   @IsString()
   @Type(() => String)
   name: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
