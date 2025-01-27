@@ -63,4 +63,13 @@ export class DistrictUpdateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

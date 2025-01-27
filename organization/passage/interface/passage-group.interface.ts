@@ -13,6 +13,7 @@ export namespace PassageInterfaces {
     name: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -25,6 +26,7 @@ export namespace PassageInterfaces {
     name?: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {

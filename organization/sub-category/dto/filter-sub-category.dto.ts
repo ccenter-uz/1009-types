@@ -12,4 +12,13 @@ export class SubCategoryFilterDto extends ListQueryDto {
   @IsOptional()
   @Type(() => Number)
   categoryId?: number;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

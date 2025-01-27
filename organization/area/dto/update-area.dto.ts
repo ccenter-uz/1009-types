@@ -74,4 +74,13 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

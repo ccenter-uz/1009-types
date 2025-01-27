@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
+import { Type } from 'class-transformer';
 
 export class MainOrganizationCreateDto
   implements MainOrganizationInterfaces.Request
@@ -14,4 +15,13 @@ export class MainOrganizationCreateDto
   @IsNotEmpty()
   @IsString()
   name: string;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

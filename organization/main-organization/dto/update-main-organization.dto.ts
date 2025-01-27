@@ -1,7 +1,8 @@
-import { IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 import { IdDto } from 'types/global';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 export class MainOrganizationUpdateDto
   extends IdDto
   implements MainOrganizationInterfaces.Update
@@ -16,4 +17,13 @@ export class MainOrganizationUpdateDto
   @IsOptional()
   @IsString()
   name: string;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

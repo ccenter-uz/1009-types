@@ -10,6 +10,7 @@ export namespace NearbyInterfaces {
     cityId: number;
     staffNumber?: string;
     name: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -19,6 +20,7 @@ export namespace NearbyInterfaces {
     cityId?: number;
     staffNumber?: string;
     name?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
@@ -31,6 +33,7 @@ export namespace NearbyInterfaces {
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
     category?: NearbyCategoryInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

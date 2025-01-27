@@ -5,12 +5,14 @@ export namespace CategoryInterfaces {
   export interface Request {
     staffNumber?: string;
     name: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
     id: number;
     staffNumber?: string;
     name?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {

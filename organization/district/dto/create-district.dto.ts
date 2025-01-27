@@ -1,5 +1,5 @@
-import { ApiProperty } from "@nestjs/swagger"
-import { Type } from "class-transformer"
+import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 import {
   IsNotEmpty,
   IsNumber,
@@ -7,62 +7,71 @@ import {
   IsOptional,
   IsString,
   ValidateNested,
-} from "class-validator"
-import { LanguageDto } from "types/global"
-import { DistrictInterfaces } from "../interface/district-group.interface"
+} from 'class-validator';
+import { LanguageDto } from 'types/global';
+import { DistrictInterfaces } from '../interface/district-group.interface';
 
 export class DistrictCreateDto implements DistrictInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  regionId: number
+  regionId: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  cityId: number
+  cityId: number;
 
   @IsOptional()
   @IsString()
-  staffNumber?: string
+  staffNumber?: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  index: string
+  index: string;
 
   @ApiProperty({
-    example: { ru: "swagger-ru", uz: "swagger-uz", cy: "swagger-cy" },
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
   @IsNotEmpty()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: LanguageDto
+  name: LanguageDto;
 
   @ApiProperty({
     example: {
-      ru: "swagger-old-ru",
-      uz: "swagger-old-uz",
-      cy: "swagger-old-cy",
+      ru: 'swagger-old-ru',
+      uz: 'swagger-old-uz',
+      cy: 'swagger-old-cy',
     },
   })
   @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  oldName?: LanguageDto
+  oldName?: LanguageDto;
 
   @ApiProperty({
     example: {
-      ru: "swagger-new-ru",
-      uz: "swagger-new-uz",
-      cy: "swagger-new-cy",
+      ru: 'swagger-new-ru',
+      uz: 'swagger-new-uz',
+      cy: 'swagger-new-cy',
     },
   })
   @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  newName?: LanguageDto
+  newName?: LanguageDto;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

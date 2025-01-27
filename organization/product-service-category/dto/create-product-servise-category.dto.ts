@@ -6,6 +6,7 @@ import {
   IsString,
   IsOptional,
   ValidateNested,
+  IsNumber,
 } from 'class-validator';
 import { LanguageDto } from 'types/global';
 import { ProductServiseCategoryInterfaces } from '../interface/product-service-category-group.interface';
@@ -25,4 +26,13 @@ export class ProductServiseCategoryCreateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }

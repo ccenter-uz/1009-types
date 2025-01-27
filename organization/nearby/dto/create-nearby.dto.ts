@@ -39,4 +39,13 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 }
