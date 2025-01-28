@@ -1,6 +1,6 @@
-import { IsNumber, IsOptional } from 'class-validator';
+import { IsEnum, IsNumber, IsOptional } from 'class-validator';
 import { Type } from 'class-transformer';
-import { ListQueryDto } from 'types/global';
+import { ListQueryDto, OrderEnum } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class DistrictFilterDto extends ListQueryDto {
@@ -23,11 +23,11 @@ export class DistrictFilterDto extends ListQueryDto {
   cityId?: number;
   
   @ApiProperty({
-    type: Number,
+    enum: OrderEnum,
     required: false,
+    description: 'Enums: "name", "orderNumber" ',
   })
-  @IsNumber()
+  @IsEnum(OrderEnum)
   @IsOptional()
-  @Type(() => Number)
-  orderNumber?: number;
+  order?: OrderEnum;
 }
