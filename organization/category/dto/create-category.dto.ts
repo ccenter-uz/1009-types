@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { CategoryInterfaces } from '../interface/category-group.interface';
 
 export class CategoryCreateDto implements CategoryInterfaces.Request {
@@ -42,4 +42,8 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   regionId?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

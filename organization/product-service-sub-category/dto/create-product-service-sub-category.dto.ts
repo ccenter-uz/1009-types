@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LanguageRequestDto } from 'types/global';
+import { LanguageDto, LanguageRequestDto, LogDataType } from 'types/global';
 import { ProductServiceSubCategoryInterfaces } from '../interface/product-service-sub-category-group.interface';
 export class ProductServiceSubCategoryCreateDto
   implements ProductServiceSubCategoryInterfaces.Request
@@ -30,4 +30,8 @@ export class ProductServiceSubCategoryCreateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

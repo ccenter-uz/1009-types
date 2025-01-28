@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { AdditionalContentInterfaces } from '../interface/additional-content-group.interface';
 
 export class AdditionalContentCreateDto
@@ -40,4 +40,8 @@ export class AdditionalContentCreateDto
   @IsNotEmpty()
   @IsNumber()
   additionalId: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
