@@ -7,7 +7,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { AdditionalCategoryInterfaces } from '../interface/additional-category-group.interface';
 
 export class AdditionalCategoryCreateDto
@@ -25,4 +25,8 @@ export class AdditionalCategoryCreateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

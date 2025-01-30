@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { AdditionalTableInterfaces } from '../interface/additional-table-group.interface';
 
 export class AdditionalTableCreateDto
@@ -40,4 +40,8 @@ export class AdditionalTableCreateDto
   @IsNotEmpty()
   @IsNumber()
   additionalId: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

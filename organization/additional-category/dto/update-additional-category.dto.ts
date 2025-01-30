@@ -5,7 +5,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { AdditionalCategoryInterfaces } from '../interface/additional-category-group.interface';
 
@@ -25,4 +25,8 @@ export class AdditionalCategoryUpdateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
