@@ -143,6 +143,13 @@ export const RegionsAndCities = [
     cities: [
       {
         name: {
+          ru: 'Когон',
+          uz: 'Kogon',
+          cy: 'Когон',
+        },
+      },
+      {
+        name: {
           ru: 'Бухоро',
           uz: 'Buxoro',
           cy: 'Бухоро',
