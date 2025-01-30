@@ -10,7 +10,7 @@ import {
   IsJSON,
   IsArray,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
 import { PhoneVersionDto, PhoneType } from './create-phone-version.dto';
@@ -383,4 +383,8 @@ export class OrganizationVersionUpdateDto
   @ValidateNested()
   @Type(() => PhotoLinkVersionDto)
   PhotoLink: PhotoLinkVersionDto[];
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

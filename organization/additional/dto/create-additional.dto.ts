@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { AdditionalInterfaces } from '../interface/additional-group.interface';
 
 export class AdditionalCreateDto implements AdditionalInterfaces.Request {
@@ -47,4 +47,8 @@ export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   additionalCategoryId: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
