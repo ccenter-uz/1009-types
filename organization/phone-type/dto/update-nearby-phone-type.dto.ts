@@ -1,4 +1,5 @@
 import {
+  IsNumber,
   IsObject,
   IsOptional,
   IsString,
@@ -25,6 +26,15 @@ export class PhoneTypeUpdateDto
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 
   @IsOptional()
   @IsObject()

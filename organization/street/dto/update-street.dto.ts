@@ -75,6 +75,14 @@ export class StreetUpdateDto extends IdDto implements StreetInterfaces.Update {
   @Type(() => LanguageDto)
   newName?: LanguageDto;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

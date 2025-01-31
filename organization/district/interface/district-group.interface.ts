@@ -10,6 +10,7 @@ export namespace DistrictInterfaces {
     name: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -21,6 +22,7 @@ export namespace DistrictInterfaces {
     name?: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
@@ -34,6 +36,7 @@ export namespace DistrictInterfaces {
     newName?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

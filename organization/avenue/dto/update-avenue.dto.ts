@@ -74,6 +74,15 @@ export class AvenueUpdateDto extends IdDto implements AvenueInterfaces.Update {
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 
   @IsOptional()
   @IsObject()

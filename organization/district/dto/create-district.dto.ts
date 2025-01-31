@@ -66,6 +66,14 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @Type(() => LanguageDto)
   newName?: LanguageDto;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
