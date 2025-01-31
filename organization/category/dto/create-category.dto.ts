@@ -43,6 +43,14 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @Type(() => Number)
   regionId?: number;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

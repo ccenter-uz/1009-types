@@ -13,6 +13,7 @@ export namespace VillageInterfaces {
     name: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -25,6 +26,7 @@ export namespace VillageInterfaces {
     name?: AppLanguages;
     oldName?: AppLanguages;
     newName?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
@@ -40,6 +42,7 @@ export namespace VillageInterfaces {
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
     district?: DistrictInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

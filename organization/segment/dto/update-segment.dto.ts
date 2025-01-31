@@ -1,4 +1,5 @@
 import {
+  IsNumber,
   IsObject,
   IsOptional,
   IsString,
@@ -21,6 +22,14 @@ export class SegmentUpdateDto
   @Type(() => String)
   name: string;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

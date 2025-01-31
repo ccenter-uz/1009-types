@@ -30,7 +30,16 @@ export class SubCategoryUpdateDto
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: LanguageDto;
+  name: LanguageDto; 
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 
   @IsOptional()
   @IsObject()

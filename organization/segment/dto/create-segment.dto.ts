@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
   IsNotEmpty,
+  IsNumber,
   IsObject,
   IsOptional,
   IsString,
@@ -19,6 +20,14 @@ export class SegmentCreateDto implements SegmentInterfaces.Request {
   @Type(() => String)
   name: string;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
