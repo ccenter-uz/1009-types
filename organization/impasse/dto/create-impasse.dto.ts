@@ -9,7 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
 export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @ApiProperty()
@@ -79,4 +79,8 @@ export class ImpasseCreateDto implements ImpasseInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 import { PhoneTypeInterfaces } from '../interface/nearby-phone-type-group.interface';
 import { Type } from 'class-transformer';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
 export class PhoneTypeCreateDto implements PhoneTypeInterfaces.Request {
   @IsOptional()
@@ -33,4 +33,7 @@ export class PhoneTypeCreateDto implements PhoneTypeInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

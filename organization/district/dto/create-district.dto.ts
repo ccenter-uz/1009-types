@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { DistrictInterfaces } from '../interface/district-group.interface';
 
 export class DistrictCreateDto implements DistrictInterfaces.Request {
@@ -74,4 +74,7 @@ export class DistrictCreateDto implements DistrictInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsString,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
 export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @ApiProperty()
@@ -83,4 +83,7 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

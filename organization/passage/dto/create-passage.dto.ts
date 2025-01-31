@@ -9,7 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
 export class PassageCreateDto implements PassageInterfaces.Request {
   @ApiProperty()
@@ -79,4 +79,7 @@ export class PassageCreateDto implements PassageInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

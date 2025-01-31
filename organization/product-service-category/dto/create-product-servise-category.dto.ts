@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsNumber,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { ProductServiseCategoryInterfaces } from '../interface/product-service-category-group.interface';
 
 export class ProductServiseCategoryCreateDto
@@ -35,4 +35,7 @@ export class ProductServiseCategoryCreateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

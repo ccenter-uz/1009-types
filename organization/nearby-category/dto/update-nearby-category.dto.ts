@@ -1,5 +1,5 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
-import { IdDto } from 'types/global';
+import { IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import { IdDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { NearbyCategoryInterfaces } from '../interface/nearby-category-group.interface';
 import { Type } from 'class-transformer';
@@ -27,4 +27,7 @@ export class NearbyCategoryUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

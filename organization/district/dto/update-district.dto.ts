@@ -6,7 +6,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { DistrictInterfaces } from '../interface/district-group.interface';
 
@@ -72,4 +72,7 @@ export class DistrictUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

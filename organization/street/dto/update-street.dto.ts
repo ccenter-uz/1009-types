@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsString,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
 export class StreetUpdateDto extends IdDto implements StreetInterfaces.Update {
   @ApiProperty()
@@ -83,4 +83,7 @@ export class StreetUpdateDto extends IdDto implements StreetInterfaces.Update {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

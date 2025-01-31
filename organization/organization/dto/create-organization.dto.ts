@@ -10,7 +10,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { OrganizationInterfaces } from 'types/organization/organization';
 import * as Multer from 'multer';
 import { PhoneDto, PhoneType } from './create-phone.dto';
@@ -366,4 +366,8 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ValidateNested()
   @Type(() => PhotoLinkDto)
   PhotoLink: PhotoLinkDto[];
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

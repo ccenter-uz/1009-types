@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsString,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
 export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @ApiProperty()
@@ -74,13 +74,4 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @ValidateNested()
   @Type(() => LanguageDto)
   newName?: LanguageDto;
-  
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  orderNumber?: number;
 }

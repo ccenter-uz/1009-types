@@ -6,7 +6,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { NearbyInterfaces } from '../interface/nearby-group.interface';
 
@@ -43,4 +43,8 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

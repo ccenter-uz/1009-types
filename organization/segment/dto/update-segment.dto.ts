@@ -6,7 +6,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { SegmentInterfaces } from '../interface/segment-group.interface';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -30,4 +30,7 @@ export class SegmentUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

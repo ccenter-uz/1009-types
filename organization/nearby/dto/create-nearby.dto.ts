@@ -8,7 +8,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 import { NearbyInterfaces } from '../interface/nearby-group.interface';
 
 export class NearbyCreateDto implements NearbyInterfaces.Request {
@@ -48,4 +48,8 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

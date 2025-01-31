@@ -27,11 +27,11 @@ export enum Roles {
 }
 
 export enum PermissionsEnum {
-  CREATE_DATA = 'CREATE_DATA',
-  READ_DATA = 'READ_DATA',
-  UPDATE_DATA = 'UPDATE_DATA',
-  DELETE_DATA = 'DELETE_DATA',
-  RESTORE_DATA = 'RESTORE_DATA',
+  POST = 'POST',
+  GET = 'GET',
+  PUT = 'PUT',
+  DELETE = 'DELETE',
+  RESTORE = 'PUT',
 }
 
 export const UserPermissions = {
@@ -268,6 +268,11 @@ export const UserPermissions = {
       },
       edit: {
         [ACCESSESS.UPDATE]: true,
+      },
+      waitings: {
+        [ACCESSESS.GET]: true,
+        [ACCESSESS.UPDATE]: true,
+        [ACCESSESS.DELETE]: true,
       },
     },
     monitoring: {

@@ -9,7 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
 export class SubCategoryCreateDto implements SubCategoryInterfaces.Request {
   @ApiProperty()
@@ -38,4 +38,8 @@ export class SubCategoryCreateDto implements SubCategoryInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

@@ -1,5 +1,5 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
-import { IdDto } from 'types/global';
+import { IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import { IdDto, LogDataType } from 'types/global';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
@@ -26,4 +26,8 @@ export class MainOrganizationUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

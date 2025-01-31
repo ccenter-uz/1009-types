@@ -1,7 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { MainOrganizationInterfaces } from '../interface/main-organization-group.interface';
 import { Type } from 'class-transformer';
+import { LogDataType } from 'types/global';
 
 export class MainOrganizationCreateDto
   implements MainOrganizationInterfaces.Request
@@ -24,4 +31,7 @@ export class MainOrganizationCreateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

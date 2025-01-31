@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsString,
 } from 'class-validator';
-import { IdDto, LanguageDto } from 'types/global';
+import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
 export class PassageUpdateDto
   extends IdDto
@@ -86,4 +86,7 @@ export class PassageUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
