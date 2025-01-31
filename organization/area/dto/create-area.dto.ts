@@ -71,6 +71,15 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @Type(() => LanguageDto)
   newName?: LanguageDto;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
+  
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

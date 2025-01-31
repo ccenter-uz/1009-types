@@ -5,6 +5,7 @@ import {
   IsOptional,
   ValidateNested,
   IsObject,
+  IsNumber,
 } from 'class-validator';
 import { PhoneTypeInterfaces } from '../interface/nearby-phone-type-group.interface';
 import { Type } from 'class-transformer';
@@ -24,6 +25,14 @@ export class PhoneTypeCreateDto implements PhoneTypeInterfaces.Request {
   @Type(() => LanguageDto)
   name: LanguageDto;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

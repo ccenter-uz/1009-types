@@ -3,18 +3,21 @@ export namespace ProductServiseCategoryInterfaces {
   export interface Request {
     staffNumber?: string;
     name: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
     id: number;
     staffNumber?: string;
     name?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
     id: number;
     staffNumber?: string;
     name?: {} | string;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

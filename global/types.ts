@@ -43,11 +43,11 @@ export interface ApiErrorType {
 }
 
 export type PermissionType =
-  | PermissionsEnum.CREATE_DATA
-  | PermissionsEnum.READ_DATA
-  | PermissionsEnum.UPDATE_DATA
-  | PermissionsEnum.DELETE_DATA
-  | PermissionsEnum.RESTORE_DATA;
+  | PermissionsEnum.POST
+  | PermissionsEnum.GET
+  | PermissionsEnum.PUT
+  | PermissionsEnum.DELETE
+  | PermissionsEnum.RESTORE;
 
 export enum StatusEnum {
   ACTIVE = 1,
@@ -76,3 +76,8 @@ export type LogDataType = {
   path: string;
   method: string;
 };
+
+export enum OrderEnum {
+  NAME='name',
+  ORDER_NUMBER='orderNumber'
+}

@@ -4,6 +4,7 @@ export namespace ProductServiceSubCategoryInterfaces {
     productServiceCategoryId: number;
     staffNumber?: string;
     name: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -11,6 +12,7 @@ export namespace ProductServiceSubCategoryInterfaces {
     productServiceCategoryId?: number;
     staffNumber?: string;
     name?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
@@ -18,6 +20,7 @@ export namespace ProductServiceSubCategoryInterfaces {
     productServiceCategoryId: number;
     staffNumber?: string;
     name?: {} | string;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
