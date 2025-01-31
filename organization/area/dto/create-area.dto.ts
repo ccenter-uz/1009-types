@@ -79,4 +79,8 @@ export class AreaCreateDto implements AreaInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

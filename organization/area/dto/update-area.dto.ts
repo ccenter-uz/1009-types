@@ -83,4 +83,8 @@ export class AreaUpdateDto extends IdDto implements AreaInterfaces.Update {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }
