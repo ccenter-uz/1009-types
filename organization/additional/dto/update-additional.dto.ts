@@ -57,13 +57,15 @@ export class AdditionalUpdateDto
 
   @ApiProperty()
   @IsObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => AdditionalTableOrContentDto)
-  content: AdditionalTableOrContentDto;
+  content?: AdditionalTableOrContentDto;
 
   @ApiProperty()
   @IsObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => AdditionalTableOrContentDto)
-  table: AdditionalTableOrContentDto;
+  table?: AdditionalTableOrContentDto;
 }

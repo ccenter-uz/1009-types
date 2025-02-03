@@ -32,13 +32,7 @@ export class AdditionalTableOrContentRequestDto extends IdDto {
   @Type(() => LanguageDto)
   content: LanguageDto;
 
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  additionalId?: number;
-
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
-  
 }

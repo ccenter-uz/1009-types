@@ -33,11 +33,6 @@ export class AdditionalTableOrContentDto  {
   @Type(() => LanguageDto)
   content: LanguageDto;
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  additionalId: number;
-
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
