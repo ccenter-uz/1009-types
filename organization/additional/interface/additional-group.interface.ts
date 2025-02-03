@@ -6,8 +6,8 @@ export namespace AdditionalInterfaces {
     name: AppLanguages;
     warning: AppLanguages;
     mention: AppLanguages;
-    content: AdditionalTableOrContnetInterfaces;
-    table: AdditionalTableOrContnetInterfaces;
+    content: AdditionalTableOrContnetInterfaces[];
+    table: AdditionalTableOrContnetInterfaces[];
   }
 
   export interface Update {
@@ -16,8 +16,8 @@ export namespace AdditionalInterfaces {
     name?: AppLanguages;
     warning?: AppLanguages;
     mention?: AppLanguages;
-    content?: AdditionalTableOrContnetInterfaces;
-    table?: AdditionalTableOrContnetInterfaces;
+    content?: AdditionalTableOrContnetInterfaces[];
+    table?: AdditionalTableOrContnetInterfaces[];
   }
 
   export interface Response {
@@ -26,8 +26,8 @@ export namespace AdditionalInterfaces {
     name?: {} | string;
     warning?: {} | string;
     mention?: {} | string;
-    content?: AdditionalTableOrContnetInterfaces;
-    table?: AdditionalTableOrContnetInterfaces;
+    content?: AdditionalTableOrContnetInterfaces[];
+    table?: AdditionalTableOrContnetInterfaces[];
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

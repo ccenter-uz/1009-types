@@ -1,4 +1,5 @@
 import {
+  IsArray,
   IsNumber,
   IsObject,
   IsOptional,
@@ -56,16 +57,16 @@ export class AdditionalUpdateDto
   logData?: LogDataType;
 
   @ApiProperty()
-  @IsObject()
+  @IsArray()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  content?: AdditionalTableOrContentDto;
+  @Type(() => Array)
+  content?: AdditionalTableOrContentDto[];
 
   @ApiProperty()
-  @IsObject()
+  @IsArray()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  table?: AdditionalTableOrContentDto;
+  @Type(() => Array)
+  table?: AdditionalTableOrContentDto[];
 }

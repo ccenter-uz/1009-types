@@ -2,6 +2,7 @@ import { AdditionalInterfaces } from 'types/organization/additional';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
+  IsArray,
   IsNotEmpty,
   IsNumber,
   IsObject,
@@ -54,14 +55,14 @@ export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   logData?: LogDataType;
 
   @ApiProperty()
-  @IsObject()
+  @IsArray()
   @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  content: AdditionalTableOrContentDto;
+  @Type(() => Array)
+  content: AdditionalTableOrContentDto[];
 
   @ApiProperty()
-  @IsObject()
+  @IsArray()
   @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  table: AdditionalTableOrContentDto;
+  @Type(() => Array)
+  table: AdditionalTableOrContentDto[];
 }
