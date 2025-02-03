@@ -56,17 +56,15 @@ export class AdditionalUpdateDto
   @IsObject()
   logData?: LogDataType;
 
-  @ApiProperty()
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => Array)
-  content?: AdditionalTableOrContentDto[];
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
+  content: AdditionalTableOrContentDto[];
 
-  @ApiProperty()
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => Array)
-  table?: AdditionalTableOrContentDto[];
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
+  table: AdditionalTableOrContentDto[];
 }

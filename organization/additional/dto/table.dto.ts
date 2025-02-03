@@ -33,6 +33,7 @@ export class AdditionalTableOrContentDto  {
   @Type(() => LanguageDto)
   content: LanguageDto;
 
+
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

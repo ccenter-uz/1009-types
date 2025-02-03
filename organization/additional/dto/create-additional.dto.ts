@@ -5,6 +5,7 @@ import {
   IsArray,
   IsNotEmpty,
   IsNumber,
+  isObject,
   IsObject,
   IsOptional,
   IsString,
@@ -54,15 +55,15 @@ export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsObject()
   logData?: LogDataType;
 
-  @ApiProperty()
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
-  @ValidateNested()
-  @Type(() => Array)
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
   content: AdditionalTableOrContentDto[];
 
-  @ApiProperty()
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
-  @ValidateNested()
-  @Type(() => Array)
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
   table: AdditionalTableOrContentDto[];
 }
