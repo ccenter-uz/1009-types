@@ -11,7 +11,6 @@ import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { AdditionalInterfaces } from '../interface/additional-group.interface';
 import { AdditionalTableOrContentDto } from './table.dto';
-import { AdditionalTableOrContentUpdateDto } from './table-update.dto';
 
 export class AdditionalUpdateDto
   extends IdDto
@@ -57,15 +56,15 @@ export class AdditionalUpdateDto
   @IsObject()
   logData?: LogDataType;
 
-  @ApiProperty({ type: [AdditionalTableOrContentUpdateDto] }) // Указываем, что это массив
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => AdditionalTableOrContentUpdateDto)
-  content: AdditionalTableOrContentUpdateDto[];
+  @Type(() => AdditionalTableOrContentDto)
+  content: AdditionalTableOrContentDto[];
 
-  @ApiProperty({ type: [AdditionalTableOrContentUpdateDto] }) // Указываем, что это массив
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => AdditionalTableOrContentUpdateDto)
-  table: AdditionalTableOrContentUpdateDto[];
+  @Type(() => AdditionalTableOrContentDto)
+  table: AdditionalTableOrContentDto[];
 }
