@@ -1,10 +1,8 @@
 import {
   IsString,
-  IsNotEmpty,
   IsEnum,
   IsBoolean,
   IsOptional,
-  IsNumber,
 } from 'class-validator';
 import { LanguageRequestEnum } from '../constants';
 import { LanguageRequestType } from '../types';

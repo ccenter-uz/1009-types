@@ -8,13 +8,8 @@ import {
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
-import { AdditionalInterfaces } from '../interface/additional-group.interface';
-import { AdditionalTableOrContentDto } from './table.dto';
 
-export class AdditionalUpdateDto
-  extends IdDto
-  implements AdditionalInterfaces.Update
-{
+export class AdditionalTableOrContentRequestDto extends IdDto {
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -35,35 +30,15 @@ export class AdditionalUpdateDto
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  warning: LanguageDto;
-
-  @ApiProperty({
-    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
-  })
-  @IsOptional()
-  @IsObject()
-  @ValidateNested()
-  @Type(() => LanguageDto)
-  mention: LanguageDto;
+  content: LanguageDto;
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  additionalCategoryId?: number;
+  additionalId?: number;
 
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
-
-  @ApiProperty()
-  @IsObject()
-  @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  content: AdditionalTableOrContentDto;
-
-  @ApiProperty()
-  @IsObject()
-  @ValidateNested()
-  @Type(() => AdditionalTableOrContentDto)
-  table: AdditionalTableOrContentDto;
+  
 }

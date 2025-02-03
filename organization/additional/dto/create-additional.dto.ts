@@ -1,3 +1,4 @@
+import { AdditionalInterfaces } from 'types/organization/additional';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -9,7 +10,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LogDataType } from 'types/global';
-import { AdditionalInterfaces } from '../interface/additional-group.interface';
+import { AdditionalTableOrContentDto } from './table.dto';
 
 export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsOptional()
@@ -51,4 +52,16 @@ export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
+
+  @ApiProperty()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => AdditionalTableOrContentDto)
+  content: AdditionalTableOrContentDto;
+
+  @ApiProperty()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => AdditionalTableOrContentDto)
+  table: AdditionalTableOrContentDto;
 }
