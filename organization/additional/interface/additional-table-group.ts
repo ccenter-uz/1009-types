@@ -1,6 +1,6 @@
 
 export type AdditionalTableOrContnetInterfaces = {
-  id: number;
+  id?: number;
   staffNumber?: string;
   name?: {} | string;
   content?: {} | string;
