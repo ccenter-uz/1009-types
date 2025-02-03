@@ -1,5 +1,6 @@
 import { AppLanguages } from 'types/global/types';
 import { AdditionalTableOrContnetInterfaces } from './additional-table-group';
+import { AdditionalTableOrContentUpdateDto } from '../dto/table-update.dto';
 export namespace AdditionalInterfaces {
   export interface Request {
     staffNumber?: string;
@@ -16,8 +17,8 @@ export namespace AdditionalInterfaces {
     name?: AppLanguages;
     warning?: AppLanguages;
     mention?: AppLanguages;
-    content?: AdditionalTableOrContnetInterfaces[];
-    table?: AdditionalTableOrContnetInterfaces[];
+    content?: AdditionalTableOrContentUpdateDto[];
+    table?: AdditionalTableOrContentUpdateDto[];
   }
 
   export interface Response {

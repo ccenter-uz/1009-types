@@ -1,15 +1,26 @@
 import {
+  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
+  Min,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class AdditionalTableOrContentRequestDto extends IdDto {
+export class AdditionalTableOrContentUpdateDto {
+  @ApiProperty({
+    example: 1,
+    type: Number,
+  })
+  @Min(1)
+  @IsNumber()
+  @IsNotEmpty()
+  id: number;
+
   @IsOptional()
   @IsString()
   staffNumber?: string;
