@@ -304,9 +304,11 @@ export const enum ACCESSESS {
 }
 
 export enum CreatedByEnum {
+  All = 'all',
   Billing = 'billing',
   Client = 'client',
   Moderator = 'moderator',
+  Operator = 'operator'
 }
 
 export enum OrganizationStatusEnum {

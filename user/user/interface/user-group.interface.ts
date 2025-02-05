@@ -13,6 +13,10 @@ export namespace UserInterfaces {
     role: string;
   }
 
+  export interface ForgetPwdRequest {
+    phoneNumber: string;
+  }
+
   export interface GetMeResponse {
     id: number;
   }

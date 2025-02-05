@@ -28,5 +28,5 @@ export class UserLogInDto implements UserInterfaces.LogInRequest {
   password: string;
 
   @IsOptional()
-  logData: any;
+  logData?: any;
 }
