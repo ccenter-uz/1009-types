@@ -1259,7 +1259,7 @@ export const RolePermissionsData = [
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
-    path: '/additional-category/:di',
+    path: '/additional-category/:id',
   },
   {
     role: Roles.MODERATOR,
@@ -1289,7 +1289,7 @@ export const RolePermissionsData = [
   {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
-    path: '/additional-category/:di',
+    path: '/additional-category/:id',
   }, {
     role: Roles.USER,
     permission: PermissionsEnum.GET,
@@ -1298,7 +1298,7 @@ export const RolePermissionsData = [
   {
     role: Roles.USER,
     permission: PermissionsEnum.GET,
-    path: '/additional-category/:di',
+    path: '/additional-category/:id',
   },
   {
     role: Roles.MODERATOR,
@@ -1308,7 +1308,7 @@ export const RolePermissionsData = [
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
-    path: '/additional/:di',
+    path: '/additional/:id',
   },
   {
     role: Roles.MODERATOR,
@@ -1338,7 +1338,7 @@ export const RolePermissionsData = [
   {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
-    path: '/additional/:di',
+    path: '/additional/:id',
   },
   {
     role: Roles.USER,
@@ -1348,6 +1348,6 @@ export const RolePermissionsData = [
   {
     role: Roles.USER,
     permission: PermissionsEnum.GET,
-    path: '/additional/:di',
+    path: '/additional/:id',
   },
 ];
