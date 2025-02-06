@@ -13,6 +13,16 @@ export const RolePermissionsData = [
   },
   {
     role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/role',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/role',
+  },
+  {
+    role: Roles.OPERATOR,
     permission: PermissionsEnum.PUT,
     path: '/user/update-me',
   },
