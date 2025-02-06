@@ -3,6 +3,16 @@ import { PermissionsEnum, Roles } from '../../types/global';
 export const RolePermissionsData = [
   {
     role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/user',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/user',
+  },
+  {
+    role: Roles.OPERATOR,
     permission: PermissionsEnum.PUT,
     path: '/user/update-me',
   },
@@ -1290,7 +1300,8 @@ export const RolePermissionsData = [
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
     path: '/additional-category/:id',
-  }, {
+  },
+  {
     role: Roles.USER,
     permission: PermissionsEnum.GET,
     path: '/additional-category',
