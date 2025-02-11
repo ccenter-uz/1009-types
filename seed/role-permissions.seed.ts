@@ -184,6 +184,11 @@ export const RolePermissionsData = [
   {
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
     path: '/village',
   },
   {
@@ -250,6 +255,11 @@ export const RolePermissionsData = [
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.OPERATOR,
@@ -360,6 +370,11 @@ export const RolePermissionsData = [
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.MODERATOR,
@@ -690,6 +705,36 @@ export const RolePermissionsData = [
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id/restore',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.MODERATOR,
