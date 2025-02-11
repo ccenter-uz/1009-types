@@ -4,12 +4,12 @@ import { ListQueryDto } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class AdditionalFilterDto extends ListQueryDto {
-  // @ApiProperty({
-  //   type: Number,
-  //   required: false,
-  // })
-  // @IsNumber()
-  // @IsOptional()
-  // @Type(() => Number)
-  // cityId?: number;
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  additionalCategoryId?: number;
 }
