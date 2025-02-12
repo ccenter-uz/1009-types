@@ -270,6 +270,12 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @IsString()
   @Type(() => String)
+  @Transform(({ value }) =>
+    value
+      .replace(/^"+|"+$/g, '')
+      .replace(/\\+["]/g, '')
+      .replace(/\\+/g, '')
+  )
   index?: string;
 
   @IsOptional()
