@@ -1350,4 +1350,55 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/additional/:id',
   },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id/restore',
+  },
+
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
 ];
