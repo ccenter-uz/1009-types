@@ -20,6 +20,7 @@ import { PhotoLinkVersionDto } from './file-upload-version.dto';
 import { ProductServiceVersionType } from './create-product-service-version.dto';
 import { NearbeesVersionType } from './create-nearbees-version.dto';
 import { PictureVersionType } from './update-picture-version.dto';
+import { removeSymbols } from 'types/global/helper';
 export class OrganizationVersionUpdateDto
   extends IdDto
   implements OrganizationVersionInterfaces.Update
@@ -126,156 +127,86 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   name: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   description: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   legalName: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   secret: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   kvartal: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   address: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   home: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   apartment: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   inn: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   bankNumber: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   account: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   mail: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   manager: string;
 
   @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsString()
   @Type(() => String)
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   index?: string;
 
   @IsOptional()

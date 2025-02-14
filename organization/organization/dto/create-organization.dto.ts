@@ -19,6 +19,7 @@ import { PaymentTypesDto } from './create-peyment-types.dto';
 import { PhotoLinkDto } from './file-upload-dto';
 import { ProductServiceType } from './create-product-service.dto';
 import { NearbeesType } from './create-nearbees.dto';
+import { removeSymbols } from 'types/global/helper';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1 })
@@ -124,144 +125,79 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   name: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   description?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   legalName?: string;
 
   @ApiProperty({ type: String })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   secret?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   kvartal?: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   address: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   home?: string;
 
   @ApiProperty({ type: String })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   apartment?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   inn?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   bankNumber?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   account?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   mail?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    value
-      .replace(/^"+|"+$/g, '')
-      .replace(/\\+["]/g, '')
-      .replace(/\\+/g, '')
-  )
+  @Transform(removeSymbols)
   manager?: string;
 
   @ApiProperty({ type: String })
