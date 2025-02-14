@@ -7,14 +7,11 @@ import {
   IsObject,
   ValidateNested,
   IsString,
-  IsJSON,
   IsArray,
 } from 'class-validator';
-import { IdDto, LanguageDto, LogDataType } from 'types/global';
-import { OrganizationInterfaces } from 'types/organization/organization';
+import { IdDto, LogDataType } from 'types/global';
 import * as Multer from 'multer';
-import { PhoneVersionDto, PhoneType } from './create-phone-version.dto';
-import { Phone } from '../types';
+import {  PhoneType } from './create-phone-version.dto';
 import { PaymentTypesVersionDto } from './create-peyment-types-version.dto';
 import { PhotoLinkVersionDto } from './file-upload-version.dto';
 import { ProductServiceVersionType } from './create-product-service-version.dto';
