@@ -78,6 +78,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
   @IsOptional()
   @IsNumber()
+  neighborhoodId?: number;
+
+  @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
   areaId?: number;
 
   @ApiProperty({ example: 1, required: false })
