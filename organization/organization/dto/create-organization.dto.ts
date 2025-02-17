@@ -152,7 +152,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Transform(removeSymbols)
   kvartal?: string;
 
-  @ApiProperty(  {required: false })
+  @ApiProperty({ required: false })
   @IsNotEmpty()
   @IsString()
   @Transform(removeSymbols)
@@ -164,7 +164,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Transform(removeSymbols)
   home?: string;
 
-  @ApiProperty({ type: String })
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(removeSymbols)
