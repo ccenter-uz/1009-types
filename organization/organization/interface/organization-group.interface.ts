@@ -29,7 +29,7 @@ export namespace OrganizationInterfaces {
     legalName?: string;
     secret?: string;
     kvartal?: string;
-    address: string;
+    address?: string;
     home?: string;
     apartment?: string;
     description?: string;

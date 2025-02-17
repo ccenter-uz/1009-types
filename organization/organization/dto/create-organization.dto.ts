@@ -156,7 +156,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsOptional()
   @IsString()
   @Transform(removeSymbols)
-  address: string;
+  address?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
