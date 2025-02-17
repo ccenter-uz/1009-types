@@ -22,7 +22,7 @@ import { NearbeesType } from './create-nearbees.dto';
 import { removeSymbols } from 'types/global/helper';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
@@ -140,7 +140,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Transform(removeSymbols)
   legalName?: string;
 
-  @ApiProperty({ type: String })
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(removeSymbols)
@@ -152,7 +152,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Transform(removeSymbols)
   kvartal?: string;
 
-  @ApiProperty()
+  @ApiProperty(  {required: false })
   @IsNotEmpty()
   @IsString()
   @Transform(removeSymbols)
