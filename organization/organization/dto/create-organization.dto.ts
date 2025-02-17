@@ -176,7 +176,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   kvartal?: string;
 
-  @ApiProperty(  {required: false })
+  @ApiProperty({ required: false })
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) =>
@@ -198,7 +198,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   home?: string;
 
-  @ApiProperty({ type: String })
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
