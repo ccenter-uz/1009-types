@@ -5,6 +5,7 @@ export namespace SubCategoryInterfaces {
     categoryId: number;
     staffNumber?: string;
     name: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Update {
@@ -12,6 +13,7 @@ export namespace SubCategoryInterfaces {
     categoryId?: number;
     staffNumber?: string;
     name?: AppLanguages;
+    orderNumber?: number;
   }
 
   export interface Response {
@@ -20,6 +22,7 @@ export namespace SubCategoryInterfaces {
     staffNumber?: string;
     name?: {} | string;
     category: CategoryInterfaces.Response;
+    orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;

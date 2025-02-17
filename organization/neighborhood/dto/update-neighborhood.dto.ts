@@ -1,4 +1,4 @@
-import { LaneInterfaces } from 'types/organization/lane';
+import { NeighborhoodInterfaces } from 'types/organization/neighborhood';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -10,7 +10,10 @@ import {
 } from 'class-validator';
 import { IdDto, LanguageDto, LogDataType } from 'types/global';
 
-export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
+export class NeighborhoodUpdateDto
+  extends IdDto
+  implements NeighborhoodInterfaces.Update
+{
   @ApiProperty()
   @IsOptional()
   @IsNumber()

@@ -1,5 +1,5 @@
-import { SubCategoryInterfaces } from 'types/organization/sub-category';
 import {
+  IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
@@ -10,15 +10,7 @@ import { Type } from 'class-transformer';
 import { IdDto, LanguageDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class SubCategoryUpdateDto
-  extends IdDto
-  implements SubCategoryInterfaces.Update
-{
-  @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  categoryId?: number;
-
+export class AdditionalTableOrContentDto  {
   @IsOptional()
   @IsString()
   staffNumber?: string;
@@ -26,22 +18,27 @@ export class SubCategoryUpdateDto
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsOptional()
+  @IsNotEmpty()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name: LanguageDto; 
-  
+  name: LanguageDto;
+
   @ApiProperty({
-    type: Number,
-    required: false,
+    example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  orderNumber?: number;
+  @IsNotEmpty()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  content: LanguageDto;
+
 
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
+
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date;
 }

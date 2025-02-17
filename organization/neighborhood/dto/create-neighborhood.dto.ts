@@ -1,35 +1,31 @@
-import { LaneInterfaces } from 'types/organization/lane';
+import {NeighborhoodInterfaces } from 'types/organization/neighborhood';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
-  IsOptional,
+  IsNotEmpty,
   IsNumber,
   IsObject,
-  ValidateNested,
+  IsOptional,
   IsString,
+  ValidateNested,
 } from 'class-validator';
-import { IdDto, LanguageDto, LogDataType } from 'types/global';
+import { LanguageDto, LogDataType } from 'types/global';
 
-export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
+export class NeighborhoodCreateDto implements NeighborhoodInterfaces.Request {
   @ApiProperty()
-  @IsOptional()
+  @IsNotEmpty()
   @IsNumber()
-  id: number;
+  regionId: number;
 
   @ApiProperty()
-  @IsOptional()
+  @IsNotEmpty()
   @IsNumber()
-  regionId?: number;
+  cityId: number;
 
   @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  cityId?: number;
-
-  @ApiProperty()
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  index?: string;
+  index: string;
 
   @IsOptional()
   @IsString()
@@ -43,11 +39,11 @@ export class LaneUpdateDto extends IdDto implements LaneInterfaces.Update {
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
-  @IsOptional()
+  @IsNotEmpty()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
-  name?: LanguageDto;
+  name: LanguageDto;
 
   @ApiProperty({
     example: {

@@ -21,7 +21,7 @@ import { ProductServiceType } from './create-product-service.dto';
 import { NearbeesType } from './create-nearbees.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
@@ -72,6 +72,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsOptional()
   @IsNumber()
   residentialId?: number;
+
+  @ApiProperty({ example: 1, required: false })
+  @Type(() => Number)
+  @Transform(({ value }) => (typeof parseInt(value) == 'number' ? value : null))
+  @IsOptional()
+  @IsNumber()
+  neighborhoodId?: number;
 
   @ApiProperty({ example: 1, required: false })
   @Type(() => Number)
@@ -147,7 +154,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   legalName?: string;
 
-  @ApiProperty({ type: String })
+  @ApiProperty({ type: String, required: false })
   @IsOptional()
   @IsString()
   @Transform(({ value }) =>
@@ -169,7 +176,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   kvartal?: string;
 
-  @ApiProperty()
+  @ApiProperty(  {required: false })
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) =>
