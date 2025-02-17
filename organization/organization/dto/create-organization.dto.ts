@@ -153,10 +153,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   kvartal?: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(removeSymbols)
-  address: string;
+  address?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
