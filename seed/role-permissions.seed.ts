@@ -252,6 +252,11 @@ export const RolePermissionsData = [
     path: '/sub-category',
   },
   {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
+    path: '/sub-category',
+  },
+  {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
@@ -1415,5 +1420,55 @@ export const RolePermissionsData = [
     role: Roles.USER,
     permission: PermissionsEnum.GET,
     path: '/additional/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id/restore',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
   },
 ];
