@@ -252,6 +252,11 @@ export const RolePermissionsData = [
     path: '/sub-category',
   },
   {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
+    path: '/sub-category',
+  },
+  {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
@@ -1446,7 +1451,6 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.PUT,
     path: '/neighborhood/:id/restore',
   },
-
   {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
