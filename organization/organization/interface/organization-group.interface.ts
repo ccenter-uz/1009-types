@@ -18,6 +18,7 @@ export namespace OrganizationInterfaces {
     villageId?: number;
     avenueId?: number;
     residentialId?: number;
+    neighborhoodId?: number;
     areaId?: number;
     streetId?: number;
     laneId?: number;
@@ -28,7 +29,7 @@ export namespace OrganizationInterfaces {
     legalName?: string;
     secret?: string;
     kvartal?: string;
-    address: string;
+    address?: string;
     home?: string;
     apartment?: string;
     description?: string;
@@ -55,6 +56,7 @@ export namespace OrganizationInterfaces {
     villageId?: number;
     avenueId?: number;
     residentialId?: number;
+    neighborhoodId?: number;
     areaId?: number;
     streetId?: number;
     laneId?: number;
@@ -95,6 +97,7 @@ export namespace OrganizationInterfaces {
     villageId: number;
     avenueId: number;
     residentialId: number;
+    neighborhoodId: number;
     areaId: number;
     streetId: number;
     laneId: number;

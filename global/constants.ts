@@ -202,6 +202,13 @@ export const UserPermissions = {
         [ACCESSESS.DELETE]: true,
         [ACCESSESS.RESTORE]: true,
       },
+      neighborhood: {
+        [ACCESSESS.GET]: true,
+        [ACCESSESS.CREATE]: true,
+        [ACCESSESS.UPDATE]: true,
+        [ACCESSESS.DELETE]: true,
+        [ACCESSESS.RESTORE]: true,
+      },
       impasse: {
         [ACCESSESS.GET]: true,
         [ACCESSESS.CREATE]: true,
@@ -304,9 +311,11 @@ export const enum ACCESSESS {
 }
 
 export enum CreatedByEnum {
+  All = 'all',
   Billing = 'billing',
   Client = 'client',
   Moderator = 'moderator',
+  Operator = 'operator',
 }
 
 export enum OrganizationStatusEnum {

@@ -3,6 +3,26 @@ import { PermissionsEnum, Roles } from '../../types/global';
 export const RolePermissionsData = [
   {
     role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/user',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/user',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/role',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/role',
+  },
+  {
+    role: Roles.OPERATOR,
     permission: PermissionsEnum.PUT,
     path: '/user/update-me',
   },
@@ -164,6 +184,11 @@ export const RolePermissionsData = [
   {
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
     path: '/village',
   },
   {
@@ -227,9 +252,19 @@ export const RolePermissionsData = [
     path: '/sub-category',
   },
   {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
+    path: '/sub-category',
+  },
+  {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.OPERATOR,
@@ -340,6 +375,11 @@ export const RolePermissionsData = [
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.MODERATOR,
@@ -670,6 +710,36 @@ export const RolePermissionsData = [
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
     path: '/residential-area',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id/restore',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
   },
   {
     role: Roles.MODERATOR,
@@ -1250,5 +1320,155 @@ export const RolePermissionsData = [
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
     path: '/dashboard/all',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/additional-category',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/additional-category/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/additional-category/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/additional-category/:id/restore',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/additional-category/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/additional',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/additional/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/additional/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/additional/:id/restore',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/additional/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/additional',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/additional/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.POST,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.DELETE,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.PUT,
+    path: '/neighborhood/:id/restore',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/neighborhood/:id',
   },
 ];

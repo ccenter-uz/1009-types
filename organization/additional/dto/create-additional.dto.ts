@@ -1,15 +1,18 @@
+import { AdditionalInterfaces } from 'types/organization/additional';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
+  IsArray,
   IsNotEmpty,
   IsNumber,
+  isObject,
   IsObject,
   IsOptional,
   IsString,
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LogDataType } from 'types/global';
-import { AdditionalInterfaces } from '../interface/additional-group.interface';
+import { AdditionalTableOrContentDto } from './table.dto';
 
 export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsOptional()
@@ -51,4 +54,16 @@ export class AdditionalCreateDto implements AdditionalInterfaces.Request {
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
+
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
+  content: AdditionalTableOrContentDto[];
+
+  @ApiProperty({ type: [AdditionalTableOrContentDto] }) // Указываем, что это массив
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => AdditionalTableOrContentDto)
+  table: AdditionalTableOrContentDto[];
 }

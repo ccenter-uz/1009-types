@@ -21,7 +21,7 @@ export class DistrictFilterDto extends ListQueryDto {
   @IsOptional()
   @Type(() => Number)
   cityId?: number;
-  
+
   @ApiProperty({
     enum: OrderEnum,
     required: false,
