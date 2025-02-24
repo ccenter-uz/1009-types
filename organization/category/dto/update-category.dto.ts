@@ -62,6 +62,7 @@ export class CategoryUpdateDto
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
+  
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
