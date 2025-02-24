@@ -8,13 +8,6 @@ export const RegionsAndCities = [
     cities: [
       {
         name: {
-          ru: 'test',
-          uz: 'test',
-          cy: 'test',
-        },
-      },
-      {
-        name: {
           ru: 'Андижан',
           uz: 'Andijon',
           cy: 'Тошкент',
