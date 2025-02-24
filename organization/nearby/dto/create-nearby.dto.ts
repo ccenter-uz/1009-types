@@ -26,6 +26,15 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   cityId: number;
+  
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  districtId?: number;
 
   @IsOptional()
   @IsString()
