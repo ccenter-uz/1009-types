@@ -1,3 +1,4 @@
+import {NeighborhoodInterfaces } from 'types/organization/neighborhood';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
@@ -9,14 +10,8 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { LanguageDto, LogDataType } from 'types/global';
-import { NearbyInterfaces } from '../interface/nearby-group.interface';
 
-export class NearbyCreateDto implements NearbyInterfaces.Request {
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  nearbyCategoryId: number;
-
+export class NeighborhoodCreateDto implements NeighborhoodInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
@@ -26,19 +21,20 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @IsNotEmpty()
   @IsNumber()
   cityId: number;
-  
-  @ApiProperty({
-    type: Number,
-    required: false,
-  })
-  @IsNumber()
-  @IsOptional()
-  @Type(() => Number)
-  districtId?: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  index: string;
 
   @IsOptional()
   @IsString()
   staffNumber?: string;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  districtId?: number;
 
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
@@ -48,7 +44,33 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
-  
+
+  @ApiProperty({
+    example: {
+      ru: 'swagger-old-ru',
+      uz: 'swagger-old-uz',
+      cy: 'swagger-old-cy',
+    },
+  })
+  @IsOptional()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  oldName?: LanguageDto;
+
+  @ApiProperty({
+    example: {
+      ru: 'swagger-new-ru',
+      uz: 'swagger-new-uz',
+      cy: 'swagger-new-cy',
+    },
+  })
+  @IsOptional()
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LanguageDto)
+  newName?: LanguageDto;
+
   @ApiProperty({
     type: Number,
     required: false,
@@ -57,7 +79,6 @@ export class NearbyCreateDto implements NearbyInterfaces.Request {
   @IsOptional()
   @Type(() => Number)
   orderNumber?: number;
-
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

@@ -1,42 +1,47 @@
 import { AppLanguages } from 'types/global/types';
 import { CityInterfaces } from 'types/organization/city';
 import { DistrictInterfaces } from 'types/organization/district';
-import { NearbyCategoryInterfaces } from 'types/organization/nearby-category';
 import { RegionInterfaces } from 'types/organization/region';
-export namespace NearbyInterfaces {
+
+export namespace NeighborhoodInterfaces {
   export interface Request {
-    nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId?: number;
+    index: string;
     staffNumber?: string;
+    districtId?: number;
     name: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
     orderNumber?: number;
   }
 
   export interface Update {
     id: number;
-    nearbyCategoryId?: number;
     regionId?: number;
     cityId?: number;
-    districtId?: number;
+    index?: string;
     staffNumber?: string;
+    districtId?: number;
     name?: AppLanguages;
+    oldName?: AppLanguages;
+    newName?: AppLanguages;
     orderNumber?: number;
   }
 
   export interface Response {
     id: number;
-    nearbyCategoryId: number;
     regionId: number;
     cityId: number;
-    districtId?: number;
+    index: string;
     staffNumber?: string;
+    districtId?: number;
     name?: {} | string;
+    oldName?: {} | string;
+    newName?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
     district?: DistrictInterfaces.Response;
-    category?: NearbyCategoryInterfaces.Response;
     orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
