@@ -15,9 +15,9 @@ export const RegionsAndCities = [
       },
       {
         name: {
-          ru: 'Акака',
-          uz: 'Akaka',
-          cy: 'Акака',
+          ru: 'Асака',
+          uz: 'Asaka',
+          cy: 'Асака',
         },
       },
       {

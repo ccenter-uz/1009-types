@@ -50,6 +50,15 @@ export class CategoryCreateDto implements CategoryInterfaces.Request {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
+  districtId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
   orderNumber?: number;
   @IsOptional()
   @IsObject()
