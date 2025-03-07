@@ -84,6 +84,7 @@ export class ListQueryDto extends LanguageRequestDto {
   @ApiProperty({
     type: Number,
     required: false,
+    enum: StatusEnum,
   })
   @Transform(({ value }) => {
     if (typeof value === 'string') {
