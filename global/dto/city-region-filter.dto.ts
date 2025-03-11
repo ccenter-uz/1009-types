@@ -23,6 +23,15 @@ export class CityRegionFilterDto extends ListQueryDto {
   regionId?: number;
 
   @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  districtId?: number;
+
+  @ApiProperty({
     enum: OrderEnum,
     required: false,
     description: 'Enums: "name", "orderNumber" ',
