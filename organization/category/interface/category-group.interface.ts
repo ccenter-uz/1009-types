@@ -19,6 +19,7 @@ export namespace CategoryInterfaces {
   export interface Response {
     id: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     city?: CityInterfaces.Response;
     region?: RegionInterfaces.Response;
