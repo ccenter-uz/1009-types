@@ -35,6 +35,7 @@ export namespace PassageInterfaces {
     cityId: number;
     index: string;
     staffNumber?: string;
+    editedStaffNumber?: string;
     districtId?: number;
     name?: {} | string;
     oldName?: {} | string;

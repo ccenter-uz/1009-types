@@ -14,6 +14,7 @@ export namespace AdditionalCategoryInterfaces {
   export interface Response {
     id: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     createdAt: Date;
     updatedAt: Date;

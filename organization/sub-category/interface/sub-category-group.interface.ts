@@ -20,6 +20,7 @@ export namespace SubCategoryInterfaces {
     id: number;
     categoryId: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     category: CategoryInterfaces.Response;
     orderNumber?: number;

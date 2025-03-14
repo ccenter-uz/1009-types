@@ -32,6 +32,7 @@ export namespace NearbyInterfaces {
     cityId: number;
     districtId?: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     region?: RegionInterfaces.Response;
     city?: CityInterfaces.Response;
