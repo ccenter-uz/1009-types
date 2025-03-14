@@ -1,15 +1,23 @@
-import { IsNumber, IsOptional } from 'class-validator';
+import { IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
 import { Type } from 'class-transformer';
-import { ListQueryDto } from 'types/global';
+import { ListQueryDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class AdditionalFilterDto extends ListQueryDto {
-  // @ApiProperty({
-  //   type: Number,
-  //   required: false,
-  // })
-  // @IsNumber()
-  // @IsOptional()
-  // @Type(() => Number)
-  // cityId?: number;
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  additionalCategoryId?: number;
+
+  @IsOptional()
+  @IsString()
+  role?: string;
+
+  @IsOptional()
+  @IsObject()
+  logData?: LogDataType;
 }

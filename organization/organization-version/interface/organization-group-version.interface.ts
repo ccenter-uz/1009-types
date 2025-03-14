@@ -19,6 +19,7 @@ export namespace OrganizationVersionInterfaces {
     villageId?: number;
     avenueId?: number;
     residentialId?: number;
+    neighborhoodId?: number;
     areaId?: number;
     streetId?: number;
     laneId?: number;
@@ -67,6 +68,7 @@ export namespace OrganizationVersionInterfaces {
     villageId?: number;
     avenueId?: number;
     residentialId?: number;
+    neighborhoodId?: number;
     areaId?: number;
     streetId?: number;
     laneId?: number;
@@ -107,6 +109,7 @@ export namespace OrganizationVersionInterfaces {
     villageId: number;
     avenueId: number;
     residentialId: number;
+    neighborhoodId: number;
     areaId: number;
     streetId: number;
     laneId: number;

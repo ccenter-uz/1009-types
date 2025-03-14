@@ -11,17 +11,41 @@ import { ApiProperty } from '@nestjs/swagger';
 import { NearbyInterfaces } from '../interface/nearby-group.interface';
 
 export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
-  @ApiProperty()
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
   @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
   nearbyCategoryId?: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
   @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
   regionId?: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
   @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
   cityId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  districtId?: number;
 
   @IsOptional()
   @IsString()
@@ -30,10 +54,20 @@ export class NearbyUpdateDto extends IdDto implements NearbyInterfaces.Update {
   @ApiProperty({
     example: { ru: 'swagger-ru', uz: 'swagger-uz', cy: 'swagger-cy' },
   })
+  @IsOptional()
   @IsObject()
   @ValidateNested()
   @Type(() => LanguageDto)
   name: LanguageDto;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
 
   @IsOptional()
   @IsObject()

@@ -45,6 +45,24 @@ export class CategoryUpdateDto
   @Type(() => Number)
   regionId?: number;
 
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  districtId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  orderNumber?: number;
+  
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
