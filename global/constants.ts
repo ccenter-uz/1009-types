@@ -339,3 +339,12 @@ export const enum OrganizationVersionActionsEnum {
   DELETE = 'delete',
   // RESTORE = 'restore',
 }
+
+export enum MethodsEnum {
+  POST = 'POST',
+  GET = 'GET',
+  PUT = 'PUT',
+  DELETE = 'DELETE',
+  RESTORE = 'PUT',
+  ALL = 'ALL',
+}
