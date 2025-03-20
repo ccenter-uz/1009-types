@@ -32,6 +32,7 @@ export enum PermissionsEnum {
   PUT = 'PUT',
   DELETE = 'DELETE',
   RESTORE = 'PUT',
+  ALL = 'ALL', 
 }
 
 export const UserPermissions = {
@@ -339,3 +340,4 @@ export const enum OrganizationVersionActionsEnum {
   DELETE = 'delete',
   // RESTORE = 'restore',
 }
+
