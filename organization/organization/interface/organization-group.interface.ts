@@ -121,6 +121,7 @@ export namespace OrganizationInterfaces {
     index: string;
     nearbyDescription?: string;
     staffNumber?: string;
+    editedStaffNumber?: string;
     status: number;
     deleteReason?: string;
     createdBy: string;

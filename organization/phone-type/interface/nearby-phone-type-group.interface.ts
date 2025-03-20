@@ -16,6 +16,7 @@ export namespace PhoneTypeInterfaces {
   export interface Response {
     id: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     orderNumber?: number;
     createdAt: Date;
