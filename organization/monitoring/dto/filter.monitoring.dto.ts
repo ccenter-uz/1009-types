@@ -6,7 +6,7 @@ import {
   IsString,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { ListQueryDto, MethodsEnum, PermissionsEnum } from 'types/global';
+import { ListQueryDto,  PermissionsEnum } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class MonitoringFilterDto extends ListQueryDto {
@@ -44,16 +44,16 @@ export class MonitoringFilterDto extends ListQueryDto {
   @IsString()
   @IsOptional()
   role?: string;
-  
+
   @ApiProperty({
     type: String,
     required: false,
-    enum: MethodsEnum, // Указываем enum
-    example: MethodsEnum.GET, // Пример значения
+    enum: PermissionsEnum, // Указываем enum
+    example: PermissionsEnum.GET, // Пример значения
     description:
       'The HTTP method associated with the entity action. Possible values: POST, GET, PUT, DELETE, RESTORE.',
   })
-  @IsEnum(MethodsEnum)
+  @IsEnum(PermissionsEnum)
   @IsString()
   @IsOptional()
   method?: string;
