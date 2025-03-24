@@ -59,6 +59,14 @@ export class MonitoringFilterDto extends ListQueryDto {
   method?: string;
 
   @ApiProperty({
+    type: String,
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  module?: string;
+
+  @ApiProperty({
     type: Boolean,
     required: false,
   })
