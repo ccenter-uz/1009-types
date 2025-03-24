@@ -81,6 +81,11 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/user/get-me',
   },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/user/get-by-staff-number/:id',
+  },
   // {
   //   role: 1,
   //   permission: PermissionsEnum.GET,
