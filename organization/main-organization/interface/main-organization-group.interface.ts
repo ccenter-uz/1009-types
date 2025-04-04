@@ -1,14 +1,16 @@
+import { AppLanguages } from "types/global";
+
 export namespace MainOrganizationInterfaces {
   export interface Request {
     staffNumber?: string;
-    name: string;
+    name: AppLanguages;
     orderNumber?: number;
   }
 
   export interface Update {
     id: number;
     staffNumber?: string;
-    name?: string;
+    name?: AppLanguages;
     orderNumber?: number;
   }
 
@@ -16,7 +18,7 @@ export namespace MainOrganizationInterfaces {
     id: number;
     staffNumber?: string;
     editedStaffNumber?: string;
-    name?: string;
+    name?: AppLanguages;
     orderNumber?: number;
     createdAt: Date;
     updatedAt: Date;
