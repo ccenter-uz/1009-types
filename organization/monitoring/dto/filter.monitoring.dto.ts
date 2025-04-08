@@ -6,7 +6,7 @@ import {
   IsString,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { ListQueryDto,  PermissionsEnum, moduleNames } from 'types/global';
+import { ListQueryDto, PermissionsEnum, moduleNames } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class MonitoringFilterDto extends ListQueryDto {
