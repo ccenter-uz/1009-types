@@ -26,6 +26,15 @@ export class MonitoringFilterDto extends ListQueryDto {
   @IsNumber()
   @IsOptional()
   @Type(() => Number)
+  referenceId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
   roleId?: number;
 
   @ApiProperty({
@@ -61,10 +70,12 @@ export class MonitoringFilterDto extends ListQueryDto {
   @ApiProperty({
     type: String,
     required: false,
-    enum: moduleNames, 
-    example: moduleNames.ORGANIZATION, 
+    enum: moduleNames,
+    example: moduleNames.ORGANIZATION,
     description:
-      'The HTTP method associated with the entity action. Possible values: POST, GET, PUT, DELETE, RESTORE.',
+      'Specifies which module this field belongs to. Must be one of the following values: ' +
+      Object.values(moduleNames).join(', ') +
+      '.',
   })
   @IsEnum(moduleNames)
   @IsOptional()
