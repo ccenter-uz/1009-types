@@ -341,3 +341,34 @@ export const enum OrganizationVersionActionsEnum {
   // RESTORE = 'restore',
 }
 
+
+export enum moduleNames {
+  ADDITIONAL = 'additional',
+  ADDITIONAL_CATEGORY = 'additional-category',
+  AREA = 'area',
+  AVENUE = 'avenue',
+  CATEGORY = 'category',
+  CITY = 'city',
+  DISTRICT = 'district',
+  IMPASSE = 'impasse',
+  LANE = 'lane',
+  MAIN_ORGANIZATION = 'main-organization',
+  NEARBY = 'nearby',
+  NEARBY_CATEGORY = 'nearby-category',
+  NEIGHBORHOOD = 'neighborhood',
+  ORGANIZATION = 'organization',
+  ORGANIZATION_VERSION = 'organization-version',
+  PASSAGE = 'passage',
+  PHONE_TYPE = 'phone-type',
+  PRODUCT_SERVICE_SUB_CATEGORY = 'product-service-sub-category',
+  PRODUCT_SERVICE_CATEGORY = 'product-servise-category',
+  REGION = 'region',
+  RESIDENTIAL_AREA = 'residential-area',
+  SEGMENT = 'segment',
+  STREET = 'street',
+  SUB_CATEGORY = 'sub-category',
+  VILLAGE = 'village',
+}
+
+
+

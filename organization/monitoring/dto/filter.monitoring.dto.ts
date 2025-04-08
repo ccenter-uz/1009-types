@@ -6,7 +6,7 @@ import {
   IsString,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { ListQueryDto,  PermissionsEnum } from 'types/global';
+import { ListQueryDto,  PermissionsEnum, moduleNames } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class MonitoringFilterDto extends ListQueryDto {
@@ -18,6 +18,15 @@ export class MonitoringFilterDto extends ListQueryDto {
   @IsOptional()
   @Type(() => Number)
   organizationId?: number;
+
+  @ApiProperty({
+    type: Number,
+    required: false,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  referenceId?: number;
 
   @ApiProperty({
     type: Number,
@@ -61,8 +70,14 @@ export class MonitoringFilterDto extends ListQueryDto {
   @ApiProperty({
     type: String,
     required: false,
+    enum: moduleNames,
+    example: moduleNames.ORGANIZATION,
+    description:
+      'Specifies which module this field belongs to. Must be one of the following values: ' +
+      Object.values(moduleNames).join(', ') +
+      '.',
   })
-  @IsString()
+  @IsEnum(moduleNames)
   @IsOptional()
   module?: string;
 
