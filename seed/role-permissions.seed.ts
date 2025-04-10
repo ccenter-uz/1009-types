@@ -104,6 +104,11 @@ export const RolePermissionsData = [
   // },
   {
     role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organizations/object-adress'
+  },
+  {
+    role: Roles.MODERATOR,
     permission: PermissionsEnum.POST,
     path: '/ftp/create-organizations',
   },
