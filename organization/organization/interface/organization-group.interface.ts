@@ -1,3 +1,4 @@
+import { DistrictInterfaces } from 'types/organization/district';
 import { AppLanguages, JsonValue } from 'types/global/types';
 import * as Multer from 'multer';
 import { PaymentTypesDto } from '../dto/create-peyment-types.dto';
@@ -137,7 +138,7 @@ export namespace OrganizationInterfaces {
     deletedAt: Date;
 
     area?: AreaInterfaces.Response;
-  }
+  } 
 
   export interface ResponseWithoutPagination {
     totalDocs: number;

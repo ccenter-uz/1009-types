@@ -41,6 +41,17 @@ export const RolePermissionsData = [
   //   permission: PermissionsEnum.GET,
   //   path: '/organization/my-org',
   // },
+
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/object-adress',
+  },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/object-adress',
+  },
   {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.GET,
@@ -91,6 +102,11 @@ export const RolePermissionsData = [
   //   permission: PermissionsEnum.GET,
   //   path: '/user/get-me',
   // },
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organizations/object-adress'
+  },
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.POST,
