@@ -370,6 +370,7 @@ export enum moduleNames {
 }
 
 export enum moduleNamesObjectAdress {
+  ALL = 'all' ,
   STREET = 'street',
   AREA = 'area',
   LANE = 'lane',
