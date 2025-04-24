@@ -27,5 +27,5 @@ export class ObjectAdressFilterDto extends ListQueryDto {
   })
   @IsEnum(moduleNamesObjectAdress)
   @IsOptional()
-  module?: string;
+  module?: string = 'all';
 }
