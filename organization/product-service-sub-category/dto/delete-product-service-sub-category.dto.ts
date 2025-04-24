@@ -1,7 +1,13 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
-import { Type } from 'class-transformer';
+import {
+  IsBoolean,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { Transform, Type } from 'class-transformer';
 import { DeleteDto, ListQueryDto } from 'types/global';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ProductServiceSubCategoryDeleteDto extends DeleteDto {
   @ApiProperty({
@@ -11,5 +17,24 @@ export class ProductServiceSubCategoryDeleteDto extends DeleteDto {
   @IsString()
   @IsOptional()
   @Type(() => String)
+  deleteReason?: string;
+}
+
+
+
+export class ProductServiceSubCategoryDeleteQueryDto {
+  @ApiProperty({ type: Boolean, required: true })
+  @IsOptional()
+  @IsBoolean()
+  @Transform(({ value }) => {
+    if (value === 'true' || value === true) return true;
+    if (value === 'false' || value === false) return false;
+    return undefined;
+  })
+  delete?: boolean;
+
+  @ApiPropertyOptional({ type: String })
+  @IsOptional()
+  @IsString()
   deleteReason?: string;
 }
