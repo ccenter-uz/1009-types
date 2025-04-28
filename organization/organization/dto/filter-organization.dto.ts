@@ -17,6 +17,7 @@ import {
   LogDataType,
   OrganizationStatusEnum,
   StatusEnum,
+  moduleNamesObjectAdress,
 } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -280,6 +281,29 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   @IsNumber()
   @Type(() => Number)
   streetId?: number;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  objectAdressId?: number;
+
+  @ApiProperty({
+    type: String,
+    required: false,
+    enum: moduleNamesObjectAdress,
+    example: moduleNamesObjectAdress.AREA,
+    description:
+      'Specifies which module this field belongs to. Must be one of the following values: ' +
+      Object.values(moduleNamesObjectAdress).join(', ') +
+      '.',
+  })
+  @IsEnum(moduleNamesObjectAdress)
+  @IsOptional()
+  module?: string = 'all';
 
   @ApiProperty({
     type: Number,
