@@ -30,6 +30,7 @@ export namespace DistrictInterfaces {
     regionId: number;
     cityId: number;
     staffNumber?: string;
+    editedStaffNumber?: string,
     index: string;
     name?: {} | string;
     oldName?: {} | string;

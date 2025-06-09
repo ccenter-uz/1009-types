@@ -19,6 +19,7 @@ export namespace ProductServiceSubCategoryInterfaces {
     id: number;
     productServiceCategoryId: number;
     staffNumber?: string;
+    editedStaffNumber?: string;
     name?: {} | string;
     orderNumber?: number;
     createdAt: Date;

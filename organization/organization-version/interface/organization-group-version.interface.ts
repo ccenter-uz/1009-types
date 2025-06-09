@@ -130,6 +130,7 @@ export namespace OrganizationVersionInterfaces {
     mail?: string;
     clientId?: string;
     manager?: string;
+    editedStaffNumber?: string;
     index: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];

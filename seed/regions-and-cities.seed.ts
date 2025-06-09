@@ -10,7 +10,7 @@ export const RegionsAndCities = [
         name: {
           ru: 'Андижан',
           uz: 'Andijon',
-          cy: 'Тошкент',
+          cy: 'Андижон',
         },
       },
       {

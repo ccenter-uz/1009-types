@@ -32,6 +32,7 @@ export enum PermissionsEnum {
   PUT = 'PUT',
   DELETE = 'DELETE',
   RESTORE = 'PUT',
+  ALL = 'ALL',
 }
 
 export const UserPermissions = {
@@ -338,4 +339,44 @@ export const enum OrganizationVersionActionsEnum {
   UPDATE = 'update',
   DELETE = 'delete',
   // RESTORE = 'restore',
+}
+
+export enum moduleNames {
+  ADDITIONAL = 'additional',
+  ADDITIONAL_CATEGORY = 'additional-category',
+  CATEGORY = 'category',
+  CITY = 'city',
+  DISTRICT = 'district',
+  MAIN_ORGANIZATION = 'main-organization',
+  NEARBY = 'nearby',
+  NEARBY_CATEGORY = 'nearby-category',
+  ORGANIZATION = 'organization',
+  ORGANIZATION_VERSION = 'organization-version',
+  PHONE_TYPE = 'phone-type',
+  PRODUCT_SERVICE_SUB_CATEGORY = 'product-service-sub-category',
+  PRODUCT_SERVICE_CATEGORY = 'product-servise-category',
+  REGION = 'region',
+  SEGMENT = 'segment',
+  SUB_CATEGORY = 'sub-category',
+  VILLAGE = 'village',
+  STREET = 'street',
+  AREA = 'area',
+  LANE = 'lane',
+  RESIDENTIAL_AREA = 'residential-area',
+  NEIGHBORHOOD = 'neighborhood',
+  IMPASSE = 'impasse',
+  AVENUE = 'avenue',
+  PASSAGE = 'passage',
+}
+
+export enum moduleNamesObjectAdress {
+  ALL = 'all' ,
+  STREET = 'street',
+  AREA = 'area',
+  LANE = 'lane',
+  RESIDENTIAL_AREA = 'residential-area',
+  NEIGHBORHOOD = 'neighborhood',
+  IMPASSE = 'impasse',
+  AVENUE = 'avenue',
+  PASSAGE = 'passage',
 }
