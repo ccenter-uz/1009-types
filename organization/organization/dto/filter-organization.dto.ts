@@ -129,6 +129,20 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   bounded?: boolean;
 
   @ApiProperty({
+    type: Boolean,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
+  @IsOptional()
+  @IsBoolean()
+  fromOperator?: boolean;
+
+  @ApiProperty({
     required: false,
     type: Number,
   })
