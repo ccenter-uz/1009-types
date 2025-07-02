@@ -105,7 +105,7 @@ export const RolePermissionsData = [
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
-    path: '/organizations/object-adress'
+    path: '/organizations/object-adress',
   },
   {
     role: Roles.MODERATOR,
@@ -1331,6 +1331,11 @@ export const RolePermissionsData = [
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
     path: '/organization',
+  },
+  {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
+    path: '/organization/:id',
   },
   {
     role: Roles.ADMIN,
