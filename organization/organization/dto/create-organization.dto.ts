@@ -308,7 +308,10 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
   })
   @IsNotEmpty()
-  social: socialType | string;
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  social: Record<string, string>;
 
   @ApiProperty({
     type: 'array',

@@ -11,7 +11,7 @@ import {
 } from 'class-validator';
 import { IdDto, LogDataType } from 'types/global';
 import * as Multer from 'multer';
-import {  PhoneType } from './create-phone-version.dto';
+import { PhoneType } from './create-phone-version.dto';
 import { PaymentTypesVersionDto } from './create-peyment-types-version.dto';
 import { PhotoLinkVersionDto } from './file-upload-version.dto';
 import { ProductServiceVersionType } from './create-product-service-version.dto';
@@ -305,6 +305,20 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({
     type: Object,
     example: {
+      socials: [
+        { type: 'telegram', link: 'https://t.me' },
+        { type: 'telegram', link: 'https://t.me' },
+      ],
+    },
+  })
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  social: Record<string, string>;
+
+  @ApiProperty({
+    type: Object,
+    example: {
       pictures: [{ link: 'dasdsafds' }, { link: 'dasdsafds' }],
     },
     required: false,
@@ -318,6 +332,31 @@ export class OrganizationVersionUpdateDto
     required: false,
   })
   photos: Array<Multer.File>;
+
+  @ApiProperty({
+    type: 'string',
+    format: 'binary',
+    required: false,
+  })
+  logo: Multer.File;
+
+  @ApiProperty({
+    type: 'string',
+    format: 'binary',
+    required: false,
+  })
+  certificate: Multer.File;
+
+  @ApiProperty({ example: 'https://google.com', required: false })
+  @IsOptional()
+  @IsString()
+  // @Transform(removeSymbols)
+  logoLink: string;
+  
+  @ApiProperty({ example: 'https://google.com', required: false })
+  @IsOptional()
+  @IsString()
+  certificateLink: string;
 
   @IsOptional()
   @IsArray()
