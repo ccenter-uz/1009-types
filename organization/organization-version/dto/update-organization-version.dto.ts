@@ -310,6 +310,7 @@ export class OrganizationVersionUpdateDto
         { type: 'telegram', link: 'https://t.me' },
       ],
     },
+    required: false,
   })
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
