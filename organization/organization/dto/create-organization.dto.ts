@@ -20,6 +20,7 @@ import { PhotoLinkDto } from './file-upload-dto';
 import { ProductServiceType } from './create-product-service.dto';
 import { NearbeesType } from './create-nearbees.dto';
 import { removeSymbols } from 'types/global/helper';
+import { socialType } from './create-social.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1, required: false })
@@ -298,11 +299,45 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   nearby: NearbeesType | string;
 
   @ApiProperty({
+    type: Object,
+    example: {
+      socials: [
+        { type: 'telegram', link: 'https://t.me' },
+        { type: 'telegram', link: 'https://t.me' },
+      ],
+    },
+  })
+  @IsNotEmpty()
+  social: socialType | string;
+
+  @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
     required: false,
   })
   photos: Array<Multer.File>;
+
+  @ApiProperty({
+    type: 'string',
+    format: 'binary',
+    required: false,
+  })
+  logo: Multer.File;
+
+  @ApiProperty({
+    type: 'string',
+    format: 'binary',
+    required: false,
+  })
+  certificate: Multer.File;
+
+  @IsOptional()
+  @IsString()
+  logoLink: string;
+
+  @IsOptional()
+  @IsString()
+  certificateLink: string;
 
   @IsOptional()
   @IsArray()
