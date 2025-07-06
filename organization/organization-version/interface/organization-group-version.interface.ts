@@ -8,6 +8,7 @@ import {
   NearbeesTypeResponse,
 } from 'types/organization/organization/dto/create-nearbees.dto';
 import { ProductServiceType } from 'types/organization/organization/dto/create-product-service.dto';
+import { socialType } from 'types/organization/organization/dto/create-social.dto';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
     id: number;
@@ -35,6 +36,9 @@ export namespace OrganizationVersionInterfaces {
     apartment?: string;
     description?: string;
     inn?: string;
+    socials?: JsonValue | string;
+    logo?: string;
+    certificate?: string;
     bankNumber?: string;
     account?: string;
     mail?: string;
