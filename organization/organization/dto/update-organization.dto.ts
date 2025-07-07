@@ -185,6 +185,14 @@ export class OrganizationUpdateDto
   nearbyDescription: string;
 
   @ApiProperty({
+    type: 'string',
+    required: false,
+  })
+  @IsOptional()
+  @IsString()
+  certificate: string;
+
+  @ApiProperty({
     example: {
       cash: true,
       terminal: false,

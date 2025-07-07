@@ -215,6 +215,14 @@ export class OrganizationVersionUpdateDto
   staffNumber?: string;
 
   @ApiProperty({
+    type: 'string',
+    required: false,
+  })
+  @IsOptional()
+  @IsString()
+  certificate: string;
+
+  @ApiProperty({
     example: {
       cash: true,
       terminal: false,
@@ -341,23 +349,11 @@ export class OrganizationVersionUpdateDto
   })
   logo: Multer.File;
 
-  @ApiProperty({
-    type: 'string',
-    format: 'binary',
-    required: false,
-  })
-  certificate: Multer.File;
-
   @ApiProperty({ example: 'https://google.com', required: false })
   @IsOptional()
   @IsString()
   // @Transform(removeSymbols)
   logoLink: string;
-  
-  @ApiProperty({ example: 'https://google.com', required: false })
-  @IsOptional()
-  @IsString()
-  certificateLink: string;
 
   @IsOptional()
   @IsArray()
