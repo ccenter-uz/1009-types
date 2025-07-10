@@ -18,14 +18,14 @@ export class savedOrganizationUpdateDto
   @IsNumber()
   id: number;
 
-  @ApiProperty({
-    type: Number,
-    required: true,
-  })
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  organizationId: number;
+  // @ApiProperty({
+  //   type: Number,
+  //   required: true,
+  // })
+  // @IsOptional()
+  // @IsNumber()
+  // @Type(() => Number)
+  // organizationId: number;
 
   @IsOptional()
   @IsNumber()

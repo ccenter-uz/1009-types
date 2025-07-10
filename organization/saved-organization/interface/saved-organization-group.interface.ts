@@ -11,7 +11,6 @@ export namespace savedOrganizationInterfaces {
 
   export interface Update {
     id: number;
-    organizationId: number;
     userId: number;
     isSaved?: boolean;
   }
