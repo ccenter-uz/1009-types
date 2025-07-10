@@ -221,6 +221,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   })
   @IsOptional()
   @IsString()
+  @Transform(removeSymbols)
   certificate: string;
 
   @ApiProperty({
