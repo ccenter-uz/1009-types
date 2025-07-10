@@ -216,6 +216,14 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   staffNumber?: string;
 
   @ApiProperty({
+    type: 'string',
+    required: false,
+  })
+  @IsOptional()
+  @IsString()
+  certificate: string;
+
+  @ApiProperty({
     example: {
       cash: true,
       terminal: false,
@@ -327,20 +335,9 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   })
   logo: Multer.File;
 
-  @ApiProperty({
-    type: 'string',
-    format: 'binary',
-    required: false,
-  })
-  certificate: Multer.File;
-
   @IsOptional()
   @IsString()
   logoLink: string;
-
-  @IsOptional()
-  @IsString()
-  certificateLink: string;
 
   @IsOptional()
   @IsArray()
