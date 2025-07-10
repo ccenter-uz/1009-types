@@ -105,7 +105,7 @@ export const RolePermissionsData = [
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
-    path: '/organizations/object-adress'
+    path: '/organizations/object-adress',
   },
   {
     role: Roles.MODERATOR,
@@ -1491,5 +1491,37 @@ export const RolePermissionsData = [
     role: Roles.USER,
     permission: PermissionsEnum.GET,
     path: '/neighborhood/:id',
+  },
+
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/saved-organization/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/saved-organization',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.POST,
+    path: '/saved-organization',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.PUT,
+    path: '/saved-organization/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.DELETE,
+    path: '/saved-organization/:id',
+  },
+
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.PUT,
+    path: '/saved-organization/:id/restore',
   },
 ];
