@@ -320,6 +320,7 @@ export class OrganizationVersionUpdateDto
     },
     required: false,
   })
+  @IsOptional()
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
