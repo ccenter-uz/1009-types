@@ -344,6 +344,10 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   userId?: number;
 
   @IsOptional()
+  @IsBoolean()
+  savedOrganization?: boolean;
+
+  @IsOptional()
   @IsObject()
   logData?: LogDataType;
 }
