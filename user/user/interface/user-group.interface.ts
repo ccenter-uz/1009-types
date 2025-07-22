@@ -66,6 +66,14 @@ export namespace UserInterfaces {
     deletedAt: Date;
   }
 
+  export interface ResponseCreateUser {
+    error?: ErrorStatusInLogin;
+    smsCode?: number;
+    messsage?: string;
+    age?: string;
+    userId?: number;
+  }
+
   export interface ResponseWithoutPagination {
     totalDocs: number;
     data: Response[];
