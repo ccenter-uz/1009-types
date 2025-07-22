@@ -21,6 +21,11 @@ export namespace UserInterfaces {
     id: number;
   }
 
+  export interface VerifySmsCodeRequest {
+    userId: number;
+    smsCode: number;
+  }
+
   export interface CheckUserPermissionRequest {
     userId: number;
     roleId: number;
