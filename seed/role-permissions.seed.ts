@@ -1516,7 +1516,7 @@ export const RolePermissionsData = [
   {
     role: Roles.USER,
     permission: PermissionsEnum.PUT,
-    path: '/saved-organization/:id',
+    path: '/saved-organization/:organizationId',
   },
   {
     role: Roles.USER,
