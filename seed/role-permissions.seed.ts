@@ -117,6 +117,12 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.DELETE,
     path: '/organization/:id',
   },
+
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/version/:id',
+  },
   {
     role: Roles.OPERATOR,
     permission: PermissionsEnum.PUT,
@@ -966,6 +972,12 @@ export const RolePermissionsData = [
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
     path: '/main-organization/:id',
+  },
+
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/version/:id',
   },
   {
     role: Roles.MODERATOR,
