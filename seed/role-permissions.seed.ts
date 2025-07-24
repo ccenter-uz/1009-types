@@ -1335,6 +1335,11 @@ export const RolePermissionsData = [
   {
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
+    path: '/organization/:id',
+  },
+  {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
     path: '/statistics/all',
   },
   {

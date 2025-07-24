@@ -21,6 +21,14 @@ export namespace UserInterfaces {
     id: number;
   }
 
+  export interface VerifySmsCodeRequest {
+    userId: number;
+    smsCode: number;
+  }
+
+  export interface ResendSmsCodeRequest {
+    userId: number;
+  }
   export interface CheckUserPermissionRequest {
     userId: number;
     roleId: number;
@@ -65,6 +73,16 @@ export namespace UserInterfaces {
     updatedAt: Date;
     deletedAt: Date;
   }
+
+  export interface ResponseCreateUser {
+    error?: ErrorStatusInLogin;
+    smsCode?: number;
+    messsage?: string;
+    age?: string;
+    userId?: number;
+  }
+
+  
 
   export interface ResponseWithoutPagination {
     totalDocs: number;
