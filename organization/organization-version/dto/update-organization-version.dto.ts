@@ -220,6 +220,7 @@ export class OrganizationVersionUpdateDto
   })
   @IsOptional()
   @IsString()
+  @Transform(removeSymbols)
   certificate: string;
 
   @ApiProperty({
