@@ -354,7 +354,7 @@ export class OrganizationVersionUpdateDto
   @ApiProperty({ example: 'https://google.com', required: false })
   @IsOptional()
   @IsString()
-  // @Transform(removeSymbols)
+  @Transform(removeSymbols)
   logoLink: string;
 
   @IsOptional()
