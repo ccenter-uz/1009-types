@@ -8,10 +8,10 @@ import {
   Matches,
   MaxLength,
 } from 'class-validator';
-import { UserInterfaces} from '../interface/user-group.interface';
+import { UserInterfaces } from '../interface/user-group.interface';
 import { ErrorMessageForPassword } from 'types/global';
 
-export class CreateBisnessUserLogInDto
+export class CreateBisnessDto
   implements UserInterfaces.createBisnessUserRequest
 {
   @ApiProperty()
