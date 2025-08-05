@@ -8,11 +8,11 @@ export namespace UserInterfaces {
     password: string;
   }
 
-  export interface LogInBisnessUserRequest {
+  export interface LogInBusinessUserRequest {
     phoneNumber: string;
   }
 
-  export interface createBisnessUserRequest {
+  export interface createBusinessUserRequest {
     phoneNumber: string;
   }
 
@@ -91,7 +91,7 @@ export namespace UserInterfaces {
     userId?: number;
   }
 
-  export interface ResponseLoginBisnessUser {
+  export interface ResponseLoginBusinessUser {
     error?: ErrorStatusInLogin;
     smsCode?: number;
     messsage?: string;
