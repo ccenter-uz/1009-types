@@ -124,7 +124,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   passageId?: number;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Transform(removeSymbols)
   name?: string;
@@ -232,7 +232,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
     type: PaymentTypesDto,
   })
-  @IsNotEmpty()
+  @IsOptional()
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
