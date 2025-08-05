@@ -317,6 +317,7 @@ export enum CreatedByEnum {
   Client = 'client',
   Moderator = 'moderator',
   Operator = 'operator',
+  Bisness = 'bisness',
 }
 
 export enum OrganizationStatusEnum {
