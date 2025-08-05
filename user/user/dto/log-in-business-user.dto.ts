@@ -11,13 +11,14 @@ import {
 import { UserInterfaces } from '../interface/user-group.interface';
 import { ErrorMessageForPassword } from 'types/global';
 
-export class BisnessUserLogInDto implements UserInterfaces.LogInBisnessUserRequest {
+export class BusinessUserLogInDto
+  implements UserInterfaces.LogInBusinessUserRequest
+{
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
   @MaxLength(13)
   phoneNumber: string;
-
 
   @IsOptional()
   logData?: any;

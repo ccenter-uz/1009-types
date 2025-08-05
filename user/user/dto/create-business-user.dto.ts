@@ -11,8 +11,8 @@ import {
 import { UserInterfaces } from '../interface/user-group.interface';
 import { ErrorMessageForPassword } from 'types/global';
 
-export class CreateBisnessUserDto
-  implements UserInterfaces.createBisnessUserRequest
+export class CreateBusinessUserDto
+  implements UserInterfaces.createBusinessUserRequest
 {
   @ApiProperty()
   @IsNotEmpty()
