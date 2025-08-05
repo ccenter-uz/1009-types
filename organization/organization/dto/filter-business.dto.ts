@@ -21,8 +21,7 @@ import {
 } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class OrganizationFilterBissnessDto extends LanguageRequestDto {
-
+export class OrganizationFilterBusinessDto extends LanguageRequestDto {
   @ApiProperty({
     type: String,
   })
