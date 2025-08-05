@@ -25,7 +25,6 @@ export class OrganizationFilterBissnessDto extends LanguageRequestDto {
 
   @ApiProperty({
     type: String,
-    required: false,
   })
   @IsString()
   @IsOptional()
