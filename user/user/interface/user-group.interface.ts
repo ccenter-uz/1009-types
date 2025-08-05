@@ -1,4 +1,3 @@
-import { createPagination } from 'src/common/helper/pagination.helper';
 import { ErrorStatusInLogin, PermissionType } from 'types/global';
 import { RoleInterfaces } from 'types/user/role';
 
@@ -8,11 +7,11 @@ export namespace UserInterfaces {
     password: string;
   }
 
-  export interface LogInBisnessUserRequest {
+  export interface LogInBusinessUserRequest {
     phoneNumber: string;
   }
 
-  export interface createBisnessUserRequest {
+  export interface createBusinessUserRequest {
     phoneNumber: string;
   }
 
@@ -91,12 +90,11 @@ export namespace UserInterfaces {
     userId?: number;
   }
 
-  export interface ResponseLoginBisnessUser {
+  export interface ResponseLoginBusinessUser {
     error?: ErrorStatusInLogin;
     smsCode?: number;
     messsage?: string;
     userId?: number;
-    numericId?: string;
   }
 
   export interface ResponseWithoutPagination {

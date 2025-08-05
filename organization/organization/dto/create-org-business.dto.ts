@@ -13,8 +13,8 @@ import {
 
 import { ErrorMessageForPassword, LogDataType } from 'types/global';
 
-export class OrganizationBissnesCreateDto
-  implements OrganizationInterfaces.RequestBisness
+export class OrganizationBusinessCreateDto
+  implements OrganizationInterfaces.RequestBusiness
 {
   @ApiProperty()
   @IsNotEmpty()

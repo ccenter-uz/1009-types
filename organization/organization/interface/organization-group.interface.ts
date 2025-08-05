@@ -10,8 +10,7 @@ import {
 } from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
-
-  export interface RequestBisness { 
+  export interface RequestBusiness {
     certificate: string;
     inn: string;
     address: string;
@@ -145,7 +144,13 @@ export namespace OrganizationInterfaces {
     deletedAt: Date;
 
     area?: AreaInterfaces.Response;
-  } 
+  }
+
+  export interface ResponseBusiness {
+    smsCode?: number;
+    messsage?: string;
+    userId?: number;
+  }
 
   export interface ResponseWithoutPagination {
     totalDocs: number;
