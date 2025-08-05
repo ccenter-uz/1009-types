@@ -29,13 +29,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   mainOrganizationId?: number;
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
   subCategoryId?: number;
 
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
@@ -123,11 +123,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNumber()
   passageId?: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsNotEmpty()
   @IsString()
   @Transform(removeSymbols)
-  name: string;
+  name?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
@@ -238,7 +238,7 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   @IsObject()
   @Type(() => PaymentTypesDto)
-  paymentTypes: PaymentTypesDto;
+  paymentTypes?: PaymentTypesDto;
 
   @ApiProperty({
     example: {
@@ -327,18 +327,18 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     items: { type: 'string', format: 'binary' },
     required: false,
   })
-  photos: Array<Multer.File>;
+  photos?: Array<Multer.File>;
 
   @ApiProperty({
     type: 'string',
     format: 'binary',
     required: false,
   })
-  logo: Multer.File;
+  logo?: Multer.File;
 
   @IsOptional()
   @IsString()
-  logoLink: string;
+  logoLink?: string;
 
   @IsOptional()
   @IsArray()
