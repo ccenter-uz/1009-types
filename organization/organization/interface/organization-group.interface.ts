@@ -146,6 +146,12 @@ export namespace OrganizationInterfaces {
     area?: AreaInterfaces.Response;
   }
 
+  export interface ResponseBusiness {
+    smsCode?: number;
+    messsage?: string;
+    userId?: number;
+  }
+
   export interface ResponseWithoutPagination {
     totalDocs: number;
     data: Response[];

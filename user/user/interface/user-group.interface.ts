@@ -95,7 +95,6 @@ export namespace UserInterfaces {
     smsCode?: number;
     messsage?: string;
     userId?: number;
-    numericId?: string;
   }
 
   export interface ResponseWithoutPagination {
