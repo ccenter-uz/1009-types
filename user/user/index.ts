@@ -5,3 +5,4 @@ export * from './dto/update-me-user.dto';
 export * from './interface/user-group.interface';
 export * from './dto/verify-sms-code.dto'
 export * from './dto/resend-sms-code.dto';
+export * from './dto/create-bisness-user.dto'
