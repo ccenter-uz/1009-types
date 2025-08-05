@@ -7,6 +7,9 @@ export namespace UserInterfaces {
     password: string;
   }
 
+  export interface LogInBisnessUserRequest {
+    phoneNumber: string;
+  }
   export interface LogInResponse {
     accessToken: string;
     permissions: any;
@@ -82,7 +85,13 @@ export namespace UserInterfaces {
     userId?: number;
   }
 
-  
+  export interface ResponseLoginBisnessUser {
+    error?: ErrorStatusInLogin;
+    smsCode?: number;
+    messsage?: string;
+    userId?: number;
+    numericId?: string;
+  }
 
   export interface ResponseWithoutPagination {
     totalDocs: number;
