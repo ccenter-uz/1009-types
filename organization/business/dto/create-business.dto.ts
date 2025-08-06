@@ -1,4 +1,3 @@
-import { Business } from './../../../../node_modules/.prisma/client/index.d';
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
@@ -169,10 +168,11 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
   bannerLink?: string;
 
   @IsOptional()
-  @IsArray()
-  @ValidateNested()
-  @Type(() => PhotoLinkDto)
-  PhotoLink?: Record<string, string>;
+  @IsNotEmpty()
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  PhotoLink: JSON | string;
 
   @IsOptional()
   @IsObject()

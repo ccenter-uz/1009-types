@@ -22,6 +22,7 @@ export namespace BusinessInterfaces {
     socials?: {};
     map?: {};
     photos?: Array<Multer.File>;
+    PhotoLink?:{};
     // phone: PhoneDto[];
   }
 
