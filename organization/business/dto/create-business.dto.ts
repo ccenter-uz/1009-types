@@ -166,7 +166,7 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
 
   @IsOptional()
   @IsString()
-  bannerLink?: string;
+  bannerUrl?: string;
 
   @IsOptional()
   @IsArray()
