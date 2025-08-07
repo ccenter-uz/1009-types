@@ -87,13 +87,11 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
   workTime?: Record<string, string>;
 
   @ApiProperty({
-    type: 'object',
+    type: Object,
     example: {
       map: [
-        {
-          lat: { example: '123466' },
-          loadEnvFile: { type: 'string', example: '1252542' },
-        },
+        { lon: 'dfsaf', lat: 'qewrwe' },
+        { lon: 'qwer', lat: 'rqerqwe' },
       ],
     },
   })
