@@ -13,6 +13,7 @@ export namespace UserInterfaces {
 
   export interface createBusinessUserRequest {
     phoneNumber: string;
+    email: string;
   }
 
   export interface LogInResponse {

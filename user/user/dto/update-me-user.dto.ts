@@ -26,6 +26,11 @@ export class UserUpdateMeDto extends IdDto implements UserInterfaces.Update {
   @ApiProperty()
   @IsOptional()
   @IsString()
+  email?: string;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
   @Length(8, 20)
   @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
     message: ErrorMessageForPassword,

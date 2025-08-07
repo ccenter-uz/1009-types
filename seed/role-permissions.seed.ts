@@ -1572,4 +1572,14 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.PUT,
     path: '/business/:id/restore',
   },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/user/get-me',
+  },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.PUT,
+    path: '/user/update-me',
+  },
 ];

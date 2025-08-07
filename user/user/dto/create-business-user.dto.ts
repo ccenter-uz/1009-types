@@ -20,6 +20,11 @@ export class CreateBusinessUserDto
   @MaxLength(13)
   phoneNumber: string;
 
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  email: string;
+
   @IsOptional()
   logData?: any;
 }
