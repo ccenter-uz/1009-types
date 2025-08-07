@@ -37,6 +37,11 @@ export class OrganizationBusinessCreateDto
   @MaxLength(13)
   phoneNumber: string;
 
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  email: string;
+
   @IsOptional()
   @IsObject()
   logData?: LogDataType;

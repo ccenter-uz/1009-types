@@ -15,10 +15,7 @@ import { BusinessInterfaces } from 'types/organization/business/interface/busine
 import * as Multer from 'multer';
 import { removeSymbols } from 'types/global/helper';
 import { PictureVersionType } from 'types/organization/organization-version/dto/update-picture-version.dto';
-export class BusinessUpdateDto
-  extends IdDto
-  implements BusinessInterfaces.Update
-{
+export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Update {
   @IsOptional()
   @IsNumber()
   organizationId?: number;
@@ -176,5 +173,5 @@ export class BusinessUpdateDto
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  PhotoLink: Record<string, string>[];
+  PhotoLink: Record<string, { link: string }[]>;
 }
