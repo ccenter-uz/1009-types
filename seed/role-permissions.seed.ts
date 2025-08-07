@@ -1550,7 +1550,7 @@ export const RolePermissionsData = [
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.GET,
-    path: '/business/:id',
+    path: '/business/one',
   },
   {
     role: Roles.BUSINESS,
@@ -1581,5 +1581,10 @@ export const RolePermissionsData = [
     role: Roles.BUSINESS,
     permission: PermissionsEnum.PUT,
     path: '/user/update-me',
+  },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.DELETE,
+    path: '/user/delete-me',
   },
 ];
