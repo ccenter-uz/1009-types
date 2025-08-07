@@ -172,7 +172,7 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  PhotoLink: JSON | string;
+  PhotoLink: Record<string, { link: string }[]>;
 
   @IsOptional()
   @IsObject()
