@@ -64,11 +64,9 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
 
   @ApiProperty({
     example: {
-      dayoffs: ['Monday'],
-      lunchFrom: '13:00',
-      lunchTo: '14:00',
-      worktimeFrom: '10:00',
-      worktimeTo: '19:00',
+      cash: true,
+      terminal: false,
+      transfer: true,
     },
   })
   @IsOptional()

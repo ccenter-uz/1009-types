@@ -13,13 +13,8 @@ import {
 import { IdDto, LanguageDto } from 'types/global';
 import { BusinessInterfaces } from 'types/organization/business/interface/business-group.interface';
 import * as Multer from 'multer';
-import { PhoneDto } from './create-phone.dto';
-import { Phone } from '../types';
-import { PaymentTypesDto } from './create-peyment-types.dto';
 import { removeSymbols } from 'types/global/helper';
-import { PhotoLinkDto } from './file-upload-dto';
 export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Update {
-
   @IsOptional()
   @IsNumber()
   organizationId?: number;
@@ -62,11 +57,9 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     example: {
-      dayoffs: ['Monday'],
-      lunchFrom: '13:00',
-      lunchTo: '14:00',
-      worktimeFrom: '10:00',
-      worktimeTo: '19:00',
+      cash: true,
+      terminal: false,
+      transfer: true,
     },
   })
   @IsOptional()
