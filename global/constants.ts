@@ -24,6 +24,7 @@ export enum Roles {
   MODERATOR = 'moderator',
   OPERATOR = 'operator',
   USER = 'user',
+  BUSINESS = 'business',
 }
 
 export enum PermissionsEnum {

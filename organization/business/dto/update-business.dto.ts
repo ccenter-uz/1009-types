@@ -1,4 +1,3 @@
-import { Business } from './../../../../node_modules/.prisma/client/index.d';
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
@@ -19,10 +18,12 @@ import { Phone } from '../types';
 import { PaymentTypesDto } from './create-peyment-types.dto';
 import { removeSymbols } from 'types/global/helper';
 import { PhotoLinkDto } from './file-upload-dto';
-export class BusinessUpdateDto
-  extends IdDto
-  implements BusinessInterfaces.Update
-{
+export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Update {
+
+  @IsOptional()
+  @IsNumber()
+  organizationId?: number;
+
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
@@ -169,10 +170,11 @@ export class BusinessUpdateDto
   bannerUrl?: string;
 
   @IsOptional()
-  @IsArray()
-  @ValidateNested()
-  @Type(() => PhotoLinkDto)
-  PhotoLink: Record<string, string>;
+  @IsNotEmpty()
+  @Transform(({ value }) =>
+    typeof value === 'string' ? JSON.parse(value) : value
+  )
+  PhotoLink: Record<string, { link: string }[]>;
 
   @ApiProperty({
     type: 'array',
