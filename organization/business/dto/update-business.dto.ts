@@ -88,9 +88,13 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: 'object',
-    properties: {
-      lat: { example: '123466' },
-      loadEnvFile: { type: 'string', example: '1252542' },
+    example: {
+      map: [
+        {
+          lat: { example: '123466' },
+          loadEnvFile: { type: 'string', example: '1252542' },
+        },
+      ],
     },
   })
   @IsOptional()
@@ -102,10 +106,12 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: Object,
-    example: [
-      { id: 1, phone: '+998901234567' },
-      { id: 2, phone: '+998901234565' },
-    ],
+    example: {
+      phone: [
+        { id: 1, phone: '+998901234567' },
+        { id: 2, phone: '+998901234565' },
+      ],
+    },
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -115,10 +121,12 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: Object,
-    example: [
-      { type: 'telegram', link: 'https://t.me' },
-      { type: 'telegram', link: 'https://t.me' },
-    ],
+    example: {
+      socials: [
+        { type: 'telegram', link: 'https://t.me' },
+        { type: 'telegram', link: 'https://t.me' },
+      ],
+    },
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -128,7 +136,9 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: Object,
-    example: [{ link: 'dasdsafds' }, { link: 'dasdsafds' }],
+    example: {
+      pictures: [{ link: 'dasdsafds' }, { link: 'dasdsafds' }],
+    },
 
     required: false,
   })
