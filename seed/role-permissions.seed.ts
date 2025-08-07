@@ -1545,31 +1545,31 @@ export const RolePermissionsData = [
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.GET,
-    path: '/neighborhood',
+    path: '/business',
   },
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.GET,
-    path: '/neighborhood/:id',
+    path: '/business/:id',
   },
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.POST,
-    path: '/neighborhood',
+    path: '/business',
   },
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.PUT,
-    path: '/neighborhood/:id',
+    path: '/business/:id',
   },
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.DELETE,
-    path: '/neighborhood/:id',
+    path: '/business/:id',
   },
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.PUT,
-    path: '/neighborhood/:id/restore',
+    path: '/business/:id/restore',
   },
 ];
