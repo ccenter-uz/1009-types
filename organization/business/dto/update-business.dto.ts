@@ -14,7 +14,11 @@ import { IdDto, LanguageDto } from 'types/global';
 import { BusinessInterfaces } from 'types/organization/business/interface/business-group.interface';
 import * as Multer from 'multer';
 import { removeSymbols } from 'types/global/helper';
-export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Update {
+import { PictureVersionType } from 'types/organization/organization-version/dto/update-picture-version.dto';
+export class BusinessUpdateDto
+  extends IdDto
+  implements BusinessInterfaces.Update
+{
   @IsOptional()
   @IsNumber()
   organizationId?: number;
@@ -101,12 +105,10 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: Object,
-    example: {
-      phones: [
-        { id: 1, phone: '+998901234567' },
-        { id: 2, phone: '+998901234565' },
-      ],
-    },
+    example: [
+      { id: 1, phone: '+998901234567' },
+      { id: 2, phone: '+998901234565' },
+    ],
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -116,18 +118,37 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
 
   @ApiProperty({
     type: Object,
-    example: {
-      socials: [
-        { type: 'telegram', link: 'https://t.me' },
-        { type: 'telegram', link: 'https://t.me' },
-      ],
-    },
+    example: [
+      { type: 'telegram', link: 'https://t.me' },
+      { type: 'telegram', link: 'https://t.me' },
+    ],
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
   social: Record<string, string>;
+
+  @ApiProperty({
+    type: Object,
+    example: [{ link: 'dasdsafds' }, { link: 'dasdsafds' }],
+
+    required: false,
+  })
+  @IsOptional()
+  picture: PictureVersionType | string;
+
+  @ApiProperty({ example: 'https://google.com', required: false })
+  @IsOptional()
+  @IsString()
+  @Transform(removeSymbols)
+  logoUrl?: string;
+
+  @ApiProperty({ example: 'https://google.com', required: false })
+  @IsOptional()
+  @IsString()
+  @Transform(removeSymbols)
+  bannerUrl?: string;
 
   @ApiProperty({
     type: 'array',
@@ -150,29 +171,10 @@ export class BusinessUpdateDto extends IdDto implements BusinessInterfaces.Updat
   })
   banner?: Multer.File;
 
-  @ApiProperty({ example: 'https://google.com', required: false })
-  @IsOptional()
-  @IsString()
-  @Transform(removeSymbols)
-  logoUrl?: string;
-
-  @ApiProperty({ example: 'https://google.com', required: false })
-  @IsOptional()
-  @IsString()
-  @Transform(removeSymbols)
-  bannerUrl?: string;
-
   @IsOptional()
   @IsNotEmpty()
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  PhotoLink: Record<string, { link: string }[]>;
-
-  @ApiProperty({
-    type: 'array',
-    items: { type: 'string', format: 'binary' },
-    // description: 'Array of images for work time',
-  })
-  photosUrl?: Array<Multer.File>;
+  PhotoLink: Record<string, string>[];
 }

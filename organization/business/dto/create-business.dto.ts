@@ -108,12 +108,10 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
 
   @ApiProperty({
     type: Object,
-    example: {
-      phones: [
-        { id: 1, phone: '+998901234567' },
-        { id: 2, phone: '+998901234565' },
-      ],
-    },
+    example: [
+      { id: 1, phone: '+998901234567' },
+      { id: 2, phone: '+998901234565' },
+    ],
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -123,12 +121,10 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
 
   @ApiProperty({
     type: Object,
-    example: {
-      socials: [
-        { type: 'telegram', link: 'https://t.me' },
-        { type: 'telegram', link: 'https://t.me' },
-      ],
-    },
+    example: [
+      { type: 'telegram', link: 'https://t.me' },
+      { type: 'telegram', link: 'https://t.me' },
+    ],
   })
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -170,7 +166,7 @@ export class BusinessCreateDto implements BusinessInterfaces.Request {
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  PhotoLink: Record<string, { link: string }[]>;
+  PhotoLink: Record<string, string>[];
 
   @IsOptional()
   @IsObject()
