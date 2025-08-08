@@ -21,7 +21,7 @@ import {
 } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class OrganizationFilterDto extends LanguageRequestDto {
+export class SavedOrganizationFilterDto extends LanguageRequestDto {
   @ApiProperty({
     type: Number,
     required: false,
@@ -335,6 +335,20 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   @IsOptional()
   status: OrganizationStatusEnum = OrganizationStatusEnum.Accepted;
 
+  @ApiProperty({
+    type: Boolean,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return Boolean(value);
+  })
+  @IsOptional()
+  @IsBoolean()
+  savedOrganization?: boolean;
+
   @IsOptional()
   @IsString()
   role?: string;
@@ -342,10 +356,6 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   @IsOptional()
   @IsNumber()
   userId?: number;
-
-  @IsOptional()
-  @IsBoolean()
-  savedOrganization?: boolean;
 
   @IsOptional()
   @IsObject()

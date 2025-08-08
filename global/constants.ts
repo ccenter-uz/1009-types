@@ -341,7 +341,7 @@ export const enum OrganizationVersionActionsEnum {
   // RESTORE = 'restore',
 }
 
-export enum moduleNames {
+export enum ModuleNames {
   ADDITIONAL = 'additional',
   ADDITIONAL_CATEGORY = 'additional-category',
   CATEGORY = 'category',
@@ -369,14 +369,25 @@ export enum moduleNames {
   PASSAGE = 'passage',
 }
 
-export enum moduleNamesObjectAdress {
-  ALL = 'all' ,
+export enum ModuleNamesObjectAdress {
+  ALL = 'all',
   STREET = 'street',
   AREA = 'area',
   LANE = 'lane',
-  RESIDENTIAL_AREA = 'residential-area',
+  RESIDENTIAL_AREA = 'residential',
   NEIGHBORHOOD = 'neighborhood',
   IMPASSE = 'impasse',
   AVENUE = 'avenue',
   PASSAGE = 'passage',
 }
+
+export const ModuleNamesObjectAdressArray = [
+  'street',
+  'area',
+  'lane',
+  'residential',
+  'neighborhood',
+  'impasse',
+  'avenue',
+  'passage',
+];

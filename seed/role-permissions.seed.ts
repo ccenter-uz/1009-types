@@ -105,7 +105,7 @@ export const RolePermissionsData = [
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
-    path: '/organizations/object-adress'
+    path: '/organizations/object-adress',
   },
   {
     role: Roles.MODERATOR,
@@ -116,6 +116,12 @@ export const RolePermissionsData = [
     role: Roles.OPERATOR,
     permission: PermissionsEnum.DELETE,
     path: '/organization/:id',
+  },
+
+  {
+    role: Roles.OPERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/version/:id',
   },
   {
     role: Roles.OPERATOR,
@@ -967,6 +973,12 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/main-organization/:id',
   },
+
+  {
+    role: Roles.MODERATOR,
+    permission: PermissionsEnum.GET,
+    path: '/organization/version/:id',
+  },
   {
     role: Roles.MODERATOR,
     permission: PermissionsEnum.GET,
@@ -1335,6 +1347,11 @@ export const RolePermissionsData = [
   {
     role: Roles.ADMIN,
     permission: PermissionsEnum.GET,
+    path: '/organization/:id',
+  },
+  {
+    role: Roles.ADMIN,
+    permission: PermissionsEnum.GET,
     path: '/statistics/all',
   },
   {
@@ -1491,5 +1508,37 @@ export const RolePermissionsData = [
     role: Roles.USER,
     permission: PermissionsEnum.GET,
     path: '/neighborhood/:id',
+  },
+
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/saved-organization/:id',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/saved-organization',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.POST,
+    path: '/saved-organization',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.PUT,
+    path: '/saved-organization/:organizationId',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.DELETE,
+    path: '/saved-organization/:id',
+  },
+
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.PUT,
+    path: '/saved-organization/:id/restore',
   },
 ];

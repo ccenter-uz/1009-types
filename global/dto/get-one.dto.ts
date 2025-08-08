@@ -1,4 +1,4 @@
-import { IsInt, IsObject, IsOptional, IsString, Min } from 'class-validator';
+import { IsInt, IsNumber, IsObject, IsOptional, IsString, Min } from 'class-validator';
 import { Type } from 'class-transformer';
 import { LanguageRequestDto } from './language-request.dto';
 import { LogDataType } from '../types';
