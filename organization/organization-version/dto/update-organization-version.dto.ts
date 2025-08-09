@@ -358,6 +358,13 @@ export class OrganizationVersionUpdateDto
   })
   logo: Multer.File;
 
+  @ApiProperty({
+    type: 'string',
+    format: 'binary',
+    required: false,
+  })
+  banner: Multer.File;
+
   @ApiProperty({ example: 'https://google.com', required: false })
   @IsOptional()
   @IsString()
