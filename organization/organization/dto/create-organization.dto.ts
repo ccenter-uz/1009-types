@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
   IsArray,
@@ -21,6 +21,7 @@ import { ProductServiceType } from './create-product-service.dto';
 import { NearbeesType } from './create-nearbees.dto';
 import { removeSymbols } from 'types/global/helper';
 import { socialType } from './create-social.dto';
+import { SiteDto } from 'types/organization/organization-version/dto/update-site.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1, required: false })
@@ -321,6 +322,12 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     typeof value === 'string' ? JSON.parse(value) : value
   )
   social: Record<string, string>;
+
+  @ApiPropertyOptional({ type: () => SiteDto })
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => SiteDto)
+  site?: SiteDto;
 
   @ApiProperty({
     type: 'array',
