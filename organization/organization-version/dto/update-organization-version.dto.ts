@@ -1,5 +1,5 @@
 import { OrganizationVersionInterfaces } from 'types/organization/organization-version';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
   IsOptional,
@@ -18,6 +18,7 @@ import { ProductServiceVersionType } from './create-product-service-version.dto'
 import { NearbeesVersionType } from './create-nearbees-version.dto';
 import { PictureVersionType } from './update-picture-version.dto';
 import { removeSymbols } from 'types/global/helper';
+import { SiteDto } from './update-site.dto';
 export class OrganizationVersionUpdateDto
   extends IdDto
   implements OrganizationVersionInterfaces.Update
@@ -326,6 +327,12 @@ export class OrganizationVersionUpdateDto
     typeof value === 'string' ? JSON.parse(value) : value
   )
   social: Record<string, string>;
+
+  @ApiPropertyOptional({ type: () => SiteDto })
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => SiteDto)
+  site?: SiteDto;
 
   @ApiProperty({
     type: Object,

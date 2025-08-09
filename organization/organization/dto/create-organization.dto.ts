@@ -323,11 +323,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   social: Record<string, string>;
 
-  @ApiPropertyOptional({ type: () => SiteDto })
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => SiteDto)
-  site?: SiteDto;
+  // @ApiPropertyOptional({ type: () => SiteDto })
+  // @IsOptional()
+  // @ValidateNested()
+  // @Type(() => SiteDto)
+  // site?: SiteDto;
 
   @ApiProperty({
     type: 'array',
