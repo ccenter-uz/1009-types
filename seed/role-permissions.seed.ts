@@ -1545,36 +1545,6 @@ export const RolePermissionsData = [
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.GET,
-    path: '/business',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/business/one',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.POST,
-    path: '/business',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.PUT,
-    path: '/business/:id',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.DELETE,
-    path: '/business/:id',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.PUT,
-    path: '/business/:id/restore',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
     path: '/user/get-me',
   },
   {
@@ -1586,5 +1556,28 @@ export const RolePermissionsData = [
     role: Roles.BUSINESS,
     permission: PermissionsEnum.DELETE,
     path: '/user/delete-me',
+  },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.PUT,
+    path: '/organization/site/update',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/organization/site/one',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/organization/site/version',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/monitoring/organization',
   },
 ];
