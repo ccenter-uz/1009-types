@@ -10,6 +10,12 @@ import {
 } from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
 export namespace OrganizationInterfaces {
+  export interface RequestBusiness {
+    certificate: string;
+    inn: string;
+    address: string;
+    phoneNumber: string;
+  }
   export interface Request {
     mainOrganizationId?: number;
     subCategoryId?: number;
@@ -26,7 +32,7 @@ export namespace OrganizationInterfaces {
     impasseId?: number;
     segmentId?: number;
     passageId?: number;
-    name: string;
+    name?: string;
     legalName?: string;
     secret?: string;
     kvartal?: string;
@@ -40,7 +46,7 @@ export namespace OrganizationInterfaces {
     mail?: string;
     manager?: string;
     index?: string;
-    paymentTypes: PaymentTypesDto;
+    paymentTypes?: PaymentTypesDto;
     workTime?: {};
     transport?: {};
     photos?: Array<Multer.File>;
@@ -138,7 +144,13 @@ export namespace OrganizationInterfaces {
     deletedAt: Date;
 
     area?: AreaInterfaces.Response;
-  } 
+  }
+
+  export interface ResponseBusiness {
+    smsCode?: number;
+    messsage?: string;
+    userId?: number;
+  }
 
   export interface ResponseWithoutPagination {
     totalDocs: number;

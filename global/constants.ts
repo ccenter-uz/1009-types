@@ -24,6 +24,7 @@ export enum Roles {
   MODERATOR = 'moderator',
   OPERATOR = 'operator',
   USER = 'user',
+  BUSINESS = 'business',
 }
 
 export enum PermissionsEnum {
@@ -317,6 +318,7 @@ export enum CreatedByEnum {
   Client = 'client',
   Moderator = 'moderator',
   Operator = 'operator',
+  Business = 'business',
 }
 
 export enum OrganizationStatusEnum {
