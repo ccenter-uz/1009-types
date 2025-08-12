@@ -9,6 +9,8 @@ import {
   ProductServiceTypeResponce,
 } from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
+import { SiteDto } from 'types/organization/organization-version/dto/update-site.dto';
+import { RateType } from '../types';
 export namespace OrganizationInterfaces {
   export interface RequestBusiness {
     certificate: string;
@@ -96,21 +98,21 @@ export namespace OrganizationInterfaces {
 
   export interface Response {
     id: number;
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
-    districtId: number;
-    villageId: number;
-    avenueId: number;
-    residentialId: number;
-    neighborhoodId: number;
-    areaId: number;
-    streetId: number;
-    laneId: number;
-    impasseId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    neighborhoodId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
     segmentId?: number;
-    passageId: number;
+    passageId?: number;
     name?: string;
     legalName?: string;
     secret?: string;
@@ -123,17 +125,21 @@ export namespace OrganizationInterfaces {
     bankNumber?: string;
     account?: string;
     mail?: string;
+    email?: string;
     clientId?: string;
     manager?: string;
-    index: string;
+    index?: string;
     nearbyDescription?: string;
     staffNumber?: string;
     editedStaffNumber?: string;
-    status: number;
+    status?: number;
     deleteReason?: string;
-    createdBy: string;
+    createdBy?: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
+    site?: SiteDto;
+    socials: JsonValue | string;
+    rate?: RateType;
     // ProductServices?: ProductServiceTypeResponce[];
     // Nearbees?: NearbeesType[];
     Picture?: PictureType[];
