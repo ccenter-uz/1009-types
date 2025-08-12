@@ -9,6 +9,8 @@ import {
 } from 'types/organization/organization/dto/create-nearbees.dto';
 import { ProductServiceType } from 'types/organization/organization/dto/create-product-service.dto';
 import { socialType } from 'types/organization/organization/dto/create-social.dto';
+import { SiteDto } from '../dto/update-site.dto';
+import { RateType } from '../types';
 export namespace OrganizationVersionInterfaces {
   export interface Request {
     id: number;
@@ -105,21 +107,21 @@ export namespace OrganizationVersionInterfaces {
 
   export interface Response {
     id: number;
-    mainOrganizationId: number;
-    subCategoryId: number;
-    regionId: number;
-    cityId: number;
-    districtId: number;
-    villageId: number;
-    avenueId: number;
-    residentialId: number;
-    neighborhoodId: number;
-    areaId: number;
-    streetId: number;
-    laneId: number;
-    impasseId: number;
+    mainOrganizationId?: number;
+    subCategoryId?: number;
+    regionId?: number;
+    cityId?: number;
+    districtId?: number;
+    villageId?: number;
+    avenueId?: number;
+    residentialId?: number;
+    neighborhoodId?: number;
+    areaId?: number;
+    streetId?: number;
+    laneId?: number;
+    impasseId?: number;
     segmentId?: number;
-    passageId: number;
+    passageId?: number;
     name?: string;
     legalName?: string;
     secret?: string;
@@ -132,18 +134,22 @@ export namespace OrganizationVersionInterfaces {
     bankNumber?: string;
     account?: string;
     mail?: string;
+    email?: string;
     clientId?: string;
     manager?: string;
     editedStaffNumber?: string;
-    index: string;
+    index?: string;
+    site?: SiteDto;
+    rate?: RateType;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
+    socials?: JsonValue | string;
     PictureVersion?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
-    createdAt: Date;
-    updatedAt: Date;
-    deletedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
+    deletedAt?: Date;
   }
 
   export interface ResponseWithoutPagination {

@@ -332,6 +332,10 @@ export class OrganizationVersionUpdateDto
   @IsOptional()
   @ValidateNested()
   @Type(() => SiteDto)
+  @Transform(({ value }) => {
+    if (!value || typeof value !== 'object') return undefined;
+    return value;
+  })
   site?: SiteDto;
 
   @ApiProperty({
