@@ -19,7 +19,7 @@ export class SiteDto {
   @ApiPropertyOptional({
     type: Object,
     example: {
-      maps: [
+      branches: [
         { lon: '12346469', lat: '12346469' },
         { lon: '12346469', lat: '12346469' },
       ],
@@ -29,5 +29,5 @@ export class SiteDto {
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  map?: Record<string, string>;
+  branch?: Record<string, string>;
 }

@@ -144,7 +144,7 @@ export namespace OrganizationVersionInterfaces {
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     socials?: JsonValue | string;
-    PictureVersion?: PictureType[];
+    Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;
     createdAt?: Date;
