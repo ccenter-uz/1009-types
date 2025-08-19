@@ -141,6 +141,7 @@ export namespace OrganizationVersionInterfaces {
     index?: string;
     site?: SiteDto;
     rate?: RateType;
+    status?: number;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
     socials?: JsonValue | string;
