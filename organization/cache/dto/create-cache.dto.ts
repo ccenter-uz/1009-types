@@ -63,7 +63,15 @@ export class CacheCreateDto implements CacheInterfaces.Request {
 
   @IsOptional()
   @IsString()
-  filesJson?: string;
+  photosJson?: string;
+
+  @IsOptional()
+  @IsString()
+  logoJson?: string;
+
+  @IsOptional()
+  @IsString()
+  bannerJson?: string;
 
   @IsOptional()
   @IsObject()
