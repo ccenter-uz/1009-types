@@ -12,7 +12,7 @@ export namespace CacheInterfaces {
     photos?: Array<Multer.File>;
     logo?: Multer.File;
     banner?: Multer.File;
-    filesJson:string
+    filesJson?:string
   }
 
   export interface Update {
