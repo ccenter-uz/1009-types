@@ -22,6 +22,14 @@ export namespace UserInterfaces {
     role: string;
   }
 
+  export interface LogInResponse {
+    accessToken: string;
+    permissions: any;
+    role: string;
+  }
+
+
+
   export interface ForgetPwdRequest {
     phoneNumber: string;
   }
@@ -33,6 +41,7 @@ export namespace UserInterfaces {
   export interface VerifySmsCodeRequest {
     userId: number;
     smsCode: number;
+    error?: ErrorStatusInLogin;
   }
 
   export interface ResendSmsCodeRequest {
@@ -45,13 +54,13 @@ export namespace UserInterfaces {
     path: string;
   }
 
-    export interface ClientRequest {
-      fullName: string;
-      phoneNumber: string;
-      password: string;
-      roleId?: number;
-      numericId?: string;
-    }
+  export interface ClientRequest {
+    fullName: string;
+    phoneNumber: string;
+    password: string;
+    roleId?: number;
+    numericId?: string;
+  }
 
   export interface Request {
     fullName: string;
