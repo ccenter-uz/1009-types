@@ -78,17 +78,19 @@ export namespace UserInterfaces {
   }
 
   export interface Response {
-    id: number;
-    fullName: string;
-    phoneNumber: string;
-    roleId: number;
-    numericId: string;
-    status: number;
+    id?: number;
+    fullName?: string;
+    phoneNumber?: string;
+    roleId?: number;
+    numericId?: string;
+    status?: number;
+    userId?: number;
+    smsCode?: number;
     role?: RoleInterfaces.Response;
     error?: ErrorStatusInLogin;
-    createdAt: Date;
-    updatedAt: Date;
-    deletedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
+    deletedAt?: Date;
   }
 
   export interface ResponseCreateUser {

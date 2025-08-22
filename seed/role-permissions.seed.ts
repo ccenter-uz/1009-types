@@ -1580,4 +1580,40 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/monitoring/organization',
   },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/cache',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.POST,
+    path: '/cache',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/cache',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.PUT,
+    path: '/cache/:id',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.DELETE,
+    path: '/cache/:id',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.DELETE,
+    path: '/cache/:id/restore',
+  },
 ];
