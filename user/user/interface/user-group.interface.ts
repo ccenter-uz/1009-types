@@ -45,6 +45,14 @@ export namespace UserInterfaces {
     path: string;
   }
 
+    export interface ClientRequest {
+      fullName: string;
+      phoneNumber: string;
+      password: string;
+      roleId?: number;
+      numericId?: string;
+    }
+
   export interface Request {
     fullName: string;
     phoneNumber: string;
