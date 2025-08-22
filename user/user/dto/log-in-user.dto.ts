@@ -21,10 +21,10 @@ export class UserLogInDto implements UserInterfaces.LogInRequest {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @Length(8, 20)
-  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
-    message: ErrorMessageForPassword,
-  })
+  // @Length(8, 20)
+  // @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_\(\)])/, {
+  //   message: ErrorMessageForPassword,
+  // })
   password: string;
 
   @IsOptional()
