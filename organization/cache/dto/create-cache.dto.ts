@@ -27,6 +27,9 @@ export class CacheCreateDto implements CacheInterfaces.Request {
       lunchTo: '14:00',
       worktimeFrom: '10:00',
       worktimeTo: '19:00',
+      pictures: [],
+      logoLink: 'asdfasf',
+      bannerLink: 'sadfasdfsa',
     },
   })
   @IsOptional()
@@ -34,7 +37,7 @@ export class CacheCreateDto implements CacheInterfaces.Request {
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
-  data?: Record<string, string>;
+  data?: Record<string, any>;
 
   @ApiProperty({
     type: 'array',
@@ -57,21 +60,6 @@ export class CacheCreateDto implements CacheInterfaces.Request {
   })
   banner?: Multer.File;
 
-  @IsOptional()
-  @IsString()
-  logoLink?: string;
-
-  @IsOptional()
-  @IsString()
-  photosJson?: string;
-
-  @IsOptional()
-  @IsString()
-  logoJson?: string;
-
-  @IsOptional()
-  @IsString()
-  bannerJson?: string;
 
   @IsOptional()
   @IsObject()

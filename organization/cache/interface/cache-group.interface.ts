@@ -12,9 +12,7 @@ export namespace CacheInterfaces {
     photos?: Array<Multer.File>;
     logo?: Multer.File;
     banner?: Multer.File;
-    photosJson?: string;
-    logoJson?: string;
-    bannerJson?: string;
+
   }
 
   export interface Update {
@@ -32,9 +30,7 @@ export namespace CacheInterfaces {
     logo?: Multer.File;
     banner?: Multer.File;
     filesJson?: string;
-    photosJson?: string;
-    logoJson?: string;
-    bannerJson?: string;
+
   }
 
   export interface ResponseWithoutPagination {
