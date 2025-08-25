@@ -339,12 +339,6 @@ export class SavedOrganizationFilterDto extends LanguageRequestDto {
     type: Boolean,
     required: false,
   })
-  @Transform(({ value }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return Boolean(value);
-  })
   @IsOptional()
   @IsBoolean()
   savedOrganization?: boolean;
