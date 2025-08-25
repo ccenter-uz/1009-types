@@ -335,10 +335,7 @@ export class SavedOrganizationFilterDto extends LanguageRequestDto {
   @IsOptional()
   status: OrganizationStatusEnum = OrganizationStatusEnum.Accepted;
 
-  @ApiProperty({
-    type: Boolean,
-    required: false,
-  })
+
   @IsOptional()
   @IsBoolean()
   savedOrganization?: boolean;
