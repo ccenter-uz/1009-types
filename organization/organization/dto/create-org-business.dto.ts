@@ -19,6 +19,11 @@ export class OrganizationBusinessCreateDto
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  name: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
   certificate: string;
 
   @ApiProperty()
