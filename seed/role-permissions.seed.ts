@@ -1550,7 +1550,7 @@ export const RolePermissionsData = [
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.PUT,
-    path: '/user/update-me',
+    path: '/user/update-me/site',
   },
   {
     role: Roles.BUSINESS,
