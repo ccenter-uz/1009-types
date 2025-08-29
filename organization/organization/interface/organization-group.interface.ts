@@ -140,6 +140,7 @@ export namespace OrganizationInterfaces {
     site?: SiteDto;
     socials: JsonValue | string;
     rate?: RateType;
+    logoLink?: string;
     // ProductServices?: ProductServiceTypeResponce[];
     // Nearbees?: NearbeesType[];
     Picture?: PictureType[];
