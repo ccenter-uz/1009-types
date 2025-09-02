@@ -142,10 +142,11 @@ export namespace OrganizationVersionInterfaces {
     site?: SiteDto;
     rate?: RateType;
     status?: number;
-    logoLink? : string;
+    logoLink?: string;
     paymentTypes?: PaymentTypesVersionDto;
     phone?: PhoneType[];
-    socials?: JsonValue | string;
+    social?: JsonValue | string;
+    certificate: string;
     Picture?: PictureType[];
     workTime?: JsonValue | string;
     transport?: JsonValue | string;

@@ -138,7 +138,9 @@ export namespace OrganizationInterfaces {
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
     site?: SiteDto;
-    socials: JsonValue | string;
+    social?: JsonValue | string;
+    socials?: JsonValue | string;
+    certificate: string;
     rate?: RateType;
     logoLink?: string;
     // ProductServices?: ProductServiceTypeResponce[];
