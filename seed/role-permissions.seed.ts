@@ -1509,6 +1509,11 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/neighborhood/:id',
   },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.GET,
+    path: '/organization',
+  },
 
   {
     role: Roles.USER,
@@ -1530,8 +1535,6 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.DELETE,
     path: '/saved-organization/:organizationId',
   },
-
-
 
   {
     role: Roles.BUSINESS,
