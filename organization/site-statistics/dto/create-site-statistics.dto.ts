@@ -29,13 +29,12 @@ export class siteStatisticsCreateDto implements siteStatisticsInterfaces.Request
   @ApiProperty({
     type: Array,
     required: false,
-    example: [1, 2],
+    example: [41.3111, 69.2797],
   })
   @IsOptional()
   @Type(() => Array)
   address?: Array<number>;
 
-  @ApiProperty()
   @IsOptional()
   @IsString()
   addressCity: string;
