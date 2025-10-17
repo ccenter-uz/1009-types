@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
+  IsEnum,
   IsNotEmpty,
   IsNumber,
   IsObject,
@@ -8,7 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { LanguageDto, LogDataType } from 'types/global';
+import { DeviceType, LanguageDto, LogDataType } from 'types/global';
 import { siteStatisticsInterfaces } from '../interface/site-statistics-group.interface';
 
 export class siteStatisticsCreateDto implements siteStatisticsInterfaces.Request {
@@ -44,10 +45,16 @@ export class siteStatisticsCreateDto implements siteStatisticsInterfaces.Request
   @IsNumber()
   userLogId: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    enum: DeviceType,
+    description: 'Device type (computer, tablet, or phone)',
+    example: DeviceType.COMPUTER,
+  })
   @IsNotEmpty()
-  @IsString()
-  device: string;
+  @IsEnum(DeviceType, {
+    message: 'device must be one of: computer, tablet, phone',
+  })
+  device: DeviceType;
 
   @ApiProperty()
   @IsNotEmpty()

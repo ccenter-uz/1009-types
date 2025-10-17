@@ -409,7 +409,7 @@ export const Regions = [
   'namangan',
   'navoiy',
   'qashqadaryo',
-  'qoraqalpogiston',
+  'qaraqalpaqstan',
   'samarqand',
   'sirdaryo',
   'surxondaryo',

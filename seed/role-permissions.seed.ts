@@ -1597,4 +1597,9 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.DELETE,
     path: '/cache',
   },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.DELETE,
+    path: '/bisiness-statistics/one',
+  },
 ];
