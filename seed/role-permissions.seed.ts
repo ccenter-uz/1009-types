@@ -1599,7 +1599,7 @@ export const RolePermissionsData = [
   },
   {
     role: Roles.BUSINESS,
-    permission: PermissionsEnum.DELETE,
+    permission: PermissionsEnum.GET,
     path: '/bisiness-statistics/one',
   },
 ];
