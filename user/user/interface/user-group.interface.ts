@@ -86,6 +86,11 @@ export namespace UserInterfaces {
     password?: string;
   }
 
+    export interface UpdateSmsCode {
+      userId: number;
+      smsCode: number;
+    }
+
   export interface Response {
     id?: number;
     fullName?: string;
