@@ -23,6 +23,11 @@ export class UserUpdateMeBusinessDto extends IdDto implements UserInterfaces.Upd
   @IsString()
   email?: string;
 
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  language?: string;
+
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
