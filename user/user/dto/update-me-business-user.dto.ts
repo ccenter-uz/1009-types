@@ -33,7 +33,6 @@ export class UserUpdateMeBusinessDto extends IdDto implements UserInterfaces.Upd
   language?: string;
 
   
-
   @IsOptional()
   @IsObject()
   logData?: LogDataType;
