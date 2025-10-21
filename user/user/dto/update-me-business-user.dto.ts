@@ -1,4 +1,5 @@
 import {
+  IsIn,
   IsNumber,
   IsObject,
   IsOptional,
@@ -23,10 +24,15 @@ export class UserUpdateMeBusinessDto extends IdDto implements UserInterfaces.Upd
   @IsString()
   email?: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'uz', description: 'User selected language (uz, ru, en)' })
   @IsOptional()
   @IsString()
+  @IsIn(['uz', 'ru', 'en'], {
+    message: 'Language must be one of the following values: "uz", "ru", or "en".',
+  })
   language?: string;
+
+  
 
   @IsOptional()
   @IsObject()
