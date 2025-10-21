@@ -12,10 +12,7 @@ import { ErrorMessageForPassword, IdDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { UserInterfaces } from '../interface/user-group.interface';
 
-export class UserUpdateSmsCodeDto
-  extends IdDto
-  implements UserInterfaces.UpdateSmsCode
-{
+export class UserUpdateSmsCodeDto implements UserInterfaces.UpdateSmsCode {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
