@@ -8,8 +8,14 @@ import {
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import { LanguageRequestDto, LogDataType } from 'types/global';
+import { ApiProperty } from '@nestjs/swagger';
 
-export class GetOneSavedOrganizationDto extends LanguageRequestDto {
+export class GetSiteStatisticsDto extends LanguageRequestDto {
+  @ApiProperty({ type: String, required: false, example: '30 days' })
+  @IsString()
+  @IsOptional()
+  dateRange?: string;
+
   @IsInt()
   @Min(1)
   @Type(() => Number)
