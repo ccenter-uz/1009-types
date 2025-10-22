@@ -17,10 +17,10 @@ export class ExcelData {
   NAME?: string;
 
   @ApiProperty({ description: 'Phone details, should be an object or array' })
-  PHONE: any; // Желательно уточнить тип данных, например, PhoneDto[]
+  PHONE: string; // Желательно уточнить тип данных, например, PhoneDto[]
 
   @ApiProperty({ description: 'Segment identifier' })
-  SEGMENT: number;
+  SEGMENT: string;
 
   @ApiProperty({ description: 'Account information' })
   ACCOUNT: string;
@@ -36,6 +36,9 @@ export class ExcelData {
 
   @ApiProperty({ description: 'Email address' })
   MAIL: string;
+
+  @ApiProperty({ description: 'Fields to be updated, separated by semicolons' })
+  UPDATES: string;
 }
 
 export class scriptResponse {
