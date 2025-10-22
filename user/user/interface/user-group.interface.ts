@@ -7,28 +7,11 @@ export namespace UserInterfaces {
     password: string;
   }
 
-  export interface LogInBusinessUserRequest {
-    phoneNumber: string;
-  }
-
-  export interface createBusinessUserRequest {
-    phoneNumber: string;
-    email: string;
-  }
-
   export interface LogInResponse {
     accessToken: string;
     permissions: any;
     role: string;
   }
-
-  export interface LogInResponse {
-    accessToken: string;
-    permissions: any;
-    role: string;
-  }
-
-
 
   export interface ForgetPwdRequest {
     phoneNumber: string;
@@ -41,7 +24,6 @@ export namespace UserInterfaces {
   export interface VerifySmsCodeRequest {
     userId: number;
     smsCode: number;
-    error?: ErrorStatusInLogin;
   }
 
   export interface ResendSmsCodeRequest {
@@ -52,14 +34,6 @@ export namespace UserInterfaces {
     roleId: number;
     method: PermissionType;
     path: string;
-  }
-
-  export interface ClientRequest {
-    fullName: string;
-    phoneNumber: string;
-    password: string;
-    roleId?: number;
-    numericId?: string;
   }
 
   export interface Request {
@@ -86,25 +60,18 @@ export namespace UserInterfaces {
     password?: string;
   }
 
-    export interface UpdateSmsCode {
-      userId: number;
-      smsCode: number;
-    }
-
   export interface Response {
-    id?: number;
-    fullName?: string;
-    phoneNumber?: string;
-    roleId?: number;
-    numericId?: string;
-    status?: number;
-    userId?: number;
-    smsCode?: number;
+    id: number;
+    fullName: string;
+    phoneNumber: string;
+    roleId: number;
+    numericId: string;
+    status: number;
     role?: RoleInterfaces.Response;
     error?: ErrorStatusInLogin;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deletedAt?: Date;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: Date;
   }
 
   export interface ResponseCreateUser {
@@ -115,12 +82,7 @@ export namespace UserInterfaces {
     userId?: number;
   }
 
-  export interface ResponseLoginBusinessUser {
-    error?: ErrorStatusInLogin;
-    smsCode?: number;
-    messsage?: string;
-    userId?: number;
-  }
+  
 
   export interface ResponseWithoutPagination {
     totalDocs: number;

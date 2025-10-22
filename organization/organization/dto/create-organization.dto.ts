@@ -1,4 +1,4 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
   IsArray,
@@ -21,7 +21,6 @@ import { ProductServiceType } from './create-product-service.dto';
 import { NearbeesType } from './create-nearbees.dto';
 import { removeSymbols } from 'types/global/helper';
 import { socialType } from './create-social.dto';
-import { SiteDto } from 'types/organization/organization-version/dto/update-site.dto';
 
 export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @ApiProperty({ example: 1, required: false })
@@ -30,13 +29,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @Type(() => Number)
   mainOrganizationId?: number;
 
-  @ApiProperty({ example: 1, required: false })
+  @ApiProperty({ example: 1 })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
   subCategoryId?: number;
 
-  @ApiProperty({ example: 1, required: false })
+  @ApiProperty({ example: 1 })
   @IsOptional()
   @IsNumber()
   @Type(() => Number)
@@ -124,11 +123,11 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   @IsNumber()
   passageId?: number;
 
-  @ApiProperty({ required: false })
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
   @Transform(removeSymbols)
-  name?: string;
+  name: string;
 
   @ApiProperty({ type: String, required: false })
   @IsOptional()
@@ -233,13 +232,13 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
     },
     type: PaymentTypesDto,
   })
-  @IsOptional()
+  @IsNotEmpty()
   @Transform(({ value }) =>
     typeof value === 'string' ? JSON.parse(value) : value
   )
   @IsObject()
   @Type(() => PaymentTypesDto)
-  paymentTypes?: PaymentTypesDto;
+  paymentTypes: PaymentTypesDto;
 
   @ApiProperty({
     example: {
@@ -323,29 +322,23 @@ export class OrganizationCreateDto implements OrganizationInterfaces.Request {
   )
   social: Record<string, string>;
 
-  // @ApiPropertyOptional({ type: () => SiteDto })
-  // @IsOptional()
-  // @ValidateNested()
-  // @Type(() => SiteDto)
-  // site?: SiteDto;
-
   @ApiProperty({
     type: 'array',
     items: { type: 'string', format: 'binary' },
     required: false,
   })
-  photos?: Array<Multer.File>;
+  photos: Array<Multer.File>;
 
   @ApiProperty({
     type: 'string',
     format: 'binary',
     required: false,
   })
-  logo?: Multer.File;
+  logo: Multer.File;
 
   @IsOptional()
   @IsString()
-  logoLink?: string;
+  logoLink: string;
 
   @IsOptional()
   @IsArray()

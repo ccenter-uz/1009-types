@@ -9,15 +9,7 @@ import {
   ProductServiceTypeResponce,
 } from '../dto/create-product-service.dto';
 import { AreaInterfaces } from 'types/organization/area';
-import { SiteDto } from 'types/organization/organization-version/dto/update-site.dto';
-import { RateType } from '../types';
 export namespace OrganizationInterfaces {
-  export interface RequestBusiness {
-    certificate: string;
-    inn: string;
-    address: string;
-    phoneNumber: string;
-  }
   export interface Request {
     mainOrganizationId?: number;
     subCategoryId?: number;
@@ -34,7 +26,7 @@ export namespace OrganizationInterfaces {
     impasseId?: number;
     segmentId?: number;
     passageId?: number;
-    name?: string;
+    name: string;
     legalName?: string;
     secret?: string;
     kvartal?: string;
@@ -48,7 +40,7 @@ export namespace OrganizationInterfaces {
     mail?: string;
     manager?: string;
     index?: string;
-    paymentTypes?: PaymentTypesDto;
+    paymentTypes: PaymentTypesDto;
     workTime?: {};
     transport?: {};
     photos?: Array<Multer.File>;
@@ -98,21 +90,21 @@ export namespace OrganizationInterfaces {
 
   export interface Response {
     id: number;
-    mainOrganizationId?: number;
-    subCategoryId?: number;
-    regionId?: number;
-    cityId?: number;
-    districtId?: number;
-    villageId?: number;
-    avenueId?: number;
-    residentialId?: number;
-    neighborhoodId?: number;
-    areaId?: number;
-    streetId?: number;
-    laneId?: number;
-    impasseId?: number;
+    mainOrganizationId: number;
+    subCategoryId: number;
+    regionId: number;
+    cityId: number;
+    districtId: number;
+    villageId: number;
+    avenueId: number;
+    residentialId: number;
+    neighborhoodId: number;
+    areaId: number;
+    streetId: number;
+    laneId: number;
+    impasseId: number;
     segmentId?: number;
-    passageId?: number;
+    passageId: number;
     name?: string;
     legalName?: string;
     secret?: string;
@@ -125,24 +117,17 @@ export namespace OrganizationInterfaces {
     bankNumber?: string;
     account?: string;
     mail?: string;
-    email?: string;
     clientId?: string;
     manager?: string;
-    index?: string;
+    index: string;
     nearbyDescription?: string;
     staffNumber?: string;
     editedStaffNumber?: string;
-    status?: number;
+    status: number;
     deleteReason?: string;
-    createdBy?: string;
+    createdBy: string;
     paymentTypes?: PaymentTypesDto;
     phone?: PhoneType[];
-    site?: SiteDto;
-    social?: JsonValue | string;
-    socials?: JsonValue | string;
-    certificate: string;
-    rate?: RateType;
-    logoLink?: string;
     // ProductServices?: ProductServiceTypeResponce[];
     // Nearbees?: NearbeesType[];
     Picture?: PictureType[];
@@ -153,13 +138,7 @@ export namespace OrganizationInterfaces {
     deletedAt: Date;
 
     area?: AreaInterfaces.Response;
-  }
-
-  export interface ResponseBusiness {
-    smsCode?: number;
-    messsage?: string;
-    userId?: number;
-  }
+  } 
 
   export interface ResponseWithoutPagination {
     totalDocs: number;

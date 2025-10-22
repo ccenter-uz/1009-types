@@ -340,10 +340,6 @@ export class OrganizationFilterDto extends LanguageRequestDto {
   role?: string;
 
   @IsOptional()
-  @IsString()
-  inn?: string;
-
-  @IsOptional()
   @IsNumber()
   userId?: number;
 
