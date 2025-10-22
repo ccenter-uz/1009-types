@@ -24,7 +24,6 @@ export enum Roles {
   MODERATOR = 'moderator',
   OPERATOR = 'operator',
   USER = 'user',
-  BUSINESS = 'business',
 }
 
 export enum PermissionsEnum {
@@ -318,8 +317,6 @@ export enum CreatedByEnum {
   Client = 'client',
   Moderator = 'moderator',
   Operator = 'operator',
-  Business = 'business',
-  User = 'user',
 }
 
 export enum OrganizationStatusEnum {
@@ -342,12 +339,6 @@ export const enum OrganizationVersionActionsEnum {
   UPDATE = 'update',
   DELETE = 'delete',
   // RESTORE = 'restore',
-}
-
-export enum DeviceType {
-  COMPUTER = 'computer',
-  TABLET = 'tablet',
-  PHONE = 'phone',
 }
 
 export enum ModuleNames {
@@ -399,20 +390,4 @@ export const ModuleNamesObjectAdressArray = [
   'impasse',
   'avenue',
   'passage',
-];
-
-export const Regions = [
-  'andijon',
-  'buxoro',
-  'fargona',
-  'jizzax',
-  'namangan',
-  'navoiy',
-  'qashqadaryo',
-  'qaraqalpaqstan',
-  'samarqand',
-  'sirdaryo',
-  'surxondaryo',
-  'toshkent',
-  'toshkent shahar',
 ];

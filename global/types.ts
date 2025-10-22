@@ -73,7 +73,6 @@ export type LogDataType = {
     fullName: string;
     role: string;
   };
-  organizationId?: number;
   path: string;
   method: string;
 };

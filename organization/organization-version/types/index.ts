@@ -4,11 +4,6 @@ export type Phone = {
   action?: string;
 };
 
-export type RateType = {
-  rate: number;
-  count: number;
-};
-
 
 // export type Phone = {
 //   phone: string;

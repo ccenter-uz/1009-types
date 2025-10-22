@@ -1509,11 +1509,6 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/neighborhood/:id',
   },
-  {
-    role: Roles.USER,
-    permission: PermissionsEnum.GET,
-    path: '/organization',
-  },
 
   {
     role: Roles.USER,
@@ -1528,78 +1523,22 @@ export const RolePermissionsData = [
   {
     role: Roles.USER,
     permission: PermissionsEnum.POST,
+    path: '/saved-organization',
+  },
+  {
+    role: Roles.USER,
+    permission: PermissionsEnum.PUT,
     path: '/saved-organization/:organizationId',
   },
   {
     role: Roles.USER,
     permission: PermissionsEnum.DELETE,
-    path: '/saved-organization/:organizationId',
+    path: '/saved-organization/:id',
   },
 
   {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/user/get-me',
-  },
-  {
-    role: Roles.BUSINESS,
+    role: Roles.USER,
     permission: PermissionsEnum.PUT,
-    path: '/user/update-me/site',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.DELETE,
-    path: '/user/delete-me',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.PUT,
-    path: '/organization/site/update',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/organization/site/one',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/organization/site/version',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/monitoring/organization',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/cache',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.POST,
-    path: '/cache',
-  },
-
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/cache',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.DELETE,
-    path: '/cache',
-  },
-  {
-    role: Roles.BUSINESS,
-    permission: PermissionsEnum.GET,
-    path: '/bisiness-statistics/one',
+    path: '/saved-organization/:id/restore',
   },
 ];
