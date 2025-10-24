@@ -1,4 +1,4 @@
-export enum CityServiceCommands {
+export enum NotificationServiceCommands {
     GET_LIST_BY_PAGINATION = 'NOTIFICATION_GET_LIST_BY_PAGINATION',
     GET_ALL_LIST = 'NOTIFICATION_GET_ALL_LIST',
     GET_BY_ID = 'NOTIFICATION_GET_BY_ID',
