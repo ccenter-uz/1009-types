@@ -8,3 +8,4 @@ export * from './dto/resend-sms-code.dto';
 export * from './dto/create-business-user.dto'
 export * from './dto/create-client.dto'
 export * from './dto/update-me-business-user.dto'
+export * from './dto/update-sms-code.dto'

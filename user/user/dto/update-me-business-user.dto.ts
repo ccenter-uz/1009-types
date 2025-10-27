@@ -1,4 +1,5 @@
 import {
+  IsIn,
   IsNumber,
   IsObject,
   IsOptional,
@@ -11,7 +12,10 @@ import { ErrorMessageForPassword, IdDto, LogDataType } from 'types/global';
 import { ApiProperty } from '@nestjs/swagger';
 import { UserInterfaces } from '../interface/user-group.interface';
 
-export class UserUpdateMeBusinessDto extends IdDto implements UserInterfaces.Update {
+export class UserUpdateMeBusinessDto
+  extends IdDto
+  implements UserInterfaces.Update
+{
   //   @ApiProperty()
   //   @IsOptional()
   //   @IsString()
@@ -22,6 +26,18 @@ export class UserUpdateMeBusinessDto extends IdDto implements UserInterfaces.Upd
   @IsOptional()
   @IsString()
   email?: string;
+
+  @ApiProperty({
+    example: 'uz',
+    description: 'User selected language (uz, ru, en)',
+  })
+  @IsOptional()
+  @IsString()
+  @IsIn(['uz', 'ru', 'en'], {
+    message:
+      'Language must be one of the following values: "uz", "ru", or "en".',
+  })
+  language?: string;
 
   @IsOptional()
   @IsObject()

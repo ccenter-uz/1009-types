@@ -28,6 +28,11 @@ export class UserUpdateMeDto extends IdDto implements UserInterfaces.Update {
   @IsString()
   email?: string;
 
+  // @ApiProperty()
+  @IsOptional()
+  @IsString()
+  language?: string;
+
   @ApiProperty()
   @IsOptional()
   @IsString()

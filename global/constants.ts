@@ -344,6 +344,12 @@ export const enum OrganizationVersionActionsEnum {
   // RESTORE = 'restore',
 }
 
+export enum DeviceType {
+  COMPUTER = 'computer',
+  TABLET = 'tablet',
+  PHONE = 'phone',
+}
+
 export enum ModuleNames {
   ADDITIONAL = 'additional',
   ADDITIONAL_CATEGORY = 'additional-category',
@@ -393,4 +399,20 @@ export const ModuleNamesObjectAdressArray = [
   'impasse',
   'avenue',
   'passage',
+];
+
+export const Regions = [
+  'andijon',
+  'buxoro',
+  'fargona',
+  'jizzax',
+  'namangan',
+  'navoiy',
+  'qashqadaryo',
+  'qaraqalpaqstan',
+  'samarqand',
+  'sirdaryo',
+  'surxondaryo',
+  'toshkent',
+  'toshkent shahar',
 ];
