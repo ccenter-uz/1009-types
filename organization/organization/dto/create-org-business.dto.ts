@@ -2,16 +2,13 @@ import { OrganizationInterfaces } from 'types/organization/organization';
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
-  IsNumber,
   IsObject,
   IsOptional,
   IsString,
-  Length,
-  Matches,
   MaxLength,
 } from 'class-validator';
 
-import { ErrorMessageForPassword, LogDataType } from 'types/global';
+import { LogDataType } from 'types/global';
 
 export class OrganizationBusinessCreateDto
   implements OrganizationInterfaces.RequestBusiness
