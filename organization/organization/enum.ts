@@ -1,10 +1,6 @@
 export enum OrganizationExcelDataFieldsEnum {
   CLNT_ID = 'clientId',
 
-  START = 'createdAt',
-
-  STOP = 'deletedAt',
-
   NAME = 'name',
 
   SEGMENT = 'segmentId',

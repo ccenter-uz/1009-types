@@ -4,20 +4,11 @@ export class ExcelData {
   @ApiProperty({ description: 'Unique client ID' })
   CLNT_ID: string;
 
-  @ApiProperty({ description: 'Start date in ISO string format' })
-  START: string;
-
-  @ApiProperty({
-    description: 'Stop date in ISO string format or null',
-    nullable: true,
-  })
-  STOP: string | null;
-
   @ApiProperty({ description: 'Client name (optional)', required: false })
   NAME?: string;
 
   @ApiProperty({ description: 'Phone details, should be an object or array' })
-  PHONE: string; // Желательно уточнить тип данных, например, PhoneDto[]
+  PHONE: string; 
 
   @ApiProperty({ description: 'Segment identifier' })
   SEGMENT: string;
