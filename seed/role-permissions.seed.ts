@@ -1611,6 +1611,6 @@ export const RolePermissionsData = [
   {
     role: Roles.BUSINESS,
     permission: PermissionsEnum.PUT,
-    path: '/notification/:id',
+    path: '/notification',
   },
 ];
