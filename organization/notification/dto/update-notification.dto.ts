@@ -15,22 +15,22 @@ export class NotificationUpdateDto
   extends IdDto
   implements NotificationInterfaces.Update
 {
-  @ApiProperty()
+  // @ApiProperty()
   @IsOptional()
   @IsNumber()
   organizationId: number;
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsOptional()
   @IsString()
   title: string;
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsOptional()
   @IsString()
   message: string;
 
-  @ApiProperty({ example: true })
+  // @ApiProperty({ example: true })
   @IsOptional()
   @IsBoolean()
   isRead: boolean;
@@ -40,7 +40,7 @@ export class NotificationUpdateDto
   @IsBoolean()
   allRead: boolean;
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsOptional()
   @IsString()
   userId: string;
