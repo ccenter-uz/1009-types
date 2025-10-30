@@ -1602,4 +1602,15 @@ export const RolePermissionsData = [
     permission: PermissionsEnum.GET,
     path: '/bisiness-statistics/one',
   },
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.GET,
+    path: '/notification/:id',
+  },
+
+  {
+    role: Roles.BUSINESS,
+    permission: PermissionsEnum.PUT,
+    path: '/notification/:id',
+  },
 ];
