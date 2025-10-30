@@ -15,20 +15,25 @@ export class NotificationCreateDto implements NotificationInterfaces.Request {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
-  organizationId: number;
+  organizationId?: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  organizationStatus?: number;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  title: string;
+  title?: string;
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  message: string;
+  message?: string;
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  userId: string;
+  userId?: string;
 }
