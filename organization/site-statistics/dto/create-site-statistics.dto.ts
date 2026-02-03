@@ -12,7 +12,9 @@ import {
 import { DeviceType, LanguageDto, LogDataType } from 'types/global';
 import { siteStatisticsInterfaces } from '../interface/site-statistics-group.interface';
 
-export class siteStatisticsCreateDto implements siteStatisticsInterfaces.Request {
+export class siteStatisticsCreateDto
+  implements siteStatisticsInterfaces.Request
+{
   @ApiProperty({
     type: Number,
     required: true,
@@ -57,14 +59,28 @@ export class siteStatisticsCreateDto implements siteStatisticsInterfaces.Request
   device: DeviceType;
 
   @ApiProperty()
-  @IsNotEmpty()
+  // @IsNotEmpty()
   @IsString()
   sourceSite: string;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
+  // @IsNotEmpty()
+  // @IsString()
+  @IsOptional()
   sessionTime: string;
+
+  // @IsNotEmpty()
+  @IsString()
+  @IsOptional()
+  ip: string;
+
+  @IsString()
+  @IsOptional()
+  userAgent: string;
+
+  @IsString()
+  @IsOptional()
+  uniqueKey: string;
 
   @IsOptional()
   @IsObject()

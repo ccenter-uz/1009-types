@@ -345,9 +345,9 @@ export const enum OrganizationVersionActionsEnum {
 }
 
 export enum DeviceType {
-  COMPUTER = 'computer',
+  COMPUTER = 'desktop',
   TABLET = 'tablet',
-  PHONE = 'phone',
+  PHONE = 'mobile',
 }
 
 export enum ModuleNames {

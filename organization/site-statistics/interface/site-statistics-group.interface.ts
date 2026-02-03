@@ -10,24 +10,30 @@ export namespace siteStatisticsInterfaces {
     device: string;
     sourceSite: string;
     sessionTime: string;
+    ip: string;
+    userAgent: string;
+    uniqueKey: string;
   }
 
-export interface Response {
-  id?: number;
-  organizationId?: number;
-  total?: number;
-  totalPageviews?: number;
-  uniqueUsers?: number;
-  avarageSessionTime?: number;
-  userId?: number;
-  address?: string;
-  device?: string;
-  sourceSite?: string;
-  sessionTime?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
-}
+  export interface Response {
+    id?: number;
+    organizationId?: number;
+    total?: number;
+    totalPageviews?: number;
+    uniqueUsers?: number;
+    avarageSessionTime?: number;
+    userId?: number;
+    address?: string;
+    device?: string;
+    sourceSite?: string;
+    sessionTime?: string;
+    ip: string;
+    userAgent: string;
+    uniqueKey: string;
+    createdAt?: Date;
+    updatedAt?: Date;
+    deletedAt?: Date;
+  }
 
   export interface ResponseWithoutPagination {
     totalDocs: number;
