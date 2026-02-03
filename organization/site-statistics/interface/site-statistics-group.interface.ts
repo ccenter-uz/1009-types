@@ -27,9 +27,9 @@ export namespace siteStatisticsInterfaces {
     device?: string;
     sourceSite?: string;
     sessionTime?: string;
-    ip: string;
-    userAgent: string;
-    uniqueKey: string;
+    ip?: string;
+    userAgent?: string;
+    uniqueKey?: string;
     createdAt?: Date;
     updatedAt?: Date;
     deletedAt?: Date;
